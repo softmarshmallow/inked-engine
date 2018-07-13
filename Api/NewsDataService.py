@@ -1,0 +1,88 @@
+from typing import List
+
+from bson import ObjectId
+
+from DataModels.NewsDataModel import NewsDataModel, CreateNewNewsModelFromJson_MongoDB
+from pymongo import MongoClient
+
+
+class NewsDataService:
+    def __init__(self):
+        self.client = MongoClient('localhost', 27017)
+        self.db = self.client.inked_news_storage
+        self.newsTable = self.db.news
+
+    def FetchNewsData(self, cnt: int = None) -> List[NewsDataModel]:
+        fetchedList = []
+
+        q = self.newsTable.find()
+        if cnt is not None:
+            q.limit(cnt)
+
+        for document in q:
+            newsData = CreateNewNewsModelFromJson_MongoDB(document)
+            fetchedList.append(newsData)
+
+        return fetchedList
+
+
+    def WriteNewsData(self, newsData: NewsDataModel):
+        pass
+
+    def SetCompTags(self, newsDataID: str, compTags: List[str])->bool:
+        q = {"$set": {"compTags": compTags}}
+        # q = {"$compTags": compTags}
+        self.newsTable.update_one({"_id": ObjectId(newsDataID)}, q)
+
+    def FetchCompNews(self, comp):
+        cursor = self.newsTable.find({"compTags": comp})
+        l = []
+        for c in cursor:
+            l.append(c)
+            # print(c)
+
+        print(len(l))
+
+
+
+
+
+
+# Temporary method
+# 로컬 데이터를 디비로 옮길때 사용, 아키텍쳐 변경시 deprecated.
+def SetupDB():
+    from Api.LocalJsonDatabaseService import GetLocalNewsData
+
+    ask = input("this action will override all DB.... (Y/N)")
+    if ask != "Y":
+        return
+
+    client = MongoClient('localhost', 27017)
+    db = client.inked_news_storage
+    newsTable = db.news
+    newsTable.drop()
+
+    all_newsData = GetLocalNewsData(hasMaxValue=False)
+    total = len(all_newsData)
+    i = 0
+    for newsData in all_newsData:
+
+        news_data = {
+            'title': newsData.newsTitle,
+            'content': newsData.newsContent,
+            'time': newsData.newsTime,
+            'providerID': newsData.providerId
+        }
+        result = newsTable.insert_one(news_data)
+        print('One post: {0}'.format(result.inserted_id))
+        print("TOTAL", total, "DONE", str(i))
+        i += 1
+
+
+
+if __name__ == "__main__":
+    c = NewsDataService()
+    l = c.FetchNewsData(10)
+
+    for i in l:
+        print(i.id)
