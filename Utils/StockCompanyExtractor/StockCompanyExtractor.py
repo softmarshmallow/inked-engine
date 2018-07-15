@@ -4,6 +4,8 @@ from typing import List
 
 from datetime import datetime
 
+import os
+
 from Api.NewsDataService import NewsDataService
 from DataModels.NewsDataModel import NewsDataModel
 
@@ -31,7 +33,9 @@ def FetchAllCompanyName() -> dict:
         return compDict
 
     compDict = {}
-    file = open("KRX-Stock-List.csv", "r")
+    dirname = os.path.dirname(__file__)
+    filename = os.path.join(dirname, "KRX-Stock-List.csv")
+    file = open(filename, "r")
     reader = csv.reader(file)
     # Skip Header
     next(reader, None)
@@ -91,9 +95,8 @@ def GetCompCodeWithName(compName) -> str:
 
 
 # Improvements 미리 모든뉴스 테깅후 DB저장, DB에서 추출.
-def FindAllNewsContainsCompany(compName) -> List[NewsDataModel]:
-    print(comp)
-    NewsDataService().FetchCompNews(comp)
+def FindAllNewsContainsCompany(comp) -> List[NewsDataModel]:
+    return NewsDataService().FetchCompNews(comp)
 
 
 if __name__ == "__main__":

@@ -34,14 +34,14 @@ class NewsDataService:
         # q = {"$compTags": compTags}
         self.newsTable.update_one({"_id": ObjectId(newsDataID)}, q)
 
-    def FetchCompNews(self, comp):
+    def FetchCompNews(self, comp)-> List:
         cursor = self.newsTable.find({"compTags": comp})
         l = []
         for c in cursor:
             l.append(c)
             # print(c)
 
-        print(len(l))
+        return l
 
 
 
