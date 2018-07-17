@@ -25,27 +25,27 @@ class NewsDataService:
 
         return fetchedList
 
-
     def WriteNewsData(self, newsData: NewsDataModel):
         pass
 
-    def SetCompTags(self, newsDataID: str, compTags: List[str])->bool:
+    def SetCompTags(self, newsDataID: str, compTags: List[str]) -> bool:
         q = {"$set": {"compTags": compTags}}
         # q = {"$compTags": compTags}
         self.newsTable.update_one({"_id": ObjectId(newsDataID)}, q)
 
-    def FetchCompNews(self, comp)-> List:
+    def FetchCompNews(self, comp) -> List:
         cursor = self.newsTable.find({"compTags": comp})
         l = []
         for c in cursor:
-            l.append(c)
+            o = CreateNewNewsModelFromJson_MongoDB(c)
+            l.append(o)
             # print(c)
 
         return l
 
-
-
-
+    def FetchNewsWithKeyword(self, keyword):
+        # TODO
+        pass
 
 
 # Temporary method
@@ -66,7 +66,6 @@ def SetupDB():
     total = len(all_newsData)
     i = 0
     for newsData in all_newsData:
-
         news_data = {
             'title': newsData.newsTitle,
             'content': newsData.newsContent,
@@ -79,10 +78,14 @@ def SetupDB():
         i += 1
 
 
-
 if __name__ == "__main__":
-    c = NewsDataService()
-    l = c.FetchNewsData(10)
+    # c = NewsDataService()
+    # l = c.FetchNewsData(10)
+    from Utils.StockCompanyExtractor.StockCompanyExtractor import CompNameToCompTuple
 
+    c = CompNameToCompTuple("삼성전자")
+    l = NewsDataService().FetchCompNews(c)
     for i in l:
+        print(type(i))
+        print(i)
         print(i.id)

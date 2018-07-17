@@ -1,7 +1,5 @@
 from konlpy.tag import Kkma, Twitter
-from konlpy.utils import pprint
 import nltk
-from Api import FirebaseService as firService
 from Api import LocalJsonDatabaseService as localService
 from Utils.HtmlLinkRemover import GetLinkLessContent
 

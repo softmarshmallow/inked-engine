@@ -10,6 +10,7 @@ from Api.NewsDataService import NewsDataService
 from DataModels.NewsDataModel import NewsDataModel
 
 
+# TODO Move this as a service
 # region Utils
 
 # 889 -> 00889
@@ -21,13 +22,15 @@ def CompNameToCompTuple(compName) -> tuple:
     return GetCompCodeWithName(compName), compName
 
 
+def CompCodeToTuple(compCode):
+    return compCode, FetchAllCompanyDic()[compCode]
 # endregion
 
 
 compDict: dict = None
 
 
-def FetchAllCompanyName() -> dict:
+def FetchAllCompanyDic() -> dict:
     global compDict
     if compDict is not None:
         return compDict
@@ -49,7 +52,7 @@ def FetchAllCompanyName() -> dict:
 
 
 def FetchAllCompName() -> List[str]:
-    compDict: dict = FetchAllCompanyName()
+    compDict: dict = FetchAllCompanyDic()
     compNameList = list(compDict.values())
     return compNameList
 
@@ -67,18 +70,16 @@ def FindAllCompanyInContent_LOOP(news: NewsDataModel) -> List[str]:
 def FindAllCompanyInContent(news: NewsDataModel, allowOverlap: bool = True) -> List[tuple]:
     companies: List[tuple] = []
 
-    listStrings = news.get_newsContent()
+    content = news.get_newsContent()
     auto = ahocorasick.Automaton()
     for compName in FetchAllCompName():
         auto.add_word(compName, compName)
     auto.make_automaton()
 
-    # for astr in listStrings:
-    # print(newsData.newsTitle)
-    for a in auto.iter(listStrings):
-        filtered_compName = a[1]
+    for found in auto.iter(content):
+        filtered_compName = found[1]
         companies.append((GetCompCodeWithName(filtered_compName), filtered_compName))
-        # print(a)
+        # print(found)
 
     if not allowOverlap:
         no_overlap_comps = []
@@ -89,7 +90,7 @@ def FindAllCompanyInContent(news: NewsDataModel, allowOverlap: bool = True) -> L
 
 
 def GetCompCodeWithName(compName) -> str:
-    for code, name in FetchAllCompanyName().items():  # for name, age in list.items():  (for Python 3.x)
+    for code, name in FetchAllCompanyDic().items():  # for name, age in list.items():  (for Python 3.x)
         if name == compName:
             return code
 
@@ -100,7 +101,13 @@ def FindAllNewsContainsCompany(comp) -> List[NewsDataModel]:
 
 
 if __name__ == "__main__":
-    allComp = FetchAllCompanyName()
+    a = FetchAllCompanyDic()
+    print(a)
+    for b in a:
+        print(b)
+    print(CompNameToCompTuple("삼성전자"))
+
+    allComp = FetchAllCompanyDic()
     for comp in allComp.items():
         FindAllNewsContainsCompany(comp)
 

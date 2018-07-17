@@ -1,33 +1,42 @@
 from typing import List
 import json
 
+import ahocorasick
+
+import os
+
 from Api.NewsDataService import NewsDataService
 from WordTokenizer.WordTokenizer import WordTokenizer
+
+dir_path = os.path.dirname(os.path.realpath(__file__))
 
 
 def FetchStopwords() -> List[str]:
     stopwords = []
     # stopwords list 1
-    stopwords += json.loads(open("Stopwords/stopwords-ko.json").read())
+    path = os.path.join(dir_path, "Stopwords/stopwords-ko.json")
+    stopwords += json.loads(open(path).read())
 
     # stopwords list 2
-    stopwords += open("Stopwords/ranks-stopwords-ko.txt").read().splitlines()
-
-    # stopwords list 3
-    stopwords += json.loads(open("Stopwords/custom-stopwords-ko.json").read())
+    path = os.path.join(dir_path, "Stopwords/custom-stopwords-ko.json")
+    stopwords += json.loads(open(path).read())
 
     # Remove duplicates
     # stopwords = list(set(stopwords))
 
     return stopwords
 
+
 # FIXME 인풋으로 리스트가 아닌 raw 텍스트 받을것.
 class StopwordsRemover:
 
-    def __init__(self, txtArr: List[str]):
+    def __init__(self, txtArr: List[str] = None, rawTxt: str = None):
         self.txtArr = txtArr
+        self.rawTxt = rawTxt
 
     def RemoveStopwords(self) -> List[str]:
+        if self.txtArr is None:
+            raise ReferenceError("no parameter setted")
         stopwords = FetchStopwords()
         targetTextArr = self.txtArr
         removalTextArr = stopwords
@@ -44,6 +53,19 @@ class StopwordsRemover:
         # endregion
 
         return list(removedStopwordsTextArr)
+
+    def RemoveStopwordsFromContent(self) -> str:
+        if self.rawTxt is None:
+            raise ReferenceError("no parameter setted")
+
+        auto = ahocorasick.Automaton()
+        for stopword in FetchStopwords():
+            auto.add_word(stopword, stopword)
+        auto.make_automaton()
+
+        for found in auto.iter(self.rawTxt):
+            print(found)
+#             TODO Add remove logic
 
 
 if __name__ == "__main__":

@@ -21,3 +21,9 @@ class WordTokenizer:
                 result.append(word[0])
 
         return result
+
+
+
+if __name__ == "__main__":
+    result = WordTokenizer("하기보다는 하기에").Tokenize()
+    print(result)
