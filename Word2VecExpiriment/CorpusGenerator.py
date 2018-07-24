@@ -12,7 +12,6 @@ def CreateUnpolishedCorpus(contentType:str = "Wiki")->str:
     print("CreateUnpolishedCorpus....")
 
     from Api.LocalJsonDatabaseService import GetLocalNewsData
-    from Utils.HtmlLinkRemover import GetLinkLessContent
 
     outputFilePath = "Corpus/" + contentType + ".txt"
     f = open(outputFilePath, 'w')

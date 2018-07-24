@@ -15,7 +15,7 @@ class NewsDataModel(object):
         self.newsCompTags: List[str] #= compTags
 
     def __str__(self):
-        return self.newsTitle
+        return "OBJ: " + self.newsTitle
 
     def get_newsContent(self, removeHtml=True, removeAdSection=True):
         self._newsContent = ""

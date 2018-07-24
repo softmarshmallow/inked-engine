@@ -7,6 +7,7 @@ from datetime import datetime
 import os
 
 from Api.NewsDataService import NewsDataService
+from DataModels.CompanyModel import CompanyModel
 from DataModels.NewsDataModel import NewsDataModel
 
 
@@ -21,21 +22,18 @@ def PolishCompCode(rawCompCode) -> str:
 def CompNameToCompTuple(compName) -> tuple:
     return GetCompCodeWithName(compName), compName
 
-
-def CompCodeToTuple(compCode):
-    return compCode, FetchAllCompanyDic()[compCode]
 # endregion
 
 
-compDict: dict = None
+compList: List[CompanyModel] = None
 
 
-def FetchAllCompanyDic() -> dict:
-    global compDict
-    if compDict is not None:
-        return compDict
+def FetchAllCompanyList() -> List[CompanyModel]:
+    global compList
+    if compList is not None:
+        return compList
 
-    compDict = {}
+    compList = []
     dirname = os.path.dirname(__file__)
     filename = os.path.join(dirname, "KRX-Stock-List.csv")
     file = open(filename, "r")
@@ -47,14 +45,19 @@ def FetchAllCompanyDic() -> dict:
         # row[1] = CompName
         compCode = PolishCompCode(row[0])
         compName = row[1]
-        compDict[compCode] = compName
-    return compDict
+        newCompObj = CompanyModel(compName, compCode)
+        compList.append(newCompObj)
+    return compList
 
 
 def FetchAllCompName() -> List[str]:
-    compDict: dict = FetchAllCompanyDic()
-    compNameList = list(compDict.values())
-    return compNameList
+    compList: List[CompanyModel] = FetchAllCompanyList()
+    return [c.compName for c in compList]
+
+
+def FetchAllCompCode() -> List[str]:
+    compList: List[CompanyModel] = FetchAllCompanyList()
+    return [c.compCode for c in compList]
 
 
 def FindAllCompanyInContent_LOOP(news: NewsDataModel) -> List[str]:
@@ -90,24 +93,24 @@ def FindAllCompanyInContent(news: NewsDataModel, allowOverlap: bool = True) -> L
 
 
 def GetCompCodeWithName(compName) -> str:
-    for code, name in FetchAllCompanyDic().items():  # for name, age in list.items():  (for Python 3.x)
-        if name == compName:
-            return code
+    for comp in FetchAllCompanyList():  # for name, age in list.items():  (for Python 3.x)
+        if comp.compName == compName:
+            return comp.compCode
 
 
 # Improvements 미리 모든뉴스 테깅후 DB저장, DB에서 추출.
-def FindAllNewsContainsCompany(comp) -> List[NewsDataModel]:
-    return NewsDataService().FetchCompNews(comp)
+def FindAllNewsContainsCompany(compCode) -> List[NewsDataModel]:
+    return NewsDataService().FetchCompNews(compCode)
 
 
 if __name__ == "__main__":
-    a = FetchAllCompanyDic()
+    a = FetchAllCompanyList()
     print(a)
     for b in a:
         print(b)
     print(CompNameToCompTuple("삼성전자"))
 
-    allComp = FetchAllCompanyDic()
-    for comp in allComp.items():
-        FindAllNewsContainsCompany(comp)
+    allComp = FetchAllCompanyList()
+    for comp in allComp:
+        FindAllNewsContainsCompany(comp.compCode)
 

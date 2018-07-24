@@ -18,7 +18,7 @@ class WordTokenizer:
         for word in malist:
             # 어미/조사/구두점 등은 대상에서 제외
             if not word[1] in remove:
-                result.append(word[0])
+                result.append(word[0] + "/" + word[1])
 
         return result
 

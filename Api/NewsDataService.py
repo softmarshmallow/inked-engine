@@ -28,13 +28,13 @@ class NewsDataService:
     def WriteNewsData(self, newsData: NewsDataModel):
         pass
 
-    def SetCompTags(self, newsDataID: str, compTags: List[str]) -> bool:
+    def SetCompTags(self, newsDataID: str, compTags: List[str]):
         q = {"$set": {"compTags": compTags}}
         # q = {"$compTags": compTags}
         self.newsTable.update_one({"_id": ObjectId(newsDataID)}, q)
 
-    def FetchCompNews(self, comp) -> List:
-        cursor = self.newsTable.find({"compTags": comp})
+    def FetchCompNews(self, compCode) -> List:
+        cursor = self.newsTable.find({"compTags": compCode})
         l = []
         for c in cursor:
             o = CreateNewNewsModelFromJson_MongoDB(c)
