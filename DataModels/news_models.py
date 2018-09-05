@@ -1,24 +1,36 @@
+from datetime import datetime
 from typing import List
 
 
 class NewsDataModel(object):
-
     """docstring for NewsModel"""
+
     def __init__(self, id, newsTitle, newsContent, newsTime, providerId, compTags):
         super(NewsDataModel, self).__init__()
         self.id = id
-        self.newsTitle = newsTitle
-        self.newsContent = newsContent
-        self.newsTime = newsTime
+        self.newsTitle: str = newsTitle
+        self.newsContent: str = newsContent
+        self.newsTime: datetime = newsTime
         self.providerId = providerId
-        # FIXME
-        self.newsCompTags: List[str] #= compTags
+        self.mentionedCompanies: List[str]
+        self.language = 'ko'
+        self.category = 'undefined'
 
     def __str__(self):
-        return "OBJ: " + self.newsTitle
+        return '''
+NewsDataModel: {}
+Title:: {}
+Time:: {}
+Body:: 
+{}
+        '''.format(id(self), self.newsTitle, self.newsTime, self.get_news_content()[:100])
 
-    def get_newsContent(self, removeHtml=True, removeAdSection=True):
+    def __repr__(self):
+        return self.__str__()
+
+    def get_news_content(self, removeHtml=True, removeAdSection=True, removeNewLine=True):
         self._newsContent = ""
+
         if removeAdSection:
             from Utils.AdRemover.AdSectionRemover import GetAdLessContent
             self._newsContent = GetAdLessContent(self.newsContent)
@@ -28,22 +40,25 @@ class NewsDataModel(object):
             bs = BeautifulSoup(self._newsContent, 'lxml')
             self._newsContent = bs.getText()
 
-        return self._newsContent
+        # remove '\r'
+        if removeNewLine:
+            # self._newsContent = self._newsContent.replace('\r', ' ')
+            self._newsContent = self._newsContent.replace('\n', ' ')
 
+        return self._newsContent
 
     # FIXME
     @property
-    def newsCompTags(self):
+    def mentionedCompanies(self):
         return self.__newsCompTags
 
     # FIXME
-    @newsCompTags.setter
-    def newsCompTags(self, val: List[str]):
+    @mentionedCompanies.setter
+    def mentionedCompanies(self, val: List[str]):
         from Api.NewsDataService import NewsDataService
 
         self.__newsCompTags = val
         # update record
-        NewsDataService().SetCompTags(self.id, val)
 
 
 @DeprecationWarning
@@ -59,7 +74,7 @@ def CreateNewNewsModelFromJson(newsJson):
     return newNewsData
 
 
-def CreateNewNewsModelFromJson_MongoDB(newsDict:dict):
+def CreateNewNewsModelFromJson_MongoDB(newsDict: dict):
     id = newsDict["_id"]
     newsTitle = newsDict["title"]
     newsContent = newsDict["content"]
@@ -76,3 +91,6 @@ def CreateNewNewsModelFromJson_MongoDB(newsDict:dict):
     return newNewsData
 
 
+class AnalyzedNewsModel:
+    def __init__(self, newsData: NewsDataModel):
+        ...

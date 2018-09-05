@@ -1,87 +1,38 @@
 import ahocorasick
-import csv
 from typing import List
 
-from datetime import datetime
-
-import os
-
+from Api.CompanyDataService import FetchAllCompName, GetCompWithName, FetchAllCompanyList
 from Api.NewsDataService import NewsDataService
-from DataModels.CompanyModel import CompanyModel
-from DataModels.NewsDataModel import NewsDataModel
-
-
-# TODO Move this as a service
-# region Utils
-
-# 889 -> 00889
-def PolishCompCode(rawCompCode) -> str:
-    return str(rawCompCode).zfill(6)
-
-
-def CompNameToCompTuple(compName) -> tuple:
-    return GetCompCodeWithName(compName), compName
-
-# endregion
-
+from DataModels.models import CompanyModel
+from DataModels.news_models import NewsDataModel
 
 compList: List[CompanyModel] = None
 
 
-def FetchAllCompanyList() -> List[CompanyModel]:
-    global compList
-    if compList is not None:
-        return compList
-
-    compList = []
-    dirname = os.path.dirname(__file__)
-    filename = os.path.join(dirname, "KRX-Stock-List.csv")
-    file = open(filename, "r")
-    reader = csv.reader(file)
-    # Skip Header
-    next(reader, None)
-    for row in reader:
-        # row[0] = CompCode
-        # row[1] = CompName
-        compCode = PolishCompCode(row[0])
-        compName = row[1]
-        newCompObj = CompanyModel(compName, compCode)
-        compList.append(newCompObj)
-    return compList
-
-
-def FetchAllCompName() -> List[str]:
-    compList: List[CompanyModel] = FetchAllCompanyList()
-    return [c.compName for c in compList]
-
-
-def FetchAllCompCode() -> List[str]:
-    compList: List[CompanyModel] = FetchAllCompanyList()
-    return [c.compCode for c in compList]
-
-
 def FindAllCompanyInContent_LOOP(news: NewsDataModel) -> List[str]:
+    """Finds company in news, but with loop method."""
     includedCompList = []
     for compName in FetchAllCompName():
-        if compName in news.get_newsContent():
+        if compName in news.get_news_content():
             includedCompList.append(compName)
 
     return includedCompList
 
 
-# allowOverlap = True // 삼성전자, 대성, 삼성전자, 삼성전자 || False // 삼성전자, 대성
-def FindAllCompanyInContent(news: NewsDataModel, allowOverlap: bool = True) -> List[tuple]:
-    companies: List[tuple] = []
+def FindAllCompanyInContent(content: str, allowOverlap: bool = True) -> List[CompanyModel]:
+    """
+    Finds company in news, but with Aho corasic method
+    allowOverlap = True // 삼성전자, 대성, 삼성전자, 삼성전자 || False // 삼성전자, 대성"""
+    companies: List[CompanyModel] = []
 
-    content = news.get_newsContent()
     auto = ahocorasick.Automaton()
-    for compName in FetchAllCompName():
-        auto.add_word(compName, compName)
+    for comp in FetchAllCompanyList():
+        auto.add_word(comp.compName, comp.compName)
     auto.make_automaton()
 
     for found in auto.iter(content):
         filtered_compName = found[1]
-        companies.append((GetCompCodeWithName(filtered_compName), filtered_compName))
+        companies.append(GetCompWithName(filtered_compName))
         # print(found)
 
     if not allowOverlap:
@@ -92,14 +43,11 @@ def FindAllCompanyInContent(news: NewsDataModel, allowOverlap: bool = True) -> L
     return companies
 
 
-def GetCompCodeWithName(compName) -> str:
-    for comp in FetchAllCompanyList():  # for name, age in list.items():  (for Python 3.x)
-        if comp.compName == compName:
-            return comp.compCode
-
-
-# Improvements 미리 모든뉴스 테깅후 DB저장, DB에서 추출.
 def FindAllNewsContainsCompany(compCode) -> List[NewsDataModel]:
+    """
+    미리 태깅하여 저장한 종목 정보로 뉴스를 조회함.
+    해당 종목이 포함된 뉴스를 반환함.
+    """
     return NewsDataService().FetchCompNews(compCode)
 
 
@@ -108,7 +56,7 @@ if __name__ == "__main__":
     print(a)
     for b in a:
         print(b)
-    print(CompNameToCompTuple("삼성전자"))
+    print(GetCompWithName("삼성전자"))
 
     allComp = FetchAllCompanyList()
     for comp in allComp:

@@ -5,7 +5,7 @@ from typing import List
 from bs4 import BeautifulSoup
 
 from Api.LocalJsonDatabaseService import GetLocalNewsData
-from DataModels.NewsDataModel import NewsDataModel
+from DataModels.news_models import NewsDataModel
 
 
 def Export(rows:int, exportPath:str):

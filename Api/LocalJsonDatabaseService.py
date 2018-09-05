@@ -5,7 +5,7 @@ import os
 
 from datetime import datetime
 
-from DataModels.NewsDataModel import NewsDataModel, CreateNewNewsModelFromJson
+from DataModels.news_models import NewsDataModel, CreateNewNewsModelFromJson
 
 # File
 dirname = os.path.dirname(__file__)
@@ -55,4 +55,4 @@ if __name__ == "__main__":
 
 
     for news in newsList:
-        print(news.get_newsContent())
+        print(news.get_news_content())

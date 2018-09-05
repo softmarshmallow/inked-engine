@@ -25,7 +25,7 @@ def CreateUnpolishedCorpus(contentType:str = "Wiki")->str:
             if contentType == "NewsTitle":
                 corpus += "\n" + newsData.newsTitle
             elif contentType == "NewsContent":
-                corpus += "\n" + newsData.get_newsContent()
+                corpus += "\n" + newsData.get_news_content()
 
     f.write(corpus)
     f.close()

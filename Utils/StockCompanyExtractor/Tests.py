@@ -13,7 +13,7 @@ def AhoCorasickTest():
     for newsData in newsDataList:
         print(i)
         # compList = FindAllCompanyInContent_LOOP(newsData)
-        compList = FindAllCompanyInContent(newsData)
+        compList = FindAllCompanyInContent(newsData.get_news_content())
         i += 1
         et = datetime.now()
         print(compList)

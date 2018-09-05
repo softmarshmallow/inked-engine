@@ -3,7 +3,7 @@ from datetime import datetime
 import sys
 
 
-def LogETA(processName:str, startTime:datetime, totalProcess:int, currentProcess:int)->str:
+def LogETA(processName:str, startTime:datetime, totalProcess:int, currentProcess:int):
     try:
         percentage = currentProcess / totalProcess * 100
     except ZeroDivisionError:
@@ -20,13 +20,13 @@ def LogETA(processName:str, startTime:datetime, totalProcess:int, currentProcess
         eta = 0
     prettyETA = datetime.fromtimestamp(eta).strftime('%H:%M:%S')
 
-    message = "PROCESS: %s %f %% ETA: %s" % (processName, prettyPercentage, prettyETA)
+    message = "\rPROCESS: %s %f %% ETA: %s" % (processName, prettyPercentage, prettyETA)
 
 
 
     if percentage >= 100:
         message = "STATUS :: COMPLETE"
-    return message
-    #
-    # sys.stdout.write(message)
-    # sys.stdout.flush()
+
+    sys.stdout.write(message)
+    sys.stdout.flush()
+

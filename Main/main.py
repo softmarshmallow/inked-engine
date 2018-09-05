@@ -1,32 +1,18 @@
-from konlpy.tag import Kkma, Twitter
-import nltk
-from Api import LocalJsonDatabaseService as localService
-from Utils.HtmlLinkRemover import GetLinkLessContent
+from pprint import pprint
 
-# Font Settings
-from matplotlib import font_manager, rc
+from Api.naver_news_data_service import get_article_head_list, get_article_detail_list, get_article_content_list
+from Utils.SentTokenizer import sent_tokenize
 
-fontFrame = "/Library/Fonts/AppleGothic.ttf"
-fontName = font_manager.FontProperties(fontFrame).get_name()
-rc('font', family=fontFrame)
-#
 
-kkma = Kkma()
-posTagger = Twitter()
 
-newsDataList = localService.GetLocalNewsData(max=10, hasMaxValue=True)
-newsDataList = newsDataList[:1]
+def analyze(news):
+    # split sentences
+    sents = sent_tokenize(article_body, module='nltk')
+    pprint(sents)
 
-for newsData in newsDataList:
 
-    linkLessContent = GetLinkLessContent(newsData.newsContent)
-    print(linkLessContent)
+if __name__ == "__main__":
+    for article_body in get_article_content_list(max=10):
+        analyze(article_body)
 
-    nouns = kkma.nouns(linkLessContent)
-    freq = nltk.FreqDist(nouns)
 
-    for key, val in freq.items():
-        # print(str(key) + ':' + str(val))
-        pass
-
-    freq.plot(20, cumulative=False)

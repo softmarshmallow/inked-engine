@@ -14,11 +14,11 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 def FetchStopwords() -> List[str]:
     stopwords = []
     # stopwords list 1
-    path = os.path.join(dir_path, "Stopwords/stopwords-ko.json")
+    path = os.path.join(dir_path, "rcs/stopwords-ko.json")
     stopwords += json.loads(open(path).read())
 
     # stopwords list 2
-    path = os.path.join(dir_path, "Stopwords/custom-stopwords-ko.json")
+    path = os.path.join(dir_path, "rcs/custom-stopwords-ko.json")
     stopwords += json.loads(open(path).read())
 
     # Remove duplicates
@@ -73,7 +73,7 @@ if __name__ == "__main__":
 
     ns = NewsDataService().FetchNewsData(10)
     for n in ns:
-        content = n.get_newsContent()
+        content = n.get_news_content()
         tokens = WordTokenizer(content).Tokenize()
         swr = StopwordsRemover(tokens)
         print(content)

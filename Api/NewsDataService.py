@@ -1,21 +1,39 @@
 from typing import List
 
+import pymongo
 from bson import ObjectId
 
-from DataModels.NewsDataModel import NewsDataModel, CreateNewNewsModelFromJson_MongoDB
+from DataModels.models import CompanyModel
+from DataModels.news_models import NewsDataModel, CreateNewNewsModelFromJson_MongoDB
 from pymongo import MongoClient
+import warnings
+
+from settings import DEFAULT_NEWS_DATABASE
 
 
 class NewsDataService:
-    def __init__(self):
+    """
+    source : ebest/naver
+    """
+    def __init__(self, source=None):
         self.client = MongoClient('localhost', 27017)
-        self.db = self.client.inked_news_storage
+
+        if source is None: # if source parameter not setted, read from settings.
+            source = DEFAULT_NEWS_DATABASE
+        if source == 'ebest':
+            self.db = self.client.inked_news_storage
+        elif source == 'naver':
+            self.db = self.client.inked_news_storage_navernews
+        else:
+            warnings.warn("wrong source input... please check :: ", source)
+            self.db = self.client.inked_news_storage
+
         self.newsTable = self.db.news
 
-    def FetchNewsData(self, cnt: int = None) -> List[NewsDataModel]:
+    def FetchNewsData(self, cnt: int = None, date_sort=-1) -> List[NewsDataModel]:
         fetchedList = []
 
-        q = self.newsTable.find()
+        q = self.newsTable.find().sort('time', pymongo.DESCENDING)
         if cnt is not None:
             q.limit(cnt)
 
@@ -28,7 +46,7 @@ class NewsDataService:
     def WriteNewsData(self, newsData: NewsDataModel):
         pass
 
-    def SetCompTags(self, newsDataID: str, compTags: List[str]):
+    def SetCompTags(self, newsDataID: str, compTags: List[CompanyModel]):
         q = {"$set": {"compTags": compTags}}
         # q = {"$compTags": compTags}
         self.newsTable.update_one({"_id": ObjectId(newsDataID)}, q)
@@ -48,42 +66,12 @@ class NewsDataService:
         pass
 
 
-# Temporary method
-# 로컬 데이터를 디비로 옮길때 사용, 아키텍쳐 변경시 deprecated.
-def SetupDB():
-    from Api.LocalJsonDatabaseService import GetLocalNewsData
-
-    ask = input("this action will override all DB.... (Y/N)")
-    if ask != "Y":
-        return
-
-    client = MongoClient('localhost', 27017)
-    db = client.inked_news_storage
-    newsTable = db.news
-    newsTable.drop()
-
-    all_newsData = GetLocalNewsData(hasMaxValue=False)
-    total = len(all_newsData)
-    i = 0
-    for newsData in all_newsData:
-        news_data = {
-            'title': newsData.newsTitle,
-            'content': newsData.newsContent,
-            'time': newsData.newsTime,
-            'providerID': newsData.providerId
-        }
-        result = newsTable.insert_one(news_data)
-        print('One post: {0}'.format(result.inserted_id))
-        print("TOTAL", total, "DONE", str(i))
-        i += 1
-
-
 if __name__ == "__main__":
     # c = NewsDataService()
     # l = c.FetchNewsData(10)
-    from Utils.StockCompanyExtractor.StockCompanyExtractor import CompNameToCompTuple
+    from Utils.StockCompanyExtractor.StockCompanyExtractor import GetCompWithName
 
-    c = CompNameToCompTuple("삼성전자")
+    c = GetCompWithName("삼성전자")
     l = NewsDataService().FetchCompNews(c)
     for i in l:
         print(type(i))
