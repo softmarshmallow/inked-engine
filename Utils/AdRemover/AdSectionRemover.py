@@ -1,10 +1,7 @@
 """뉴스 안의 광고 영역을 제거합니다."""
-import re
-from typing import List
 
 from bs4 import BeautifulSoup
-from Api.LocalJsonDatabaseService import GetLocalNewsData
-import pprint
+from Api.misc.LocalJsonDatabaseService import GetLocalNewsData
 
 
 class AdSectionRemover:

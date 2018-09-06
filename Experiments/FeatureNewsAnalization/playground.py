@@ -1,6 +1,5 @@
-from Api.LocalJsonDatabaseService import GetLocalNewsData
+from Api.misc.LocalJsonDatabaseService import GetLocalNewsData
 from Utils.BoxRemover import RemoveTitleBox
-from Utils.HtmlLinkRemover import GetLinkLessContent
 
 if __name__ == "__main__":
      news = GetLocalNewsData(max=10000, hasMaxValue=False)

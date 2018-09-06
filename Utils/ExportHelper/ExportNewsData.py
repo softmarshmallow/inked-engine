@@ -4,7 +4,7 @@ from typing import List
 
 from bs4 import BeautifulSoup
 
-from Api.LocalJsonDatabaseService import GetLocalNewsData
+from Api.misc.LocalJsonDatabaseService import GetLocalNewsData
 from DataModels.news_models import NewsDataModel
 
 

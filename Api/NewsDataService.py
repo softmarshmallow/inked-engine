@@ -69,7 +69,7 @@ class NewsDataService:
 if __name__ == "__main__":
     # c = NewsDataService()
     # l = c.FetchNewsData(10)
-    from Utils.StockCompanyExtractor.StockCompanyExtractor import GetCompWithName
+    from NamedEntityRecognition.StockCompanyExtractor import GetCompWithName
 
     c = GetCompWithName("삼성전자")
     l = NewsDataService().FetchCompNews(c)

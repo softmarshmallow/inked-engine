@@ -1,8 +1,6 @@
-from pprint import pprint
-
 from Api.NewsDataService import NewsDataService
 from Utils.SentTokenizer import sent_tokenize
-from Utils.StockCompanyExtractor.StockCompanyExtractor import FindAllCompanyInContent
+from NamedEntityRecognition.StockCompanyExtractor import FindAllCompanyInContent
 
 #  Load news
 newsList = NewsDataService().FetchNewsData(100)

@@ -3,10 +3,10 @@ from datetime import datetime
 
 
 def AhoCorasickTest():
-    from Utils.StockCompanyExtractor.StockCompanyExtractor import FindAllCompanyInContent
+    from NamedEntityRecognition.StockCompanyExtractor import FindAllCompanyInContent
     st = datetime.now()
 
-    from Api.LocalJsonDatabaseService import GetLocalNewsData
+    from Api.misc.LocalJsonDatabaseService import GetLocalNewsData
 
     newsDataList = GetLocalNewsData(max=100, hasMaxValue=True)
     i = 0

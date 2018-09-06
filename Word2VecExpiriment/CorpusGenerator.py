@@ -1,7 +1,5 @@
 import codecs
 
-import os
-from konlpy.tag import Twitter
 from datetime import datetime
 
 # contentType:: (NewsTitle, NewsContent, Wiki)
@@ -11,7 +9,7 @@ from WordTokenizer.WordTokenizer import WordTokenizer
 def CreateUnpolishedCorpus(contentType:str = "Wiki")->str:
     print("CreateUnpolishedCorpus....")
 
-    from Api.LocalJsonDatabaseService import GetLocalNewsData
+    from Api.misc.LocalJsonDatabaseService import GetLocalNewsData
 
     outputFilePath = "Corpus/" + contentType + ".txt"
     f = open(outputFilePath, 'w')

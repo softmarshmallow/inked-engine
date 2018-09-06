@@ -1,6 +1,6 @@
 from pprint import pprint
 
-from Api.naver_news_data_service import get_article_head_list, get_article_detail_list, get_article_content_list
+from Api.misc.naver_news_data_service import get_article_content_list
 from Utils.SentTokenizer import sent_tokenize
 
 

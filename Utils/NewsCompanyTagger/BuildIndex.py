@@ -1,5 +1,5 @@
 from Api.NewsDataService import NewsDataService
-from Utils.StockCompanyExtractor.StockCompanyExtractor import FindAllCompanyInContent
+from NamedEntityRecognition.StockCompanyExtractor.StockCompanyExtractor import FindAllCompanyInContent
 
 
 
