@@ -1,6 +1,7 @@
 from Api.NewsDataService import NewsDataService
-from NamedEntityRecognition.StockCompanyExtractor.StockCompanyExtractor import FindAllCompanyInContent
-
+from DataModels.models import CompanyModel
+from NamedEntityRecognition.StockCompanyExtractor.StockCompanyExtractor import \
+    FindAllCompanyInContent
 
 
 class NewsCompanyIndexBuilder:
@@ -23,10 +24,10 @@ class NewsCompanyIndexBuilder:
         print("TagArticles for", allCnt, "articles")
         i = 1
         for newsData in allNewsData:
-            comps = FindAllCompanyInContent(newsData.get_news_content(), allowOverlap=False)
-            # compCodes = [i[0] for i in comps]
+            comp_infos:[CompanyModel] = FindAllCompanyInContent(newsData.get_news_content(), allowOverlap=False)
+            comp_codes = [i.information.compCode for i in comp_infos]
             # Save here
-            NewsDataService().SetCompTags(newsData.id, comps)
+            NewsDataService().SetCompTags(newsData.id, comp_codes)
 
             if i % 1000 == 0:
                 print(i, "Done", allCnt - i, "Left")

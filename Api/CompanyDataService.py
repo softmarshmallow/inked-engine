@@ -14,11 +14,11 @@ companies: List[CompanyModel] = None
 def GetCompWithName(compName) -> CompanyModel:
     """
     :param compName: "삼성전자"
-    :return: 000244
+    :return: Comp(000244)
     """
     for comp in FetchAllCompanyList():  # for name, age in list.items():  (for Python 3.x)
         if comp.compName == compName:
-            return comp.compCode
+            return comp
 
 
 # region Utils

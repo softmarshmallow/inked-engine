@@ -17,7 +17,8 @@ class ProductDataService:
         products = []
         for record in data:
             productName = record['product_name']
+            # TODO
             pm = ProductModel(productName=productName, publishDate=None, company=None,
-                              category=None, tags=None)
+                              category=None, tags=None, id=None)
             products.append(pm)
         return products

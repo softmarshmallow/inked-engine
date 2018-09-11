@@ -1,6 +1,7 @@
 import ahocorasick
+from pprint import pprint
 from typing import List
-
+from DataModels.models import ExtractedInformation
 from Api.CompanyDataService import FetchAllCompName, GetCompWithName, FetchAllCompanyList
 from Api.NewsDataService import NewsDataService
 from DataModels.models import CompanyModel
@@ -19,11 +20,12 @@ def FindAllCompanyInContent_LOOP(news: NewsDataModel) -> List[str]:
     return includedCompList
 
 
-def FindAllCompanyInContent(content: str, allowOverlap: bool = True) -> List[CompanyModel]:
+def FindAllCompanyInContent(content: str, allowOverlap: bool = True) -> List[ExtractedInformation]:
     """
     Finds company in news, but with Aho corasic method
-    allowOverlap = True // 삼성전자, 대성, 삼성전자, 삼성전자 || False // 삼성전자, 대성"""
-    companies: List[CompanyModel] = []
+    allowOverlap = True // 삼성전자, 대성, 삼성전자, 삼성전자 || False // 삼성전자, 대성
+    """
+    companies: List[ExtractedInformation] = []
 
     auto = ahocorasick.Automaton()
     for comp in FetchAllCompanyList():
@@ -32,7 +34,12 @@ def FindAllCompanyInContent(content: str, allowOverlap: bool = True) -> List[Com
 
     for found in auto.iter(content):
         filtered_compName = found[1]
-        companies.append(GetCompWithName(filtered_compName))
+        end_span = found[0]
+        start_span = end_span - (len(filtered_compName) - 1)
+        span = (start_span, end_span)
+        company = GetCompWithName(filtered_compName)
+        ei = ExtractedInformation(original=content, information=company, span=span)
+        companies.append(ei)
         # print(found)
 
     if not allowOverlap:
@@ -51,14 +58,26 @@ def FindAllNewsContainsCompany(compCode) -> List[NewsDataModel]:
     return NewsDataService().FetchCompNews(compCode)
 
 
+class CompanyExtractor:
+    def __init__(self, txt):
+        self.txt = txt
+
+    def extract_companies(self):
+        return FindAllCompanyInContent(content=self.txt)
+
+
+def test_findall_company_in_text():
+    txt = """삼성전자 삼성전자 삼성전자 삼성전자"""
+    comps = FindAllCompanyInContent(txt)
+    print(comps)
+
+
 if __name__ == "__main__":
-    a = FetchAllCompanyList()
-    print(a)
-    for b in a:
-        print(b)
-    print(GetCompWithName("삼성전자"))
+    test_findall_company_in_text()
 
-    allComp = FetchAllCompanyList()
-    for comp in allComp:
-        FindAllNewsContainsCompany(comp.compCode)
+    # all_comps = FetchAllCompanyList()
+    # pprint(all_comps)
 
+    # allComp = FetchAllCompanyList()
+    # for comp in allComp:
+    #     FindAllNewsContainsCompany(comp.compCode)

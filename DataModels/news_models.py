@@ -1,6 +1,8 @@
 from datetime import datetime
 from typing import List
 
+from DataModels.models import ProductModel, PersonModel, QuantityModel, IncidentModel, CompanyModel
+
 
 class NewsDataModel(object):
     """docstring for NewsModel"""
@@ -92,5 +94,24 @@ def CreateNewNewsModelFromJson_MongoDB(newsDict: dict):
 
 
 class AnalyzedNewsModel:
-    def __init__(self, newsData: NewsDataModel):
-        ...
+    def __init__(self, newsData: NewsDataModel, products:[ProductModel], peoples: [PersonModel], quantities: [QuantityModel], incidents: [IncidentModel], companies: [CompanyModel]):
+        self.newsData = newsData
+        self.products = products
+        self.peoples = peoples
+        self.quantities = quantities
+        self.incidents = incidents
+        self.companies = companies
+
+    def __str__(self):
+        return \
+"""
+companies: [{}]""".format(
+    # products: [{}]
+    # ''.join([str(p) for p in self.products]),
+    ''.join([str(c) for c in self.companies])
+)
+
+    def __repr__(self):
+        return self.__str__()
+
+
