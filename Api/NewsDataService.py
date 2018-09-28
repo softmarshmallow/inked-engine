@@ -33,7 +33,9 @@ class NewsDataService:
     def FetchNewsData(self, cnt: int = None, date_sort=-1) -> List[NewsDataModel]:
         fetchedList = []
 
+        self.newsTable.ensure_index([("time", pymongo.DESCENDING)])
         q = self.newsTable.find().sort('time', pymongo.DESCENDING)
+        # q = self.newsTable.find()
         if cnt is not None:
             q.limit(cnt)
 

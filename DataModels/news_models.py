@@ -31,7 +31,7 @@ Body::
         return self.__str__()
 
     def get_news_content(self, removeHtml=True, removeAdSection=True, removeNewLine=True):
-        self._newsContent = ""
+        self._newsContent = self.newsContent
 
         if removeAdSection:
             from Utils.AdRemover.AdSectionRemover import GetAdLessContent

@@ -1,10 +1,10 @@
 from Api.misc.LocalJsonDatabaseService import GetLocalNewsData
-from Utils.BoxRemover import RemoveTitleBox
+from Utils.news_box_util import remove_box
 
 if __name__ == "__main__":
      news = GetLocalNewsData(max=10000, hasMaxValue=False)
      for n in news:
-         titleBox = RemoveTitleBox(n.newsTitle)
+         titleBox = remove_box(n.newsTitle)
          box = titleBox[1]
          if box is not None:
             # print(titleBox[1])

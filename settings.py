@@ -7,7 +7,16 @@ BASE_DIR = os.path.dirname(
 )
 
 DATA_SOURCE_ROOT = os.path.join(BASE_DIR, "DataSource")
-DEFAULT_NEWS_DATABASE = 'naver'
+
+# region
+'''
+CHOOSE DATA SOURCE
+// naver / ebest //
+'''
+# DEFAULT_NEWS_DATABASE = 'naver'
+DEFAULT_NEWS_DATABASE = 'ebest'
+# endregion
+
 
 if __name__ == "__main__":
     print(BASE_DIR)

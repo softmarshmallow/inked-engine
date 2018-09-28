@@ -1,13 +1,8 @@
-import pickle
-
-path = "/Users/softmarshmallow/Downloads/annie-0.6/rsc/nusvc_model.pkl"
+import re
 
 
-f = open(path, 'rb')
-p = pickle.load(f)
+content = """[특징주우우우]"""
+regex = "\%s(.*?)\%s" % ('[', ']')
+boxContent = re.search(regex, content).group(0)
 
-print(p)
-
-
-
-open('output.txt', 'w').write(str(p))
+print(boxContent)
