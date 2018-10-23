@@ -1,0 +1,6 @@
+
+class EventModel:
+    ...
+
+class CalendarEventModel(EventModel):
+    ...

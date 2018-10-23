@@ -7,8 +7,11 @@ from DataModels.models import ProductModel, PersonModel, QuantityModel, Incident
 class NewsDataModel(object):
     """docstring for NewsModel"""
 
-    def __init__(self, id, newsTitle, newsContent, newsTime, providerId, compTags):
+    def __init__(self, id, newsTitle, newsContent, newsTime, providerId, compTags=None):
         super(NewsDataModel, self).__init__()
+        if compTags is None:
+            compTags = []
+
         self.id = id
         self.newsTitle: str = newsTitle
         self.newsContent: str = newsContent
