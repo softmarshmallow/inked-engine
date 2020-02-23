@@ -1,9 +1,5 @@
-import re
 from datetime import datetime
 from typing import List
-
-import konlpy
-import arrow
 
 from DataModels.models import ExtractedInformation
 
@@ -48,7 +44,7 @@ class TimeExtractor:
 
 
 def test():
-    from Api.NewsDataService import NewsDataService
+    from data.api import NewsDataService
     service = NewsDataService()
     l = service.FetchNewsData(1)
     content = l[0].get_news_content()

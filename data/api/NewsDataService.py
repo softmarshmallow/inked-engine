@@ -8,7 +8,7 @@ from DataModels.news_models import NewsDataModel, CreateNewNewsModelFromJson_Mon
 from pymongo import MongoClient
 import warnings
 
-from settings import DEFAULT_NEWS_DATABASE
+from conf import DEFAULT_NEWS_DATABASE
 
 
 class NewsDataService:

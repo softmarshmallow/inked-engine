@@ -1,4 +1,4 @@
-from Api.misc.LocalJsonDatabaseService import GetLocalNewsData
+from data.api import GetLocalNewsData
 from nltk import edit_distance
 
 

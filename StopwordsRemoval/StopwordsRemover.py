@@ -5,7 +5,7 @@ import ahocorasick
 
 import os
 
-from Api.NewsDataService import NewsDataService
+from data.api import NewsDataService
 from WordTokenizer.WordTokenizer import WordTokenizer
 
 dir_path = os.path.dirname(os.path.realpath(__file__))

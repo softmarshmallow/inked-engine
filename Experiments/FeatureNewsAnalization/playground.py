@@ -1,4 +1,4 @@
-from Api.misc.LocalJsonDatabaseService import GetLocalNewsData
+from data.api import GetLocalNewsData
 from Utils.news_box_util import remove_box
 
 if __name__ == "__main__":

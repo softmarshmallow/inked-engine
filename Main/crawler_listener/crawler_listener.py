@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 callback = None
 
-@app.route('/api/new_crawled_item', methods=['POST'])
+@app.route('/api/news', methods=['POST'])
 def new_crawled_item():
     content = request.json
     if validate_content(content):
@@ -24,21 +24,21 @@ def validate_content(content):
 def on_item_crawled(crawled_data):
     UNPROCESSED_CRAWLED_DATA_POOL.append(crawled_data)
 
+    try:
+        # Data As Model
+        formed_data = NewsDataModel(
+            id=crawled_data["article_id"],
+            newsContent=crawled_data["body_html"],
+            newsTitle=crawled_data["title"],
+            newsTime=crawled_data["time"],
+            compTags=[],
+            providerId=crawled_data["provider"],
+        )
 
-
-
-    # Data As Model
-    formed_data = NewsDataModel(
-        id=0,
-        newsContent="",
-        newsTitle="",
-        newsTime="",
-        compTags=[],
-        providerId="",
-    )
-
-    callback(formed_data)
-    print("add_to_pool:: ", crawled_data)
+        callback(formed_data)
+        print("add_to_pool:: ", crawled_data)
+    except Exception as e:
+        print(e)
 
 
 def run_threaded():

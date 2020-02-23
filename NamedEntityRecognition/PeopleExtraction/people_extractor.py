@@ -2,19 +2,14 @@
 from konlpy.tag import Mecab
 
 from DataModels.models import PersonModel
+from NamedEntityRecognition.AnnieHelper.annie_helper import extract_named_entity_dictionary
 
 mecab = Mecab()
 
 
 
 
-people_dics = [
-    "이건희",
-    "이재용",
-    "문제인",
-    "안철수"
-]
-
+people_dics = extract_named_entity_dictionary(NE_type="PS")
 
 
 class PeopleExtractor:
@@ -24,11 +19,11 @@ class PeopleExtractor:
     def extract_peoples(self):
         extracted_peoples = []
         nouns = mecab.nouns(self.txt)
-        for people in people_dics:
-            if people in nouns:
-                # FIXME
+        for people in people_dics.keys():
+            if people in nouns and len(people) >= 2:
                 person = PersonModel(id=None, name=people, relations=None)
                 extracted_peoples.append(person)
+                # print(people)
 
         return extracted_peoples
 

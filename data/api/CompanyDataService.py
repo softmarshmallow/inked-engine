@@ -5,7 +5,7 @@ from typing import List
 import os
 
 from DataModels.models import CompanyModel
-from settings import DATA_SOURCE_ROOT
+from conf import DATA_SOURCE_ROOT
 
 
 companies: List[CompanyModel] = None

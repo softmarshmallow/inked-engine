@@ -1,3 +1,12 @@
+# region django server
+asgiref==3.2.3
+Django==3.0.3
+pytz==2019.3
+sqlparse==0.3.0
+djangorestframework==3.11.0
+djongo==1.3.1
+# endregion
+
 konlpy
 JPype1-py3
 gensim

@@ -1,6 +1,6 @@
 from datetime import datetime
 from konlpy.tag import Mecab
-from Api.misc.naver_news_data_service import get_title_list
+from data.api import get_title_list
 
 
 mecab = Mecab()

@@ -1,4 +1,4 @@
-from Api.NewsDataService import NewsDataService
+from data.api import NewsDataService
 from DataModels.models import CompanyModel
 from NamedEntityRecognition.StockCompanyExtractor.StockCompanyExtractor import \
     FindAllCompanyInContent

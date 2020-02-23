@@ -6,7 +6,7 @@ def AhoCorasickTest():
     from NamedEntityRecognition.StockCompanyExtractor import FindAllCompanyInContent
     st = datetime.now()
 
-    from Api.misc.LocalJsonDatabaseService import GetLocalNewsData
+    from data.api import GetLocalNewsData
 
     newsDataList = GetLocalNewsData(max=100, hasMaxValue=True)
     i = 0

@@ -9,7 +9,7 @@ from WordTokenizer.WordTokenizer import WordTokenizer
 def CreateUnpolishedCorpus(contentType:str = "Wiki")->str:
     print("CreateUnpolishedCorpus....")
 
-    from Api.misc.LocalJsonDatabaseService import GetLocalNewsData
+    from data.api import GetLocalNewsData
 
     outputFilePath = "Corpus/" + contentType + ".txt"
     f = open(outputFilePath, 'w')

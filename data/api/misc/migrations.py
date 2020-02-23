@@ -14,7 +14,7 @@ def MigrateToDatabase_NaverNewsDump():
     newsTable = db.news
     newsTable.drop()
 
-    from Api.misc.naver_news_data_service import get_all_article_detail_list
+    from data.api import get_all_article_detail_list
     all_articles = get_all_article_detail_list()
     total = len(all_articles)
     i = 0
@@ -46,7 +46,7 @@ def MigrateToDatabase_FirebaseDump():
     newsTable = db.news
     newsTable.drop()
 
-    from Api.misc.LocalJsonDatabaseService import GetLocalNewsData
+    from data.api import GetLocalNewsData
     all_newsData = GetLocalNewsData(hasMaxValue=False)
     total = len(all_newsData)
     i = 0

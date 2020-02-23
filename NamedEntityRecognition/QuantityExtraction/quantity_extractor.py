@@ -7,6 +7,7 @@ class QuantityExtractor:
 
     def extract_most_informative(self):
         quants = parser.parse(self.text)
+        # print(quants)
         return quants
 
     def get_all_numbers(self):

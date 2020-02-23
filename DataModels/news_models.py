@@ -5,7 +5,6 @@ from DataModels.models import ProductModel, PersonModel, QuantityModel, Incident
 
 
 class NewsDataModel(object):
-    """docstring for NewsModel"""
 
     def __init__(self, id, newsTitle, newsContent, newsTime, providerId, compTags=None):
         super(NewsDataModel, self).__init__()
@@ -60,7 +59,6 @@ Body::
     # FIXME
     @mentionedCompanies.setter
     def mentionedCompanies(self, val: List[str]):
-        from Api.NewsDataService import NewsDataService
 
         self.__newsCompTags = val
         # update record
@@ -104,15 +102,21 @@ class AnalyzedNewsModel:
         self.quantities = quantities
         self.incidents = incidents
         self.companies = companies
+        self.summerize = ""
 
     def __str__(self):
         return \
 """
-companies: [{}]""".format(
+companies: [{}] 
+summery: {}
+peoples: [{}]
+quants: [{}]""".format(
     # products: [{}]
     # ''.join([str(p) for p in self.products]),
-    ''.join([str(c) for c in self.companies])
-)
+    ''.join([str(c) for c in self.companies]),
+    self.summerize,
+    ''.join([str(c) for c in self.peoples]),
+    ''.join([str(c) for c in self.quantities]))
 
     def __repr__(self):
         return self.__str__()

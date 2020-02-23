@@ -1,6 +1,5 @@
-from pprint import pprint
-from Utils.news_box_util import remove_box, extract_boxes
-from Api.NewsDataService import NewsDataService
+from Utils.news_box_util import extract_boxes
+from data.api import NewsDataService
 ns = NewsDataService()
 news_data_list = ns.FetchNewsData()
 

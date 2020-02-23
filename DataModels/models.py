@@ -8,13 +8,14 @@ class IncidentModel(object):
         self.type = type
         self.relation = relation
 
-
 class PersonModel:
     def __init__(self, id, name, relations):
         self.id = id
         self.name = name
         self.relations = relations
 
+    def __str__(self):
+        return self.name
 
 class CompanyModel(object):
     def __init__(self, compName, compCode):
@@ -27,7 +28,6 @@ class CompanyModel(object):
 
     def __repr__(self):
         return self.__str__()
-
 
 class ProductModel:
     def __init__(self, id, productName, publishDate, company, category, tags):
@@ -44,13 +44,11 @@ class ProductModel:
     def __repr__(self):
         return self.__str__()
 
-
 class QuantityModel:
     def __init__(self, amount, unit, target):
         self.amount: float = amount
         self.unit: str = unit
         self.target: object = target
-
 
 class ExtractedInformation:
     def __init__(self, original: object, information: object, span: (int, int)):

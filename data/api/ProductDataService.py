@@ -1,6 +1,6 @@
 from typing import List
 
-from settings import DATA_SOURCE_ROOT
+from conf import DATA_SOURCE_ROOT
 from DataModels.models import ProductModel
 import os
 import json

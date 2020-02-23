@@ -1,5 +1,5 @@
 
-from Api.NewsDataService import NewsDataService
+from data.api import NewsDataService
 import re
 
 service = NewsDataService()

@@ -1,4 +1,4 @@
-from Api.NewsDataService import NewsDataService
+from data.api import NewsDataService
 from Utils.SentTokenizer import sent_tokenize
 from NamedEntityRecognition.StockCompanyExtractor import FindAllCompanyInContent
 

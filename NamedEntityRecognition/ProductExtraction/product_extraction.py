@@ -1,5 +1,5 @@
 
-from Api.ProductDataService import ProductDataService
+from data.api import ProductDataService
 
 service = ProductDataService()
 

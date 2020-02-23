@@ -1,8 +1,9 @@
 import time
-from pprint import pprint
 from threading import Thread
 
-from Api.NewsDataService import NewsDataService
+from textrankr import TextRank
+
+from data.api import NewsDataService
 from DataModels.news_models import AnalyzedNewsModel, NewsDataModel
 from Utils.SentTokenizer import sent_tokenize
 from NamedEntityRecognition.IncidentExtraction.incedent_extractor import IncidentExtractor
@@ -39,7 +40,7 @@ class ConstantAnalysisHelper(Thread):
 
             if len(UNPROCESSED_CRAWLED_DATA_POOL) > 0:
                 pool = ThreadPool(THREAD_COUNT)
-                pool.starmap(analyze, UNPROCESSED_CRAWLED_DATA_POOL)
+                pool.map(analyze, UNPROCESSED_CRAWLED_DATA_POOL)
                 # close the pool and wait for the work to finish
                 pool.close()
                 pool.join()
@@ -61,7 +62,7 @@ def add_item(crawled_data):
 def analyze(news_data: NewsDataModel):
     print("start analysis")
     # split sentences
-    sents = sent_tokenize(news_data.newsContent, module='nltk')
+    sents = sent_tokenize(news_data.get_news_content(), module='nltk')
     # pprint(sents)
 
     analized = []
@@ -81,7 +82,13 @@ def analyze(news_data: NewsDataModel):
             products=products
         )
 
+
+        textrank = TextRank(sent)
+        result.summerize = textrank.summarize()
+
         analized.append(result)
+
+    print("\n\nSUMMERY::\n" + TextRank(news_data.get_news_content()).summarize())
 
     return analized
 
@@ -91,10 +98,13 @@ def test():
     news_data_list = NewsDataService().FetchNewsData(10)
     for news_data in news_data_list:
         result = analyze(news_data)
+        print("             ==RESULT==")
         print(result)
+        print("\n\n\n")
 
 
 if __name__ == "__main__":
-    main()
-    if DO_LISTEN_TO_CRAWLER:
-        listen_to_crawler()
+    test()
+    # main()
+    # if DO_LISTEN_TO_CRAWLER:
+    #     listen_to_crawler()
