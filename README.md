@@ -19,7 +19,7 @@ Inked-news-crawler 에서 새로운 뉴스데이터를 받아온후, 인덱싱�
 
 - tags : { company : [], namedEntities: [], keywords: []}
 - content
-- originUrl
+- origin
 - title
 - time
 

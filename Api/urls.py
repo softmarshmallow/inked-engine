@@ -7,5 +7,5 @@ router.register(r'news', views.NewsViewSet)
 
 urlpatterns = [
     # path('index', views.index, name='index'),
-    path('', include(router.urls))
+    path('', include(router.urls)),
 ]
