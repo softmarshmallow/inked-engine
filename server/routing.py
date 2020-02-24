@@ -1,6 +1,6 @@
 from channels.auth import AuthMiddlewareStack
 from channels.routing import ProtocolTypeRouter, URLRouter
-from api.routing import websocket_urlpatterns
+from api.routing import websocket_urlpatterns #, urlpatterns
 
 application = ProtocolTypeRouter({
     # (http->django views is added by default)
@@ -9,4 +9,5 @@ application = ProtocolTypeRouter({
             websocket_urlpatterns
         )
     ),
+    # 'http': URLRouter([]),
 })

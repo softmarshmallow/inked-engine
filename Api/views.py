@@ -9,9 +9,6 @@ from api.models import News
 from api.serializers import NewsSerializer
 
 
-def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
-
 
 @require_http_methods(["POST"])
 def news_crawled(request):
@@ -26,3 +23,16 @@ class PostCrawledNews(APIView):
 class NewsViewSet(viewsets.ModelViewSet):
     queryset = News.objects.all()
     serializer_class = NewsSerializer
+
+
+
+from django.shortcuts import render
+
+def index(request):
+    return render(request, 'chat/index.html', {})
+
+
+def room(request, room_name):
+    return render(request, 'chat/room.html', {
+        'room_name': room_name
+    })
