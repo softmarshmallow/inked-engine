@@ -82,7 +82,6 @@ ipykernel==4.8.2
 ipython==5.0.0
 ipython-genutils==0.2.0
 ipywidgets==7.2.1
-ItsDangerous==1.0.0
 jedi==0.15.1
 jieba3k==0.35.1
 Jinja2==2.10
