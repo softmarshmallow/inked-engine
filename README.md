@@ -23,4 +23,12 @@ Inked-news-crawler 에서 새로운 뉴스데이터를 받아온후, 인덱싱�
 - title
 - time
 
+
+## KoNlPy setup
+http://konlpy.org/en/v0.4.4/install/
+`sudo apt-get install g++ openjdk-8-jdk`
+`bash <(curl -s https://raw.githubusercontent.com/konlpy/konlpy/master/scripts/mecab.sh)`
+
+
 develped by softmarshmallow
+
