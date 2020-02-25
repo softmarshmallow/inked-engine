@@ -15,7 +15,6 @@ djangorestframework-api-key==1.4.1
 konlpy
 JPype1-py3
 gensim
-lxml
 pyahocorasick
 matplotlib
 rake-nltk
