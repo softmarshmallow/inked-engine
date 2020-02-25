@@ -1,9 +1,14 @@
 from djongo import models
 
 
-class News(models.Model):
-    _id = models.ObjectIdField() # djongo mongo obj id
-    title = models.CharField(max_length=100)
-    content = models.TextField()
+class RawNews(models.Model):
+    class Meta:
+        db_table = 'raw'
+    _id = models.ObjectIdField()
+    article_id = models.CharField(max_length=20)
     time = models.DateTimeField()
-    origin = models.URLField()
+    title = models.CharField(max_length=200)
+    article_url = models.URLField(max_length=200)
+    origin_url = models.URLField(max_length=200)
+    body_html = models.TextField()
+    provider = models.CharField(max_length=20)
