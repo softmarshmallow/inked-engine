@@ -15,8 +15,6 @@ djangorestframework-api-key==1.4.1
 konlpy
 JPype1-py3
 gensim
-pyahocorasick
-matplotlib
 rake-nltk
 pandas
 alabaster==0.7.10
