@@ -26,8 +26,6 @@ async-timeout==3.0.1
 attrs==19.3.0
 autobahn==20.2.1
 Automat==20.2.0
-awscli==1.15.66
-awsebcli==3.14.6
 Babel==2.6.0
 backcall==0.1.0
 beautifulsoup4==4.6.0
@@ -63,7 +61,6 @@ Faker==2.0.0
 feedfinder2==0.0.4
 feedparser==5.2.1
 flake8==3.5.0
-Flask==1.0.2
 futures==3.1.1
 gast==0.2.0
 gensim==3.5.0
@@ -94,13 +91,13 @@ jupyter==1.0.0
 jupyter-client==5.2.3
 jupyter-console==5.2.0
 jupyter-core==4.4.0
-Keras==2.2.4
+Keras==2.3.1
 Keras-Applications==1.0.6
 Keras-Preprocessing==1.0.5
 kiwisolver==1.0.1
 konlpy==0.4.4
 langdetect==1.0.7
-lxml==4.1.1
+lxml==4.5.0
 Markdown==3.0.1
 MarkupSafe==1.0
 matplotlib==2.2.2
@@ -147,7 +144,6 @@ pyparsing==2.2.0
 PySocks==1.6.8
 python-dateutil==2.6.1
 python-engineio==3.11.2
-python-lambda==3.2.2
 python-socketio==4.4.0
 PyYAML==3.13
 pyzmq==17.1.0
