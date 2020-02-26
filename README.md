@@ -24,6 +24,21 @@ Inked-news-crawler 에서 새로운 뉴스데이터를 받아온후, 인덱싱�
 - time
 
 
+# How to install virtualenv:
+
+### Install **pip** first
+
+    sudo apt-get install python3-pip
+
+### Then install **virtualenv** using pip3
+
+    sudo pip3 install virtualenv
+
+### Now create a virtual environment
+
+    virtualenv venv
+
+
 ## KoNlPy setup
 http://konlpy.org/en/v0.4.4/install/
 `sudo apt-get install g++ openjdk-8-jdk`
