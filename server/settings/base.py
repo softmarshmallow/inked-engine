@@ -116,8 +116,6 @@ DATABASES = {
         'CLIENT': {
             'host': 'localhost',
             'port': 27017,
-            'username': 'admin',
-            'password': 'SHARED@password'
         }
     }
 }
