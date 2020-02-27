@@ -4,7 +4,7 @@ from . import views
 
 router = routers.DefaultRouter()
 router.register(r'news', views.NewsViewSet)
-router.register(r'news/batch', views.NewsListCreateView)
+router.register(r'news/batch', views.NewsListCreateView, basename='news list')
 
 urlpatterns = [
     path('', include(router.urls)),
