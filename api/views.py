@@ -13,6 +13,8 @@ class NewsViewSet(viewsets.ModelViewSet):
 
 
 class NewsListCreateView(generics.ListCreateAPIView):
+    permission_classes = [HasAPIKey | IsAuthenticatedOrReadOnly]
+
     model = RawNews
     serializer_class = NewsSerializer
 
