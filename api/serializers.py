@@ -22,12 +22,9 @@ class NewsSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         article_url = validated_data['article_url']
-        if not RawNews.objects.filter(article_url=article_url).exists():
-            news = RawNews.objects.create(**validated_data)
-            on_new_news_crawl(NewsSerializer(news).data)
-            return news
-        else:
-            raise Response(status=HTTP_409_CONFLICT, data=f'news data with article_url {article_url} already exists.')
+        news = RawNews.objects.create(**validated_data)
+        on_new_news_crawl(NewsSerializer(news).data)
+        return news
 
 
 def on_new_news_crawl(news):
