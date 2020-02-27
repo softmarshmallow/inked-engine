@@ -1,6 +1,6 @@
-from data.api import NewsDataService
-from Utils.SentTokenizer import sent_tokenize
-from NamedEntityRecognition.StockCompanyExtractor import FindAllCompanyInContent
+from data.api.NewsDataService import NewsDataService
+from utils.SentTokenizer import sent_tokenize
+from NamedEntityRecognition.StockCompanyExtractor.StockCompanyExtractor import FindAllCompanyInContent
 
 #  Load news
 newsList = NewsDataService().FetchNewsData(100)

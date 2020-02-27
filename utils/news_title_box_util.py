@@ -29,7 +29,6 @@ class NewsBoxData:
         return self.__str__()
 
 
-
 def extract_boxes(txt: str) -> [NewsBoxData]:
     """
     remove Title header

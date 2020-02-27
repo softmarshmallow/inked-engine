@@ -4,6 +4,8 @@ from bs4 import BeautifulSoup
 from data.api import GetLocalNewsData
 
 
+# todo create 1. rule based remover & rename as it
+
 class AdSectionRemover:
     def __init__(self, newsContent: str):
         self.newsContent = newsContent
