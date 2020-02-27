@@ -7,5 +7,5 @@ if stage == 'production':
 elif stage is 'development':
     from .development import *
 else:
-    # if env settings exists, but does not match any, load development as default
-    from .development import *
+    # if env settings exists, but does not match any, load production as default
+    from .production import *
