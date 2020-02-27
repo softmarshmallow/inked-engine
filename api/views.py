@@ -19,7 +19,7 @@ class NewsListCreateView(generics.ListCreateAPIView):
     serializer_class = NewsSerializer
 
     def create(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.DATA, many=True)
+        serializer = self.get_serializer(data=request.data, many=True)
         if serializer.is_valid():
             serializer.save()
             headers = self.get_success_headers(serializer.data)
