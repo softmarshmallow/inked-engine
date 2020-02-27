@@ -3,6 +3,7 @@ from channels.layers import get_channel_layer
 from rest_framework import serializers
 from rest_framework.response import Response
 from rest_framework.status import HTTP_409_CONFLICT
+from rest_framework.validators import UniqueTogetherValidator
 
 from api.models import RawNews
 from django.forms.models import model_to_dict
@@ -12,6 +13,12 @@ class NewsSerializer(serializers.ModelSerializer):
     class Meta:
         model = RawNews
         fields = ['article_id', 'time', 'title', 'article_url', 'origin_url', 'body_html', 'provider']
+        validators = [
+            UniqueTogetherValidator(
+                queryset=RawNews.objects.all(),
+                fields=['article_url']
+            )
+        ]
 
     def create(self, validated_data):
         article_url = validated_data['article_url']
@@ -20,7 +27,7 @@ class NewsSerializer(serializers.ModelSerializer):
             on_new_news_crawl(NewsSerializer(news).data)
             return news
         else:
-            return Response(status=HTTP_409_CONFLICT, data=f'news data with article_url {article_url} already exists.')
+            raise Response(status=HTTP_409_CONFLICT, data=f'news data with article_url {article_url} already exists.')
 
 
 def on_new_news_crawl(news):
