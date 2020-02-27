@@ -13,12 +13,7 @@ class NewsSerializer(serializers.ModelSerializer):
     class Meta:
         model = RawNews
         fields = ['article_id', 'time', 'title', 'article_url', 'origin_url', 'body_html', 'provider']
-        validators = [
-            UniqueValidator(
-                queryset=RawNews.objects.all(),
-                lookup='article_url'
-            )
-        ]
+        # validators = []
 
     def create(self, validated_data):
         news = RawNews.objects.create(**validated_data)
