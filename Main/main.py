@@ -5,7 +5,7 @@ from textrankr import TextRank
 
 from data.api import NewsDataService
 from DataModels.news_models import AnalyzedNewsModel, NewsDataModel
-from Utils.SentTokenizer import sent_tokenize
+from utils.SentTokenizer import sent_tokenize
 from NamedEntityRecognition.IncidentExtraction.incedent_extractor import IncidentExtractor
 from NamedEntityRecognition.StockCompanyExtractor.StockCompanyExtractor import CompanyExtractor
 from NamedEntityRecognition.QuantityExtraction.quantity_extractor import QuantityExtractor

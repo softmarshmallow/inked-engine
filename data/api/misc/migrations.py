@@ -1,4 +1,4 @@
-from Utils.NewsCompanyTagger.BuildIndex import NewsCompanyIndexBuilder
+from utils.NewsCompanyTagger.BuildIndex import NewsCompanyIndexBuilder
 
 
 def MigrateToDatabase_NaverNewsDump():

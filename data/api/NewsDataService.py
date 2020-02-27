@@ -23,19 +23,17 @@ class NewsDataService:
         if source == 'ebest':
             self.db = self.client.inked_news_storage
         elif source == 'naver':
-            self.db = self.client.inked_news_storage_navernews
+            self.db = self.client['inked-content-db']
         else:
             warnings.warn("wrong source input... please check :: ", source)
             self.db = self.client.inked_news_storage
 
-        self.newsTable = self.db.news
+        self.newsTable = self.db.raw
 
     def FetchNewsData(self, cnt: int = None, date_sort=-1) -> List[NewsDataModel]:
         fetchedList = []
 
-        self.newsTable.ensure_index([("time", pymongo.DESCENDING)])
         q = self.newsTable.find().sort('time', pymongo.DESCENDING)
-        # q = self.newsTable.find()
         if cnt is not None:
             q.limit(cnt)
 
