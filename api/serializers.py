@@ -3,7 +3,7 @@ from channels.layers import get_channel_layer
 from rest_framework import serializers
 from rest_framework.response import Response
 from rest_framework.status import HTTP_409_CONFLICT
-from rest_framework.validators import UniqueTogetherValidator
+from rest_framework.validators import UniqueTogetherValidator, UniqueForDateValidator
 
 from api.models import RawNews
 from django.forms.models import model_to_dict
@@ -14,10 +14,11 @@ class NewsSerializer(serializers.ModelSerializer):
         model = RawNews
         fields = ['article_id', 'time', 'title', 'article_url', 'origin_url', 'body_html', 'provider']
         validators = [
-            UniqueTogetherValidator(
+            UniqueForDateValidator(
                 queryset=RawNews.objects.all(),
-                fields=['article_url']
-            )
+                field='article_url',
+                date_field='time'
+            ),
         ]
 
     def create(self, validated_data):
