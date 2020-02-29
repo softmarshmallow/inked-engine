@@ -42,3 +42,4 @@ class NewsListCreateView(generics.ListCreateAPIView):
                             headers=headers)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+

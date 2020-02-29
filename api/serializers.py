@@ -1,5 +1,6 @@
 from asgiref.sync import async_to_sync
 from channels.layers import get_channel_layer
+from django_eventstream import send_event
 from rest_framework import serializers
 from rest_framework.response import Response
 from rest_framework.status import HTTP_409_CONFLICT
@@ -31,3 +32,4 @@ def on_new_news_crawl(news):
             'news': news
         }
     )
+    send_event('time', 'message', {'text': 'hello world'})
