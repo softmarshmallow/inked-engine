@@ -4,17 +4,11 @@ from rest_framework_api_key.permissions import HasAPIKey
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from api.models import RawNews
 from api.serializers import NewsSerializer
-from datetime import datetime, timedelta, time
 
 
 class NewsViewSet(viewsets.ModelViewSet):
     permission_classes = [HasAPIKey | IsAuthenticatedOrReadOnly]
-
-    today = datetime.now().date()
-    tomorrow = today + timedelta(1)
-    today_start = datetime.combine(today, time())
-    today_end = datetime.combine(tomorrow, time())
-    queryset = RawNews.objects.filter(time__gte=today_start, time__lte=today_end,)
+    queryset = RawNews.objects.all()
     serializer_class = NewsSerializer
 
 
