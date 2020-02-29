@@ -8,7 +8,7 @@ from api.serializers import NewsSerializer
 
 class NewsViewSet(viewsets.ModelViewSet):
     permission_classes = [HasAPIKey | IsAuthenticatedOrReadOnly]
-    queryset = RawNews.objects.all()
+    queryset = RawNews.objects.order_by('-time')
     serializer_class = NewsSerializer
 
 
