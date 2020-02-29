@@ -1,3 +1,5 @@
+from datetime import datetime, timedelta, time
+
 from rest_framework import viewsets, generics, status
 from rest_framework.response import Response
 from rest_framework_api_key.permissions import HasAPIKey
@@ -9,6 +11,19 @@ from api.serializers import NewsSerializer
 class NewsViewSet(viewsets.ModelViewSet):
     permission_classes = [HasAPIKey | IsAuthenticatedOrReadOnly]
     queryset = RawNews.objects.order_by('-time')
+    serializer_class = NewsSerializer
+
+
+# returns only today's data
+class OptimizedNewsViewSet(generics.ListAPIView):
+    permission_classes = [HasAPIKey | IsAuthenticatedOrReadOnly]
+
+    today = datetime.now().date()
+    yesterday = today + timedelta(-1)
+    tomorrow = today + timedelta(1)
+    time_range_start = datetime.combine(yesterday, time())
+    time_range_end = datetime.combine(tomorrow, time())
+    queryset = RawNews.objects.filter(time__gte=time_range_start, time__lte=time_range_end, ).order_by('-time')
     serializer_class = NewsSerializer
 
 
