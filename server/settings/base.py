@@ -122,6 +122,7 @@ DATABASES = {
 
 # region sse
 EVENTSTREAM_ALLOW_ORIGIN = "*"
+EVENTSTREAM_ALLOW_CREDENTIALS = True
 # endregion
 
 
