@@ -2,12 +2,8 @@ from asgiref.sync import async_to_sync
 from channels.layers import get_channel_layer
 from django_eventstream import send_event
 from rest_framework import serializers
-from rest_framework.response import Response
-from rest_framework.status import HTTP_409_CONFLICT
-from rest_framework.validators import UniqueTogetherValidator, UniqueValidator
 
 from api.models import RawNews
-from django.forms.models import model_to_dict
 
 
 class NewsSerializer(serializers.ModelSerializer):
