@@ -20,10 +20,8 @@ class OptimizedNewsViewSet(generics.ListAPIView):
 
     today = datetime.now().date()
     yesterday = today + timedelta(-1)
-    tomorrow = today + timedelta(2)
     time_range_start = datetime.combine(yesterday, time())
-    time_range_end = datetime.combine(tomorrow, time())
-    queryset = RawNews.objects.filter(time__gte=time_range_start, time__lte=time_range_end, ).order_by('-time')
+    queryset = RawNews.objects.filter(time__gte=time_range_start, ).order_by('-time')
     serializer_class = NewsSerializer
 
 
