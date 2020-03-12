@@ -3,12 +3,15 @@ from djongo import models
 
 
 class TagHolder(models.Model):
-    spam_human = models.BooleanField(default=None, null=True)
-    spam_robot = models.BooleanField(default=None, null=True)
+    spam_human = models.BooleanField(default=None, null=True, blank=True)
+    spam_robot = models.BooleanField(default=None, null=True, blank=True)
 
     class Meta:
+        ...
         abstract = True
 
+    def __str__(self):
+        return "meta"
 
 class TagHolderForm(forms.ModelForm):
     class Meta:
@@ -31,6 +34,8 @@ class RawNews(models.Model):
     provider = models.CharField(max_length=50)
     meta = models.EmbeddedField(
         model_container=TagHolder,
-        model_form_class=TagHolderForm
+        model_form_class=TagHolderForm,
+        null=True,
+        blank=True,
     )
 
