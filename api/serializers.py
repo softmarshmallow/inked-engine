@@ -3,13 +3,21 @@ from channels.layers import get_channel_layer
 from django_eventstream import send_event
 from rest_framework import serializers
 
-from api.models import RawNews
+from api.models import RawNews, TagHolder
+
+
+class MetaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TagHolder
+        fields = ['spam_human', 'spam_robot',]
 
 
 class NewsSerializer(serializers.ModelSerializer):
+    meta = MetaSerializer()
+
     class Meta:
         model = RawNews
-        fields = ['article_id', 'time', 'title', 'article_url', 'origin_url', 'body_html', 'provider']
+        fields = ['article_id', 'time', 'title', 'article_url', 'origin_url', 'body_html', 'provider', 'meta']
         # validators = []
 
     def create(self, validated_data):
