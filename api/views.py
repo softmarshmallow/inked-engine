@@ -22,24 +22,24 @@ class SpamNewsView(APIView):
 
     def get(self, request, format=None):
         time_range_start = get_time_range_start(-5)
-        queryset = RawNews.objects.filter(time__gte=time_range_start, meta={"spam_human": True}).order_by('-time')[:1]
+        queryset = RawNews.objects.filter(time__gte=time_range_start, meta={"spam_human": None}).order_by('-time')[:1]
         if len(queryset) == 0:
             raise Http404
         else:
-            data = NewsSerializer(queryset[0])
-            if data.is_valid():
+            try:
+                data = NewsSerializer(queryset[0])
                 return Response(data.data)
-            return Response(data.errors, status=status.HTTP_400_BAD_REQUEST)
+            except:
+                return Response(data.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    def put(self, request, pk, format=None):
-        snippet = self.get_object(pk)
-        request.data
-        spam = request.data['spam']
-        serializer = NewsSerializer(snippet, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    def patch(self, request, format=None):
+        id = request.data['id']
+        is_spam = request.data['is_spam']
+        # serializer = NewsSerializer(snippet, data=request.data)
+        # if serializer.is_valid():
+        #     serializer.save()
+        #     return Response(serializer.data)
+        return Response(f"{id}{is_spam}", status=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request, pk, format=None):
         snippet = self.get_object(pk)
