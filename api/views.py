@@ -6,7 +6,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_api_key.permissions import HasAPIKey
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
-from api.models import RawNews
+from api.models import RawNews, TagHolder, TagHolderForm
 from api.serializers import NewsSerializer
 
 
@@ -29,17 +29,15 @@ class SpamNewsView(APIView):
             try:
                 data = NewsSerializer(queryset[0])
                 return Response(data.data)
-            except:
-                return Response(data.errors, status=status.HTTP_400_BAD_REQUEST)
+            except Exception as e:
+                return Response(e, status=status.HTTP_400_BAD_REQUEST)
 
     def patch(self, request, format=None):
-        id = request.data['id']
+        id = request.data['id'] # article id
         is_spam = request.data['is_spam']
-        # serializer = NewsSerializer(snippet, data=request.data)
-        # if serializer.is_valid():
-        #     serializer.save()
-        #     return Response(serializer.data)
-        return Response(f"{id}{is_spam}", status=status.HTTP_400_BAD_REQUEST)
+        time_range_start = get_time_range_start(-5)
+        news = RawNews.objects.filter(time__gte=time_range_start, article_id=id).update(meta={'spam_human' : is_spam})
+        return Response(news, status=status.HTTP_200_OK)
 
     def delete(self, request, pk, format=None):
         snippet = self.get_object(pk)
