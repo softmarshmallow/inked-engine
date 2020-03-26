@@ -1,4 +1,4 @@
 .idea/*
 **.pyc
 server/settings/production.py
-credentials
+credentials/db-connection.json
