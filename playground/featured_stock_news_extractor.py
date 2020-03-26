@@ -1,4 +1,4 @@
-from utils.news_title_box_util import extract_boxes
+from utils.title_box_util.news_title_box_util import extract_boxes
 from data.api import NewsDataService
 ns = NewsDataService()
 news_data_list = ns.FetchNewsData()

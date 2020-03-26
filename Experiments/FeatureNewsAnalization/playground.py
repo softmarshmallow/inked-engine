@@ -1,5 +1,5 @@
 from data.api import GetLocalNewsData
-from utils.news_title_box_util import remove_box
+from utils.title_box_util.news_title_box_util import remove_box
 
 if __name__ == "__main__":
      news = GetLocalNewsData(max=10000, hasMaxValue=False)
