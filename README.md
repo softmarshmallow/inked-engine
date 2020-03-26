@@ -45,5 +45,15 @@ http://konlpy.org/en/v0.4.4/install/
 `bash <(curl -s https://raw.githubusercontent.com/konlpy/konlpy/master/scripts/mecab.sh)`
 
 
-develped by softmarshmallow
+## IMPORTANT:: seed credential files
+you can see 
+```gitignore
+server/settings/production.py
+credentials/db-connection.json
+```
+from `.gitignore` which two files you will have to provide manually to run this project.
 
+
+
+## developed by
+develped by softmarshmallow
