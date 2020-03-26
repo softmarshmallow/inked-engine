@@ -5,6 +5,7 @@ import urllib.parse
 # connects to service server's raw collection database,
 # which is crawler's raw data management collection
 
+# fixme load from credentials
 url = "ec2-52-78-69-94.ap-northeast-2.compute.amazonaws.com:27017"
 username = urllib.parse.quote_plus('admin')
 password = urllib.parse.quote_plus('SHARED@password')

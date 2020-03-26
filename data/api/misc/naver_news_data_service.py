@@ -7,6 +7,7 @@ import sys
 
 from dateutil.rrule import rrule, DAILY
 
+# fixme make as public possible
 DATA_ROOT = "/Users/softmarshmallow/Documents/Apps/Inked/Crawlers/inkedNewsCrawler/data"
 DEFAULT_DATE = datetime(2018, 4, 23)
 

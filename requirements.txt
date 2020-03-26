@@ -5,6 +5,7 @@ pytz==2019.3
 sqlparse==0.2.4
 djangorestframework==3.11.0
 djongo==1.3.1
+daphne==2.4.1
 channels==2.4.0
 channels-redis==2.4.2
 django-eventstream==3.1.0
@@ -14,6 +15,26 @@ gunicorn==20.0.4
 uwsgi==2.0.18
 django-storages==1.9.1
 django-filter==2.2.0
+# endregion
+
+# region databases
+pymongo==3.7.0
+elasticsearch==6.3.1
+boto3==1.12.7
+# endregion
+
+
+# region text processing
+konlpy==0.4.4
+JPype1==0.6.3
+JPype1-py3==0.5.5.2
+
+bs4==0.0.1
+lxml==4.5.0
+
+nltk==3.2.5
+
+gensim==3.5.0
 # endregion
 
 
@@ -32,8 +53,6 @@ backcall==0.1.0
 beautifulsoup4==4.6.0
 bleach==2.1.3
 blessed==1.15.0
-boto3==1.12.7
-bs4==0.0.1
 bson==0.5.8
 bz2file==0.98
 cached-property==1.5.1
@@ -47,8 +66,6 @@ constantly==15.1.0
 cryptography==2.8
 cssselect==1.0.3
 cycler==0.10.0
-daphne==2.4.1
-dataclasses==0.7
 decorator==4.3.0
 docker==3.5.1
 docker-compose==1.21.2
@@ -56,7 +73,6 @@ docker-pycreds==0.3.0
 dockerpty==0.4.1
 docopt==0.6.2
 docutils==0.14
-elasticsearch==6.3.1
 entrypoints==0.2.3
 Faker==2.0.0
 feedfinder2==0.0.4
@@ -64,7 +80,6 @@ feedparser==5.2.1
 flake8==3.5.0
 futures==3.1.1
 gast==0.2.0
-gensim==3.5.0
 google-api-python-client==1.6.7
 gripcontrol==4.0.0
 grpcio==1.17.0
@@ -85,8 +100,6 @@ jedi==0.15.1
 jieba3k==0.35.1
 Jinja2==2.10
 jmespath==0.9.3
-JPype1==0.6.3
-JPype1-py3==0.5.5.2
 jsonschema==2.6.0
 jupyter==1.0.0
 jupyter-client==5.2.3
@@ -96,11 +109,8 @@ Keras==2.3.1
 Keras-Applications==1.0.6
 Keras-Preprocessing==1.0.5
 kiwisolver==1.0.1
-konlpy==0.4.4
 langdetect==1.0.7
-lxml==4.5.0
 Markdown==3.0.1
-MarkupSafe==1.0
 matplotlib==2.2.2
 mccabe==0.6.1
 mistune==0.8.3
@@ -109,7 +119,6 @@ nbconvert==5.3.1
 nbformat==4.4.0
 networkx==2.1
 newspaper3k==0.2.7
-nltk==3.2.5
 notebook==5.6.0
 numpy==1.14.5
 oauth2client==4.1.2
@@ -139,7 +148,6 @@ pyflakes==1.6.0
 Pygments==2.2.0
 PyHamcrest==2.0.0
 PyJWT==1.7.1
-pymongo==3.7.0
 pyOpenSSL==19.1.0
 pyparsing==2.2.0
 PySocks==1.6.8
@@ -154,7 +162,6 @@ rake-nltk==1.0.4
 requests==2.18.4
 requests-file==1.4.3
 rsa==3.4.2
-s3transfer==0.1.13
 scapy-python3==0.25
 scikit-learn==0.19.2
 scipy==1.0.0
@@ -162,14 +169,11 @@ semantic-version==2.5.0
 Send2Trash==1.5.0
 service-identity==18.1.0
 simplegeneric==0.8.1
-six==1.11.0
 smart-open==1.6.0
 snowballstemmer==1.2.1
 Sphinx==1.7.5
 sphinxcontrib-websupport==1.1.0
 stemming==1.0.1
-tensorboard==1.12.0
-tensorflow==1.12.0
 termcolor==1.1.0
 terminado==0.8.1
 testpath==0.3.1
@@ -184,8 +188,6 @@ Twisted==19.10.0
 txaio==20.1.1
 uritemplate==3.0.0
 urllib3==1.22
-virtualenv==15.1.0
-virtualenv-clone==0.2.6
 wcwidth==0.1.7
 webencodings==0.5.1
 websocket-client==0.54.0
