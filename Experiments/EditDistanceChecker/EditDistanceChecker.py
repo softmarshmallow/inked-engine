@@ -32,7 +32,7 @@ def Test():
 
     sentA = "라면 먹고 갈래?"
     sentALen = len(sentA)
-    sentB = "라면 먹고 가지 않을래? 라고 말했다"# 똥바보 세캬?"
+    sentB = "라면 먹고 가지 않을래?"
     sentBLen = len(sentB)
     maxLen = max(sentALen, sentBLen)
     lenSum = abs(sentALen - sentBLen)
@@ -43,4 +43,5 @@ def Test():
 
 
 if __name__ == "__main__":
-    CheckAllDistance()
+    # CheckAllDistance()
+    Test()
