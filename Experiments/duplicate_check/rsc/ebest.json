@@ -1,0 +1,342 @@
+[
+  {
+    "__id": "5e7df8d524aa9a00072724f7",
+    "provider": "27",
+    "__typename": "News",
+    "originUrl": null,
+    "id": "5e7df8d524aa9a00072724f7",
+    "meta": {
+      "source": "EBEST",
+      "__typename": "NewsMeta",
+      "__id": "0",
+      "__path": "News:5e7df8d524aa9a00072724f7:meta=>NewsMeta:0"
+    },
+    "content": "",
+    "time": "2020-03-27T12:58:30.000Z",
+    "title": "총리까지 걸렸다…‘죽음의 도시’로 변한 유럽",
+    "__path": "News:5e7df8d524aa9a00072724f7"
+  },
+  {
+    "__id": "5e7df8f624aa9a00072724fd",
+    "provider": "24",
+    "__typename": "News",
+    "originUrl": null,
+    "id": "5e7df8f624aa9a00072724fd",
+    "meta": {
+      "source": "EBEST",
+      "__typename": "NewsMeta",
+      "__id": "0",
+      "__path": "News:5e7df8f624aa9a00072724fd:meta=>NewsMeta:0"
+    },
+    "content": "",
+    "time": "2020-03-27T13:00:00.000Z",
+    "title": "【증시예측】 월요일증시 (30일) 급등 예상 종목 TOP3",
+    "__path": "News:5e7df8f624aa9a00072724fd"
+  },
+  {
+    "__id": "5e7df90124aa9a00072724ff",
+    "provider": "11",
+    "__typename": "News",
+    "originUrl": null,
+    "id": "5e7df90124aa9a00072724ff",
+    "meta": {
+      "source": "EBEST",
+      "__typename": "NewsMeta",
+      "__id": "0",
+      "__path": "News:5e7df90124aa9a00072724ff:meta=>NewsMeta:0"
+    },
+    "content": "'집단감염 우려' 만민중앙교회 관련 6명 확진…지하 기도실 폐쇄(종합2보)\n교회 폐쇄하고 임시 선별진료소 설치…교인 200여명 검사 진행중\r\n\r\n    (서울=연합뉴스) 임화섭 김지헌 기자 = 서울 구로구 구로3동에 있는 '만민중앙\r\n교회'와 관련된 확진자가 잇따라 확인되고 있다고 복수의 방역당국 관계자들이 전했\r\n다.\r\n    방역당국은 조사 과정에서 동작구 목사 사택 인근에 있는 교인들 거주 빌라 지\r\n하에서 기도실을 발견하고 폐쇄 조치를 내렸다. 이 교회는 공식적으로 3월 6일부터 \r\n예배를 온라인으로 전환했다.\r\n    방역당국은 또 사택과 빌라 근처에 컨테이너로 설치된 사무실에 교인들이 드나\r\n든 사실도 확인하고 교회나 사택 운영과의 연관성을 조사하면서 접촉자를 파악 중이\r\n다.\r\n    동작구는 이 빌라에 사는 만민중앙교회 교인 17명의 명단을 교회 장로로부터 넘\r\n겨받아 검사를 실시했다. 이 중 15명은 음성으로 판정됐고 2명의 검사 결과는 아직 \r\n나오지 않았다.\r\n    구로구는 접촉자 240여명을 파악했으며, 이 중 교직자 33명은 26일 오후 구로구\r\n 선별진료소에서 검사를 받았다. 이 중 구로구 외 거주자 3명이 확진됐고 30명은 음\r\n성 판정을 받았다. 구로구는 27일 오후 구로3동 만민중앙교회 앞에 임시 선별진료소\r\n를 설치해 나머지 교인 200여명이 검사를 받도록 했으며, 오후 6시까지 198명을 검\r\n사했다.\r\n\n    다만 이 중에는 접촉자로 분류되지 않아 원래 대상자가 아니었는데 검사를 받은\r\n 인원도 포함됐을 수 있어 정확한 전수검사 진행상황은 즉각 파악되지 않고 있다.\r\n    구로구청은 27일 만민중앙교회를 일단 폐쇄했으며, 검사 결과에 따라 폐쇄 기간\r\n을 조정할 예정이다.\r\n    구로구청이 파악한 타구 거주 확진자 3명 중 2명은 동작구에 있는 만민중앙교회\r\n 사무실에서 금천구 6번 확진자와 함께 근무하는 직원이며 다른 1명은 교회 교직자\r\n다.\r\n    서울 자치구들과 방역당국의 발표 내용에 따르면 그동안 만민중앙교회 관련 감\r\n염으로 의심되는 환자가 최소 4명 공개됐다.\r\n    금천구 독산3동에 실거주하는 55세 남성(금천구 8번 확진자)은 27일 확진 통보\r\n를 받았다. 이 환자의 주민등록상 주소는 경기 광명시이지만 실거주지는 금천구 독\r\n산3동이고, 검사는 26일 구로구 선별진료소에서 받았다.\r\n    이 환자의 직장은 구로구 구로3동에 있는 만민중앙교회다.\r\n    이 환자는 금천구 6번 환자(독산1동 거주, 40세 남성, 25일 확진)의 직장 동료\r\n인 것으로 알려졌다.\r\n    방역당국은 금천구 6번 환자가 동선으로 보아 만민중앙교회와 관련이 있고 이 \r\n교회에서 일을 하고 있을 공산이 큰 것으로 보고 있다.\r\n    금천구 6번 환자는 아내인 7번 환자(독산1동 거주, 33세 여성, 26일 확진), 장\r\n모인 구로구 24번 환자(가리봉동 거주, 58세 여성, 26일 확진)와 접촉해 감염시킨 \r\n것으로 추정된다.\r\n    영등포구 대림3동에 사는 40대 남성(영등포구 21번 환자)은 27일 확진됐다. 그\r\n는 25일에 발열, 기침, 인후통 등 증상이 있었고 26일 구로구보건소에서 검사를 받\r\n았다. 이 환자는 만민중앙교회의 동작구 컨테이너 사무실에서 근무하는 사무직원이\r\n다.\r\n    이런 내용을 종합하면 지금까지 각 자치구에 파악된 만민중앙교회 관련 확진자\r\n는 가족 등 파생 감염을 합해 6명 이상인 것으로 추정된다.\r\n    방역당국은 금천구 7번 환자가 가산디지털단지 SK트윈타워 5층에 있는 직장 사\r\n무실에서 접촉한 동료 11명을 파악해 일단 자가격리 조치했다.\r\n    limhwasop@yna.co.kr, jk@yna.co.kr\r\n(끝)\n\n\r\n<a href=\"http://www.yonhapnews.co.kr/aboutus/4223030400.html\"><긴급속보 SMS 신청></a> <a href=\"http://yonhap.pumzine.com\"><포토 매거진></a> <a href=\"http://www.yonhapnews.co.kr/aboutus/4223030500.html\">< M-SPORTS ></a>\r\n<저작권자(c) 연합뉴스, 무단 전재-재배포 금지>",
+    "time": "2020-03-27T13:00:44.000Z",
+    "title": "'집단감염 우려' 만민중앙교회 관련 6명 확진…지하 기도실 폐쇄(종합2보)",
+    "__path": "News:5e7df90124aa9a00072724ff"
+  },
+  {
+    "__id": "5e7df91124aa9a0007272501",
+    "provider": "25",
+    "__typename": "News",
+    "originUrl": null,
+    "id": "5e7df91124aa9a0007272501",
+    "meta": {
+      "source": "EBEST",
+      "__typename": "NewsMeta",
+      "__id": "0",
+      "__path": "News:5e7df91124aa9a0007272501:meta=>NewsMeta:0"
+    },
+    "content": "<a href=\"http://www.yasl.co.kr/\" target=\"_blank\">▷주식매입자금은 수수료 없는 연2.79% 야호스탁론으로! </a>\r\n\r\n <img src=http://file.mk.co.kr/neds/20200327/20200327_4437657_1585313879.jpg                                                          ><br>\n 토요일인 28일은 차고 건조한 공기가 유입되면서 일부 지역은 아침 최저기온이 영\r\n하로 내려가는 등 꽃샘추위가 오겠다. \r\n특히 경기 동부와 강원 영서는 기온이 영하로 내려가는 곳이 있고 강원 산지 도로는\r\n 눈이 내리는 곳도 있어 농작물 냉해 피해나 교통안전에 유의해야 한다.\r\n아침 최저 기온은 －2∼9도, 낮 최고기온은 9∼14도로 전날(8∼16도·9∼27도)과 비\r\n교해 기온이 크게 내려가 쌀쌀하겠다.\r\n미세먼지 등급은 대기확산이 원활해 전국이 '좋음'∼'보통'으로 예상된다.\r\n중부지방은 대체로 맑고 남부지방은 오전에 구름 많다가 오후부터 맑아지겠다. 제주\r\n도는 낮에 비가 조금 오겠다. 예상 강수량은 5㎜ 내외다.\r\n[디지털뉴스국]\r\n\r\n\r\n\r\n<!-- r_start //--><a href=\"http://xn--6o2b15ym2a7ma.kr/\" target=\"_blank\"><img src=\"http://img.mk.co.kr/mk/1/20200327/stock_banner/202003270754181118126.jpg\"></a><br/><br>☞ <a href=\"http://vip.mk.co.kr/newSt/invest/invest_view.php?p_page=&sCode=68&t_uid=30&c_uid=29021&search=\" target=\"_blank\"><font color=\"#4F81BD\">조용히 사서 묻어놔라! 3月 정말 큰돈 된다!</font></a><br>☞ <a href=\"http://vip.mk.co.kr/newSt/invest/invest_view.php?p_page=&sCode=68&t_uid=30&c_uid=29018&search=\" target=\"_blank\"><font color=\"#4F81BD\">7000% 바이오 신기술 터진다! 독점계약 일대 大파란!</font></a><br>☞ <a href=\"http://vip.mk.co.kr/newSt/invest/invest_view.php?p_page=&sCode=68&t_uid=30&c_uid=29019&search=\" target=\"_blank\"><font color=\"#4F81BD\">200조 핵심기술 세계 최초 개발! 단돈 3천원대 황금종목!!!</font></a><br>☞ <a href=\"http://vip.mk.co.kr/newSt/invest/invest_view.php?p_page=&sCode=68&t_uid=30&c_uid=29017&search=\" target=\"_blank\"><font color=\"#4F81BD\">180조 시장 석권할 바이오 황제주!!</font></a><!-- r_end //-->\r\n\r\n[ⓒ 매일경제 & mk.co.kr, 무단전재 및 재배포 금지]<br>\r\n\r\n",
+    "time": "2020-03-27T13:01:01.000Z",
+    "title": "맑고 쌀쌀한 토요일…경기동부·강원영서 아침 영하",
+    "__path": "News:5e7df91124aa9a0007272501"
+  },
+  {
+    "__id": "5e7df91f24aa9a0007272505",
+    "provider": "11",
+    "__typename": "News",
+    "originUrl": null,
+    "id": "5e7df91f24aa9a0007272505",
+    "meta": {
+      "source": "EBEST",
+      "__typename": "NewsMeta",
+      "__id": "0",
+      "__path": "News:5e7df91f24aa9a0007272505:meta=>NewsMeta:0"
+    },
+    "content": "日당국은 외출자제 요청하는데…아베 부인 단체 벚꽃사진 논란\n아베 총리, 벚꽃으로 또 악재…\"식당에서 모임하고서 기념사진 찍은 것\"\r\n\r\n\n    (도쿄=연합뉴스) 이세원 특파원 = 신종 코로나바이러스 감염증(코로나19) 확산\r\n을 막기 위해 일본 당국이 꽃구경이나 외출 등의 자제를 촉구하는 가운데 아베 신조\r\n(安倍晋三) 일본 총리 부인 아키에(昭惠) 여사가 벚꽃을 배경으로 찍은 사진이 논란\r\n을 부르고 있다.\r\n    아키에 여사가 벚꽃을 배경으로 찍은 단체 사진을 일본의 한 주간지가 인터넷에\r\n 올리면서 논란이 시작됐다.\r\n    주간지 뉴스포스트세븐이 홈페이지에 올린 사진과 설명에 따르면 인기 모델, 아\r\n이돌 그룹 멤버 등 남녀 13명이 조명이 밝혀진 벚꽃을 배경으로 찍은 단체 사진에 \r\n아키에 여사가 포함돼 있다.\r\n    이 매체는 사진이 찍힌 시점은 이달 하순이며 장소는 도쿄의 모처라고 설명했다\r\n.\r\n    고이케 유리코(小池百合子) 일본 도쿄도(東京都) 지사는 도쿄에서 코로나19가 \r\n폭발적으로 확산할 우려가 있다며 지난 25일 외출 자제 등을 요청했다.\r\n    도쿄도는 27일 꽃놀이 자제를 요청하고서 벚꽃으로 유명한 도내 일부 공원의 산\r\n책로를 폐쇄하는 등의 조치에 나선 상황이라 정치권에서 바로 문제 제기가 이어졌다\r\n.\r\n    교도통신에 따르면 후쿠야마 데쓰로(福山哲郞) 입헌민주당 간사장은 \"국민이 자\r\n제를 요청받고 있는 가운데 벚나무 아래에서 마음 편하게 식사 모임, 꽃구경\"을 한 \r\n것이라며 이해할 수 없는 행동이라고 27일 비판했다.\r\n　　이날 열린 참의원 예산위원회에서 스기오　히데야（杉尾秀哉) 입헌민주당 의원\r\n은 \"이런 사진이 나돌아 어젯밤부터 인터넷에서 비난이 쇄도하고 있다. 총리는 국민\r\n들에게 꽃구경 자제를 요청할 수 있겠느냐\"고 추궁했다.\r\n    정부 행사인 '벚꽃을 보는 모임'에 지지자와 후원회 관계자, 아키에 여사가 추\r\n천한 이들을 등을 초청했다는 의혹에 수개월 간 시달린 아베 총리로서는 아키에 여\r\n사의 사진이 벚꽃과 얽힌 또 다른 악재인 셈이다.\r\n    아베 총리는 \"식당에서 지인과 모임을 하면서 벚꽃을 배경으로 기념사진을 찍은\r\n 것\"이라며 \"이른바 공공장소에서 꽃 구경을 하거나 도쿄도가 자제를 요구하는 공원\r\n에서의 꽃놀이와 같은 연회를 한 사실은 없다\"고 이날 참의원 예산위원회에서 설명\r\n했다.\r\n    하지만 공원에서 꽃 구경을 한 것이 아니라는 설명을 받아들이더라도 단체로 식\r\n사 모임을 하는 등의 행위 역시 감염 확산으로 이어질 가능성이 있어 아키에 여사의\r\n 행동에 대한 비판은 쉽게 수그러지지 않을 것으로 예상된다.\r\n    sewonlee@yna.co.kr\r\n(끝)\n\n\r\n<a href=\"http://www.yonhapnews.co.kr/aboutus/4223030400.html\"><긴급속보 SMS 신청></a> <a href=\"http://yonhap.pumzine.com\"><포토 매거진></a> <a href=\"http://www.yonhapnews.co.kr/aboutus/4223030500.html\">< M-SPORTS ></a>\r\n<저작권자(c) 연합뉴스, 무단 전재-재배포 금지>",
+    "time": "2020-03-27T13:01:15.000Z",
+    "title": "日당국은 외출자제 요청하는데…아베 부인 단체 벚꽃사진 논란",
+    "__path": "News:5e7df91f24aa9a0007272505"
+  },
+  {
+    "__id": "5e7df95124aa9a0007272527",
+    "provider": "11",
+    "__typename": "News",
+    "originUrl": null,
+    "id": "5e7df95124aa9a0007272527",
+    "meta": {
+      "source": "EBEST",
+      "__typename": "NewsMeta",
+      "__id": "0",
+      "__path": "News:5e7df95124aa9a0007272527:meta=>NewsMeta:0"
+    },
+    "content": "[함평군수 보궐선거 후보자 등록](27일 최종)\n\r\n    ※ 정당별 약칭 범례 더불어민주당 = 민, 미래통합당 = 통, 민생당 = 민생, 정\r\n의당 = 정, 녹색당 = 녹, 민중당 = 민중, 우리공화당 = 공, 국가혁명배당금당 = 혁,\r\n 기독자유통일당 = 기, 기본소득당 = 소득, 미래당 = 미, 새누리당 = 새, 자유공화\r\n당 = 자. 친박신당 = 친박, 한국경제당 = 경제 / 나머지정당 = 기타, 무소속 = 무 \r\n등으로 표기\r\n    ※ 후보 이름(나이·성별·정당·직업) = 재산, 병역, 납세, 전과 순\r\n   \r\n    ▲ 이상익(63·남·민·정당인) = 60억5천500만원, 병역필, 4천481만원(소득 1\r\n천942만원·재산 2천311만원·종부 228만원), 없음\r\n    ▲ 김성호(63·남·민생·정당인) = 10억4천만원, 병역필, 1억6천974만원(소득 \r\n1억6천323만원·재산 651만원), 조세범처벌법위반 등 1건\r\n    ▲ 신경선(60·남·무·무직) = 3억4천900만원, 병역필, 112만원(재산 112만원)\r\n, 없음\r\n    ▲ 정두숙(59·남·무·사업) = -3천만원, 병역필, 1억427만원(소득 1억427만원\r\n), 없음\r\n    ▲ 정철희(71·남·무·정치인) = 10억2천700만원, 병역필, 1천838만원(소득 1\r\n천437만원·재산 401만원), 없음\r\n(끝)\n\n\r\n<a href=\"http://www.yonhapnews.co.kr/aboutus/4223030400.html\"><긴급속보 SMS 신청></a> <a href=\"http://yonhap.pumzine.com\"><포토 매거진></a> <a href=\"http://www.yonhapnews.co.kr/aboutus/4223030500.html\">< M-SPORTS ></a>\r\n<저작권자(c) 연합뉴스, 무단 전재-재배포 금지>",
+    "time": "2020-03-27T13:02:04.000Z",
+    "title": "[함평군수 보궐선거 후보자 등록](27일 최종)",
+    "__path": "News:5e7df95124aa9a0007272527"
+  },
+  {
+    "__id": "5e7dfa1924aa9a0007272547",
+    "provider": "20",
+    "__typename": "News",
+    "originUrl": null,
+    "id": "5e7dfa1924aa9a0007272547",
+    "meta": {
+      "source": "EBEST",
+      "__typename": "NewsMeta",
+      "__id": "0",
+      "__path": "News:5e7dfa1924aa9a0007272547:meta=>NewsMeta:0"
+    },
+    "content": "\r\n[머니투데이 김소연 기자]  <img src=\"http://thumb.mt.co.kr/06/2020/03/2020032722021933822_1.jpg\" alt=\"지난해 서울 여의도 윤중로 일대에서 진행한 벚꽃축제 / 사진=이동훈 기자 photoguy@\" border='0' vspace='5' hspace='5' align=\"\">올해 여의도 벚꽃놀이는 포기해야 할 것으로 보인다. \r\n\r\n27일 서울 영등포구는 다음달 1일부터 여의서로 봄꽃길을 전면 통제한다고 밝혔다.\r\n\r\n통제 구간은 국회3문에서 서강대교 남단까지 1.6km 구간으로, 여의서로 봄꽃길을 전면\r\n 폐쇄하고 교통·보행로를 통제한다. 교통 통제는 다음달 1일부터 11일까지 이어지며,\r\n 보행 통제 기간은 다음달 2일부터 10일까지다.\r\n\r\n구는 앞서 봄꽃축제를 취소했다. 그러나 4월 개화기 여전히 여의도를 찾는 상춘객 인 \r\n파가 몰릴 것으로 예상함에 따라 이번 조치를 취하게 됐다. \r\n\r\n이번 여의도 봄꽃길 통제에는 3000여명이 동원된다. 여의서로 외에 한강공원과 인접한\r\n 여의나루역 반경 200m 구간도 1급 관리구역으로 특별관리 방안을 수립해 집중 관리한\r\n다. 나머지 구간에도 질서요원이 배치되고 순찰과 단속을 실시할 예정이다.\r\n\r\n<br /><div id=\"relnews_list\"><!--relatedstart-->[관련기사]<br>☞ <a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2020032708060861460&EMBA\">&#034;한국은 이런 나라&#034; 외국인 눈에 비친 우리 모습은</a><br>☞ <a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2020032614270968525&EMBA\">&#39;45분 만에 확인&#39; 美 진단키트…전문가들 우려하는 이유는</a><br>☞ <a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2020032714195581746&EMBA\">&#39;원룸 세입자&#39; 조주빈, 32억 벌었다기엔 의아한 생활</a><br>☞ <a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2020032713173230078&EMBA\">옷에 묻은 코로나 바이러스, 빨래하면 없어질까?</a><br>☞ <a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2020032716047687205&EMBA\">&#034;한국 진단키트, 세계가 원한다&#034;…美·UAE·인니, 3국 우선공급</a><br><br><!--relatedend--></div>김소연 기자 nicksy@\r\n\r\n<!--textlinktopstart-->\r\n\t\t\t\t\t<strong><a href=\"http://www.kwdream.co.kr/loan/?type=out_mt_t\" target=\"_blank\">※주목※ \r\n총 수수료 0원+월 0.4%대 금리 ▶저비용 고수익 실현해볼까? (바로 가기)</a></strong><br>\r\n\t\t\t\t\r\n\t\t\t\t\t<strong><a href=\"http://mh.joystock.co.kr/landing/landing.php?inputpage=mh\" target=\"_blank\">※급등임박※ 무료 급등주 공개 ◀지금 바로 신청</a></strong><br>\r\n\t\t\t\t\r\n\t\t\t\t\t<strong><a href=\"http://web.mossinvest.com/n1/index.php?type=lin\" target=\"_blank\">코로나19 최대수혜주는?</a></strong><br>\r\n\t\t\t\t<!--textlinktopend--><!--powerIntstart--><br />\r\n[파워 인터뷰]<br>\r\n<a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2019081408535212578&amp;VBCC_P\"><img src=\"https://menu.mt.co.kr/ad/201908/20190819045017_hts0.jpg\" border=\"0\"></\r\na><br>\r\n<a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2019061216223014049\"><img src=\"https://menu.mt.co.kr/ad/201906/20190621030213_hts1.jpg\" border=\"0\"></\r\na><br><!--powerIntend--><!--textlinkstart-->\r\n\t\t\t\t\t<strong><a href=\"http://mh.joystock.co.kr/landing/landing.php?inputpage=mh\" target=\"_blank\">무료 급등주 공개 ◀지금 바로 신청</a></strong><br>\r\n\t\t\t\t\r\n\t\t\t\t\t<strong><a href=\"http://web.mossinvest.com/n1/index.php?type=lin\" target=\"_blank\">계좌복구 프로그램 지금 신청하기</a></strong><br>\r\n\t\t\t\t<!--textlinkend-->\r\n\r\n\r\n<저작권자 ⓒ '돈이 보이는 리얼타임 뉴스' 머니투데이, 무단전재 및 재배포 금지>\r\n",
+    "time": "2020-03-27T13:05:21.000Z",
+    "title": "\"여의도 벚꽃놀이 포기하세요\" 영등포구, 여의도 봄꽃길 전면 통제",
+    "__path": "News:5e7dfa1924aa9a0007272547"
+  },
+  {
+    "__id": "5e7dfa4524aa9a000727254f",
+    "provider": "11",
+    "__typename": "News",
+    "originUrl": null,
+    "id": "5e7dfa4524aa9a000727254f",
+    "meta": {
+      "source": "EBEST",
+      "__typename": "NewsMeta",
+      "__id": "0",
+      "__path": "News:5e7dfa4524aa9a000727254f:meta=>NewsMeta:0"
+    },
+    "content": "대전·세종·충남 지방의원 재·보선에 16명 등록\n광역·기초의원 8곳 모두 민주당·통합당 후보 맞대결\r\n\r\n\n\r\n    (대전=연합뉴스) 한종구 기자 = 21대 총선과 함께 치러지는 지방의원 재·보궐\r\n선거에 대전·세종·충남에서는 모두 16명의 후보가 등록했다.\r\n    27일 선관위에 따르면 이번 재·보선에서 대전·세종·충남 광역의원 3명을 비\r\n롯해 대전 서구(2명)와 유성구, 충남 아산시와 금산군에서 기초의원 5명을 새로 선\r\n출한다.\r\n    김소연 전 시의원의 총선 출마로 치러지는 대전시의원 서구 제6선거구 보궐선거\r\n에는 더불어민주당 박범계 국회의원의 보좌관 박수빈 후보와 미래통합당 박종화 시\r\n당 청년 대변인이 등록했다.\r\n    민주당 윤형권 전 세종시의원이 총선 출마를 위해 사퇴하면서 공석이 된 시의원\r\n 제9선거구에는 민주당 이순열 시당 숨쉬는세종위원장과 통합당 김영래 라온행정사\r\n사무소 대표가 등록해 1대 1 진검승부를 벌인다. \r\n    최근 별세한 한옥동 충남도의원 지역구인 천안 제5선거구 보궐선거에는 민주당\r\n에서는 윤철상 도당 부대변인이, 통합당에서는 윤종일 이화푸드 대표가 각각 등록을\r\n 마쳤다.\r\n    기초의원 재보선이 치러지는 5곳에도 민주당과 통합당 후보만 등록했다. \r\n    대전 서구의원 나선거구 보궐선거에는 민주당 김동성 복수동 주민자치부위원장\r\n과 통합당 최병순 전 복수동 통장협의회장이 일찌감치 등록을 마쳤다.\r\n    민주당 방차석 전 구의원의 공직선거법 위반 당선무효형 확정판결로 치러지는 \r\n대전 서구의원 바선거구 재선거에는 민주당 신혜영 중부리서치 대표와 통합당 고현\r\n석 누리보듬봉사단 해외봉사단장이 등록했다.\r\n    유성구의원 다선거구에는 민주당 송재만 전 이상민 국회의원 비서관과 통합당 \r\n조은호 하기중 학교폭력전담기구 학부모 위원이 등록했다.\r\n    아산시의원 가선거구 재선거는 민주당 명노봉 전 아산갑지역위원회 사무국장과 \r\n통합당 윤원준 전 이명수 국회의원 비서관이, 금산군의원 나선거구는 민주당 정옥균\r\n 추부면 체육회장과 통합당 최명수 전 금산군의원이 각각 등록을 마치고 본격적인 \r\n레이스에 들어갔다.\r\n    jkhan@yna.co.kr\r\n(끝)\n\n\r\n<a href=\"http://www.yonhapnews.co.kr/aboutus/4223030400.html\"><긴급속보 SMS 신청></a> <a href=\"http://yonhap.pumzine.com\"><포토 매거진></a> <a href=\"http://www.yonhapnews.co.kr/aboutus/4223030500.html\">< M-SPORTS ></a>\r\n<저작권자(c) 연합뉴스, 무단 전재-재배포 금지>",
+    "time": "2020-03-27T13:06:08.000Z",
+    "title": "대전·세종·충남 지방의원 재·보선에 16명 등록",
+    "__path": "News:5e7dfa4524aa9a000727254f"
+  },
+  {
+    "__id": "5e7dfa8324aa9a0007272569",
+    "provider": "20",
+    "__typename": "News",
+    "originUrl": null,
+    "id": "5e7dfa8324aa9a0007272569",
+    "meta": {
+      "source": "EBEST",
+      "__typename": "NewsMeta",
+      "__id": "0",
+      "__path": "News:5e7dfa8324aa9a0007272569:meta=>NewsMeta:0"
+    },
+    "content": "\r\n[머니투데이 진경진 기자] \r\n<img src=\"http://thumb.mt.co.kr/06/2020/03/2020032721560696441_1.jpg\" alt=\"아베 신조 일본 총리./사진=AFP\" border='0' vspace='5' hspace='5' align=\"\">\r\n일본에서 도쿄(東京)를 중심으로 코로나 19(신종 코로나 바이러스감염증) 확진자수가 \r\n급증하면서 감염 우려가 커지고있다. \r\n\r\nNHK 교도통신 등에 따르면 고이케 유리코(小池百合子)  도쿄도지사는 27일 정례 브리 \r\n핑에서 이날 오후 4시 기준 40명이 코로나19 신규 확진을 받았다고 밝혔다. 도쿄도에 \r\n서는 지난 25일 이후 3일 연속 40명대 신규 확진자가 발생했다.\r\n\r\n고이케 지사는 \"긴급사태를 선언할 만한 수준이냐\"는 질문에 \"아슬아슬한 단계\"라고  \r\n답했다. 그러면서 \"지금은 감염 폭발의 중대 국면\"이라며 \"해외에서 나타나고 있는 의\r\n료 붕괴가 일어나지 않도록 의료 기관과 온라인 진단 등 대책을 준비하려고 한다\"고  \r\n말했다.\r\n\r\n이어 \"이번 주말은 불요불급한 외출을 삼가달라\"며 \"위기 의식을 공유하고 적절한 행 \r\n동을 해야한다\"고 당부했다. \r\n\r\n일본 내 감염자수가 증가하면서 아베신조(安倍晋三)  총리가 '긴급사태'를 선포할지에\r\n 대해서도 관심이 주목되고 있다. 긴급사태는 국민의 생명과 건강에 중대한 피해를 주\r\n고, 민생과 경제에 현저한 영향을 미치는 경우 선포된다.\r\n\r\n긴급사태가 선언되면 주민들은 외출 자제 등 이동 제약과 시설 이용 제한, 토지·건물\r\n 등의 강제 의료시설화 등이 가능해진다.\r\n\r\n다만 이날 일본 정부는 현 단계에서 코로나19 대응을 위한 긴급사태를 선포할 필요가 \r\n없다는 입장을 밝혔다. \r\n\r\n미국 존스홉킨스대 집계에 따르면 이날 기준 일본 코로나19 확진자수는 1387명이며,  \r\n사망자는 47명이다.\r\n\r\n한편, 이 같은 시기에 아베 총리의 부인 아키에 여사는 연예인들과 벚꽃놀이를 한 사 \r\n진이 공개돼 논란이 일기도 했다.  \r\n\r\n\r\n\r\n\r\n\r\n<br /><div id=\"relnews_list\"><!--relatedstart-->[관련기사]<br>☞ <a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2020032708060861460&EMBA\">&#034;한국은 이런 나라&#034; 외국인 눈에 비친 우리 모습은</a><br>☞ <a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2020032614270968525&EMBA\">&#39;45분 만에 확인&#39; 美 진단키트…전문가들 우려하는 이유는</a><br>☞ <a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2020032714195581746&EMBA\">&#39;원룸 세입자&#39; 조주빈, 32억 벌었다기엔 의아한 생활</a><br>☞ <a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2020032713173230078&EMBA\">옷에 묻은 코로나 바이러스, 빨래하면 없어질까?</a><br>☞ <a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2020032716047687205&EMBA\">&#034;한국 진단키트, 세계가 원한다&#034;…美·UAE·인니, 3국 우선공급</a><br><br><!--relatedend--></div>진경진 기자 jkjin@mt.co.kr\r\n\r\n<!--textlinktopstart-->\r\n\t\t\t\t\t<strong><a href=\"http://www.kwdream.co.kr/loan/?type=out_mt_t\" target=\"_blank\">※주목※ \r\n총 수수료 0원+월 0.4%대 금리 ▶저비용 고수익 실현해볼까? (바로 가기)</a></strong><br>\r\n\t\t\t\t\r\n\t\t\t\t\t<strong><a href=\"http://mh.joystock.co.kr/landing/landing.php?inputpage=mh\" target=\"_blank\">※급등임박※ 무료 급등주 공개 ◀지금 바로 신청</a></strong><br>\r\n\t\t\t\t\r\n\t\t\t\t\t<strong><a href=\"http://web.mossinvest.com/n1/index.php?type=lin\" target=\"_blank\">코로나19 최대수혜주는?</a></strong><br>\r\n\t\t\t\t<!--textlinktopend--><!--powerIntstart--><br />\r\n[파워 인터뷰]<br>\r\n<a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2019081408535212578&amp;VBCC_P\"><img src=\"https://menu.mt.co.kr/ad/201908/20190819045017_hts0.jpg\" border=\"0\"></\r\na><br>\r\n<a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2019061216223014049\"><img src=\"https://menu.mt.co.kr/ad/201906/20190621030213_hts1.jpg\" border=\"0\"></\r\na><br><!--powerIntend--><!--textlinkstart-->\r\n\t\t\t\t\t<strong><a href=\"http://mh.joystock.co.kr/landing/landing.php?inputpage=mh\" target=\"_blank\">무료 급등주 공개 ◀지금 바로 신청</a></strong><br>\r\n\t\t\t\t\r\n\t\t\t\t\t<strong><a href=\"http://web.mossinvest.com/n1/index.php?type=lin\" target=\"_blank\">계좌복구 프로그램 지금 신청하기</a></strong><br>\r\n\t\t\t\t<!--textlinkend-->\r\n\r\n\r\n<저작권자 ⓒ '돈이 보이는 리얼타임 뉴스' 머니투데이, 무단전재 및 재배포 금지>\r\n",
+    "time": "2020-03-27T13:06:49.000Z",
+    "title": "日도쿄 확진자 사흘째 40명대…긴급사태 선포?\"아슬아슬한 단계\"",
+    "__path": "News:5e7dfa8324aa9a0007272569"
+  },
+  {
+    "__id": "5e7dfc4d24aa9a000727259b",
+    "provider": "26",
+    "__typename": "News",
+    "originUrl": null,
+    "id": "5e7dfc4d24aa9a000727259b",
+    "meta": {
+      "source": "EBEST",
+      "__typename": "NewsMeta",
+      "__id": "0",
+      "__path": "News:5e7dfc4d24aa9a000727259b:meta=>NewsMeta:0"
+    },
+    "content": "라임자산운용 사태에 연루된 신한금융투자 전직 임원이 구속됐다. 라임 사태의 핵심\r\n 용의자들이 잠적한 가운데 주요 피의자가 처음으로 구속돼 검찰이 수사에 속도를 \r\n낼 것이라는 전망이다.<br /><br /> 서울남부지방법원은 27일 오전 임모 전 신한금투 프라임브\r\n로커리지서비스(<span data-lang=\"en\" data-type=\"ore\">PBS</span>) 본부장의 구속 전 피의자 심문(영장실질심사)을 열고 구속영\r\n장을 발부했다. 재판부는 &quot;증거를 인멸할 염려 및 도망할 염려가 있으며 사안이 매\r\n우 엄중하다&quot;고 발부 이유를 설명했다.<br /><br /> 앞서 지난 26일 서울남부지방검찰청 형사6\r\n부(부장검사 조상원)는 임씨에 대해 특정경제범죄 가중처벌 등에 관한 법률 위반(수\r\n재, 사기) 및 자본시장법 위반 혐의로 구속영장을 청구했다.<br /><br /> 임씨는 현재 환매가 \r\n중단된 라임의 무역금융펀드가 글로벌 무역금융펀드에 직접 투자하는 것처럼 펀드 \r\n투자자들을 속여 480억원을 편취한 혐의를 받고 있다. 또한 신한금융투자가 라임자\r\n산운용과 함께 코스닥 상장사 리드에 투자하게 하고, 그 대가로 리드로부터 1억6500\r\n만원을 수수한 혐의도 받는다.<br /><br /> 리드는 라임자산운용이 최대주주로 있던 업체다. \r\n이 회사 경영진의 800억원대 회삿돈 횡령 사건에 연루된 이종필 전 라임자산운용 부\r\n사장은 영장실질심사를 앞두고 잠적했다.<br /><br /> 이날 남부지검은 이 전 부사장의 도피를\r\n 도운 조력자 성모씨와 한모씨 등 2명에 대해 범인도피 죄로 구속영장을 청구했다고\r\n 밝혔다.<br /><br />노유정 기자 yjroh@hankyung.com<br/><br/><br /><br /><strong><a href=\"http://ad.mapy.co.kr/vvvip001/Ryl8Wy/vAkNb2/hk02#info\" style=\"color:darkblue\" target=\"_blank\">▶▶[무료 공개]◀◀ \"100만원\"만 \r\n있어도 지금 당장 \"이것\"부터 사라!! >>> (바로확인)</a></strong><br /><strong><a href=\"http://www.x1.co.kr/landing.x1?type=9916&corp=x1\" style=\"color:darkblue\" target=\"_blank\">◆◆100%추가급등 예상◆\r\n◆ 개별주 장세 후속테마 TOP 3 (지금 추천받기)</a></strong><br /><strong><a href=\"http://www.x1.co.kr/loan.x1?action=main\" style=\"color:darkblue\" target=\"_blank\">최저금리로 갈아탈 수 있는 마\r\n지막 버스, 신용·미수·예담 대환하고 취급수수료 할인 받자!</a></strong><br /><strong><a href=\"http://ad.mapy.co.kr/vvvip001/Ryl8Wy/vAkNb2/hk01#info\" style=\"color:darkblue\" target=\"_blank\">▶▶[급등임박 \r\n공개]◀◀ 2020년 상반기 \"정부정책\" 수혜주 TOP 10 긴급공개 >>> (바로확인)</a></strong><br /><strong><a href=\"http://www.thinkstock.co.kr/\" style=\"color:darkblue\" target=\"_blank\">\r\n◈파격이벤트◈ 수수료없이 연2.79%부터, 추가자금받아 투자하자!! AI전문기업 ▲씽\r\n크풀스탁론▲</a></strong><br /><br/><br/><div id=\"relnews_list\"><div>관련기사</div><ul><li><a href=\"\"https://www.hankyung.com/article/202003264159e\" target=\"_blank\">\"순식간에 1억 벌었어요\" 노다지 어디길래</a></li><li><a href=\"\"https://www.hankyung.com/article/2020032765467\" target=\"_blank\">외국\r\n인들 \"한국 가면 코로나 검사 공짜\" 발칵</a></li><li><a href=\"\"https://www.hankyung.com/article/202003263068i\" target=\"_blank\">'큰손'들 급락장에 조용히 담은 종목, \r\n알고보니</a></li><li><a href=\"\"https://www.hankyung.com/article/2020032640601\" target=\"_blank\">팔짱만 끼고 있더니…韓 '최악의 상황'에 결국</a></li><li><a href=\"\"https://www.hankyung.com/article/202003274908i\" target=\"_blank\">삼성전자 주가, 5~6\r\n월을 기다려라</a></li></ul></div><br/><br/><br/>ⓒ 한국경제 & <a href=\"http://www.hankyung.com\" target=\"_blank\">\r\nhankyung.com</a>, 무단전재 및 재배포 금지\n",
+    "time": "2020-03-27T13:14:38.000Z",
+    "title": "'라임 사태' 신한금투 전 본부장 구속...\"사안 엄중\"",
+    "__path": "News:5e7dfc4d24aa9a000727259b"
+  },
+  {
+    "__id": "5e7dfe8a24aa9a00072725f7",
+    "provider": "11",
+    "__typename": "News",
+    "originUrl": null,
+    "id": "5e7dfe8a24aa9a00072725f7",
+    "meta": {
+      "source": "EBEST",
+      "__typename": "NewsMeta",
+      "__id": "0",
+      "__path": "News:5e7dfe8a24aa9a00072725f7:meta=>NewsMeta:0"
+    },
+    "content": "WHO에서도 한국의 코로나19 대응 경험 알려(종합)\n\r\n\n    \r\n    (제네바=연합뉴스) 임은진 특파원 = 한국의 신종 코로나바이러스 감염증(코로나\r\n19) 대응 사례가 세계보건기구(WHO)를 통해 세계 각국에 공유됐다.\r\n    박능후 보건복지부 장관은 27일(현지시간) WHO가 스위스 제네바에 있는 각국 대\r\n표부를 대상으로 진행하는 정례 화상 브리핑에서 한국의 코로나19 경험과 사례를 알\r\n렸다.\r\n    이는 지난 19일 열린 대표부 대상 정례 브리핑에서 테워드로스 아드하놈 거브러\r\n여수스 WHO 사무총장과 네덜란드 대표부가 한국 측에 요청하면서 이뤄졌다.\r\n    박능후 장관은 이날 브리핑에서 한국이 전염력이 강한 코로나19의 특성에 맞춰 \r\n체계적으로 대응한 사례를 전했다.\r\n    박 장관은 한국이 환자를 조속히 찾아내고 중증도에 따라 환자를 분류해 조처했\r\n으며, 매일 두 차례 정부 브리핑을 통해 투명성을 확보하고 시민들의 이동과 교류를\r\n 최대한 보장한 점 등을 소개했다.\r\n    그는 \"우리는 고도로 상호 연결된 세계 경제 속에서 살아가는 만큼 필수적인 경\r\n제 교류와 이동은 보장돼야 한다\"면서 \"한국은 특별입국절차와 밀접 접촉자 14일간 \r\n출국 금지 등을 통해 필요한 이동과 여행은 저해하지 않으면서 해외 유·출입에 따\r\n른 확산을 방지하고 있다\"고 밝혔다.\r\n\n\r\n    더불어 드라이브 스루와 워킹 스루 방식의 검체 채취 등 창의적인 대응은 물론,\r\n 각국의 요청에 따른 진단 키트의 수출 확대 노력도 알렸다.\r\n    그는 \"한국의 정보와 기술을 세계 각국과 공유하기 위해 자료 제공 및 원격 회\r\n의 개최 등을 수시로 진행하고 있다\"며 \"특히 WHO 참여 아래 코호트 임상 연구가 진\r\n행되고 있는 만큼 그 결과를 각국의 방역 정책과 국제 지침 마련에 기여할 수 있기\r\n를 바란다\"고 말했다.\r\n    이날 화상 브리핑에는 한국 외에도 중국과 일본, 싱가포르 등 3개국의 보건부 \r\n장관도 초청돼 자국의 코로나19 대응 경험을 전했다.\r\n    제네바에 본부를 둔 국제전기통신연합(ITU)에서도 질병관리본부 등이 정보통신\r\n기술(ICT)을 이용한 한국의 코로나19 대응 사례를 소개했다.\r\n    engine@yna.co.kr\r\n(끝)\n\n\r\n<a href=\"http://www.yonhapnews.co.kr/aboutus/4223030400.html\"><긴급속보 SMS 신청></a> <a href=\"http://yonhap.pumzine.com\"><포토 매거진></a> <a href=\"http://www.yonhapnews.co.kr/aboutus/4223030500.html\">< M-SPORTS ></a>\r\n<저작권자(c) 연합뉴스, 무단 전재-재배포 금지>",
+    "time": "2020-03-27T22:24:21.000Z",
+    "title": "WHO에서도 한국의 코로나19 대응 경험 알려(종합)",
+    "__path": "News:5e7dfe8a24aa9a00072725f7"
+  },
+  {
+    "__id": "5e7dff1024aa9a000727260f",
+    "provider": "11",
+    "__typename": "News",
+    "originUrl": null,
+    "id": "5e7dff1024aa9a000727260f",
+    "meta": {
+      "source": "EBEST",
+      "__typename": "NewsMeta",
+      "__id": "0",
+      "__path": "News:5e7dff1024aa9a000727260f:meta=>NewsMeta:0"
+    },
+    "content": "이탈리아도 말라리아·에이즈 치료제 사용 승인\n    \r\n\n    \r\n    (로마=연합뉴스) 전성훈 특파원 = 이탈리아 당국이 신종 코로나바이러스 감염증\r\n(코로나19) 환자에 대한 말라리아 및 에이즈 치료제 투약을 승인했다.\r\n    27일(현지시간) 현지 언론에 따르면 이탈리아 당국은 말라리아 치료제인 클로로\r\n퀸과 클로로퀸 계열 유사 약물인 하이드록시클로로퀸을 코로나19 환자 치료에 사용\r\n하도록 허가했다.\r\n    미국 식품의약국(FDA)의 승인을 받은 에이즈 치료제 성분인 로피나비르와 리토\r\n나비르 사용도 가능해졌다.\r\n    코로나19 환자에 해당 치료제를 사용할 경우 전액 의료보험 혜택이 적용된다.\r\n    26일 기준 이탈리아의 코로나19 누적 확진자 수는 8만539명, 누적 사망자 수는 \r\n8천165명이다. \r\n    누적 사망자 규모는 세계 최대이며, 누적 확진자도 현재의 증가 추이라면 미국(\r\n8만5천162명)과 중국(8만1천340명)을 넘어 세계 최대를 기록할 가능성이 크다. \r\n    lucho@yna.co.kr\r\n(끝)\n\n\r\n<a href=\"http://www.yonhapnews.co.kr/aboutus/4223030400.html\"><긴급속보 SMS 신청></a> <a href=\"http://yonhap.pumzine.com\"><포토 매거진></a> <a href=\"http://www.yonhapnews.co.kr/aboutus/4223030500.html\">< M-SPORTS ></a>\r\n<저작권자(c) 연합뉴스, 무단 전재-재배포 금지>",
+    "time": "2020-03-27T22:26:36.000Z",
+    "title": "이탈리아도 말라리아·에이즈 치료제 사용 승인",
+    "__path": "News:5e7dff1024aa9a000727260f"
+  },
+  {
+    "__id": "5e7dffac24aa9a0007272635",
+    "provider": "20",
+    "__typename": "News",
+    "originUrl": null,
+    "id": "5e7dffac24aa9a0007272635",
+    "meta": {
+      "source": "EBEST",
+      "__typename": "NewsMeta",
+      "__id": "0",
+      "__path": "News:5e7dffac24aa9a0007272635:meta=>NewsMeta:0"
+    },
+    "content": "\r\n[머니투데이 정한결 기자] \r\n<img src=\"http://thumb.mt.co.kr/06/2020/03/2020032722032739372_1.jpg\" alt=\"라임자산운용 사모펀드 환매 중단 사태와 관련해 긴급 체포된 신한금융투자 전 본부장 임모씨가 27일 오후 서울 남부지방법원에서 영장실질심사를 받은 뒤 청사를 나서고 있다. / 사진=이동훈 기자 photoguy@\" border='0' vspace='5' hspace='5' align=\"\">\r\n라임자산운용이 리드에 투자하는 과정에서 투자자문사를 차려 돈을 챙긴 혐의를 받는 \r\n신한금융투자 전 임원이 구속됐다.\r\n\r\n27일 박원규 서울남부지법 영장전담 부장판사는 이날 특정경제범죄가중처벌법상 수재 \r\n및 사기, 자본시장법 위반 혐의로 임모 전 신한금투 PBS(프라임브로커리지) 본부장에 \r\n대한 구속영장을 발부했다. \r\n\r\n재판부는 \"증거를 인멸하고 도주할 염려가 있는 가운데 사안이 매우 엄중하다\"고 구속\r\n 사유를 밝혔다. \r\n\r\n검찰에 따르면 임 전 본부장은 신한금투가 라임자산운용과 함께 리드에 투자를 해주고\r\n 그 대가로 리드로부터 1억6500만원의 금품을 수수한 혐의를 받는다. 임 전 본부장은 \r\n이 과정에서 따로 부티크(투자자문사)를 차린 것으로 알려졌다.\r\n\r\n라임은 2017~2018년 세 차례에 걸쳐 총 644억 원을 리드에 투자했다. 그러나 투자액  \r\n상당수는 리드에서 쓰이지 않았다. 검찰 조사에 따르면 박모 전 리드 부회장 주도 아 \r\n래 사채 대금을 갚는데 쓰이거나 이종필 전 라임 부사장의 회사로 흘러들어갔다.\r\n\r\n검찰은 라임이 리드에 투자하는 과정에서 임 전 본부장이 부티크를 내세워 투자자문  \r\n명목으로 수수료를 챙긴 것으로 보고 있다.\r\n\r\n임 전 본부장은 펀드 가입자들에게 해외 무역금융펀드에 직접 투자하는 상품인 것처럼\r\n 속여 480억원을 편취한 혐의도 받는다. 이에 라임 사태로 피해를 본 투자자들 일부는\r\n 임 전 본부장을 사기 혐의로 고발했다. 금융감독원도 임 전 본부장과 이 전 라임 부 \r\n사장을 사기와 배임 혐의로 검찰에 통보한 바 있다.\r\n\r\n검찰은 지난 25일 임 전 본부장을 오전 10시쯤 체포, 26일 구속영장을 청구했다. 임  \r\n전 본부장은 이날 오전 서울남부지법에 구속 전 피의자심문(영장실질심사)을 받기 위 \r\n해 출석했지만 취재진의 질문에는 침묵을 지켰다. \r\n\r\n검찰이 라임 사건과 관련해 강제로 신병을 확보한 건 이번이 처음이다. 검찰은 이날  \r\n또 핵심 혐의자인 이 전 부사장의 도피를 도운 조력자 2명에 대해 구속영장을 청구했 \r\n다. 다만 아직까지 이 전 부사장의 신병은 확보하지 못한 것으로 파악된다. 이 전 부 \r\n사장에 대해서는 현재 인터폴 적색 수배가 내려진 상태다.\r\n\r\n<br /><div id=\"relnews_list\"><!--relatedstart-->[관련기사]<br>☞ <a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2020032708060861460&EMBA\">&#034;한국은 이런 나라&#034; 외국인 눈에 비친 우리 모습은</a><br>☞ <a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2020032614270968525&EMBA\">&#39;45분 만에 확인&#39; 美 진단키트…전문가들 우려하는 이유는</a><br>☞ <a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2020032714195581746&EMBA\">&#39;원룸 세입자&#39; 조주빈, 32억 벌었다기엔 의아한 생활</a><br>☞ <a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2020032713173230078&EMBA\">옷에 묻은 코로나 바이러스, 빨래하면 없어질까?</a><br>☞ <a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2020032716047687205&EMBA\">&#034;한국 진단키트, 세계가 원한다&#034;…美·UAE·인니, 3국 우선공급</a><br><br><!--relatedend--></div>정한결 기자 hanj@mt.co.kr\r\n\r\n<!--textlinktopstart-->\r\n\t\t\t\t\t<strong><a href=\"http://www.kwdream.co.kr/loan/?type=out_mt_t\" target=\"_blank\">※주목※ \r\n총 수수료 0원+월 0.4%대 금리 ▶저비용 고수익 실현해볼까? (바로 가기)</a></strong><br>\r\n\t\t\t\t\r\n\t\t\t\t\t<strong><a href=\"http://mh.joystock.co.kr/landing/landing.php?inputpage=mh\" target=\"_blank\">※급등임박※ 무료 급등주 공개 ◀지금 바로 신청</a></strong><br>\r\n\t\t\t\t\r\n\t\t\t\t\t<strong><a href=\"http://web.mossinvest.com/n1/index.php?type=lin\" target=\"_blank\">코로나19 최대수혜주는?</a></strong><br>\r\n\t\t\t\t<!--textlinktopend--><!--powerIntstart--><br />\r\n[파워 인터뷰]<br>\r\n<a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2019081408535212578&amp;VBCC_P\"><img src=\"https://menu.mt.co.kr/ad/201908/20190819045017_hts0.jpg\" border=\"0\"></\r\na><br>\r\n<a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2019061216223014049\"><img src=\"https://menu.mt.co.kr/ad/201906/20190621030213_hts1.jpg\" border=\"0\"></\r\na><br><!--powerIntend--><!--textlinkstart-->\r\n\t\t\t\t\t<strong><a href=\"http://mh.joystock.co.kr/landing/landing.php?inputpage=mh\" target=\"_blank\">무료 급등주 공개 ◀지금 바로 신청</a></strong><br>\r\n\t\t\t\t\r\n\t\t\t\t\t<strong><a href=\"http://web.mossinvest.com/n1/index.php?type=lin\" target=\"_blank\">계좌복구 프로그램 지금 신청하기</a></strong><br>\r\n\t\t\t\t<!--textlinkend-->\r\n\r\n\r\n<저작권자 ⓒ '돈이 보이는 리얼타임 뉴스' 머니투데이, 무단전재 및 재배포 금지>\r\n",
+    "time": "2020-03-27T22:29:07.000Z",
+    "title": "'라임 사태' 연루 신한금투 전 임원 구속",
+    "__path": "News:5e7dffac24aa9a0007272635"
+  },
+  {
+    "__id": "5e7dffda24aa9a000727263f",
+    "provider": "25",
+    "__typename": "News",
+    "originUrl": null,
+    "id": "5e7dffda24aa9a000727263f",
+    "meta": {
+      "source": "EBEST",
+      "__typename": "NewsMeta",
+      "__id": "0",
+      "__path": "News:5e7dffda24aa9a000727263f:meta=>NewsMeta:0"
+    },
+    "content": "<a href=\"http://www.yasl.co.kr/\" target=\"_blank\">▷주식매입자금은 수수료 없는 연2.79% 야호스탁론으로! </a>\r\n\r\n <img src=http://file.mk.co.kr/neds/20200327/20200327_4437673_1585315780.jpg                                                          ><br>\n 한국의 코로나19 대응 사례가 세계보건기구(WHO)를 통해 세계 각국에 공유됐다.\r\n박능후 보건복지부 장관은 27일(현지시간) WHO가 스위스 제네바에 있는 각국 대표부\r\n를 대상으로 진행하는 정례 화상 브리핑에서 한국의 코로나19 경험과 사례를 알렸다\r\n.\r\n이는 지난 19일 열린 대표부 대상 정례 브리핑에서 테워드로스 아드하놈 거브러여수\r\n스 WHO 사무총장과 네덜란드 대표부가 한국 측에 요청하면서 이뤄졌다.\r\n박능후 장관은 이날 브리핑에서 한국이 전염력이 강한 코로나19의 특성에 맞춰 체계\r\n적으로 대응한 사례를 전했다.\r\n박 장관은 한국이 환자를 조속히 찾아내고 중증도에 따라 환자를 분류해 조처했으며\r\n, 매일 두 차례 정부 브리핑을 통해 투명성을 확보하고 시민들의 이동과 교류를 최\r\n대한 보장한 점 등을 소개했다.\r\n그는 \"우리는 고도로 상호 연결된 세계 경제 속에서 살아가는 만큼 필수적인 경제 \r\n교류와 이동은 보장돼야 한다\"면서 \"한국은 특별입국절차와 밀접 접촉자 14일간 출\r\n국 금지 등을 통해 필요한 이동과 여행은 저해하지 않으면서 해외 유·출입에 따른 \r\n확산을 방지하고 있다\"고 밝혔다.\r\n더불어 드라이브 스루와 워킹 스루 방식의 검체 채취 등 창의적인 대응은 물론, 각\r\n국의 요청에 따른 진단 키트의 수출 확대 노력도 알렸다.\r\n그는 \"한국의 정보와 기술을 세계 각국과 공유하기 위해 자료 제공 및 원격 회의 개\r\n최 등을 수시로 진행하고 있다\"며 \"특히 WHO 참여 아래 코호트 임상 연구가 진행되\r\n고 있는 만큼 그 결과를 각국의 방역 정책과 국제 지침 마련에 기여할 수 있기를 바\r\n란다\"고 말했다.\r\n[디지털뉴스국]\r\n\r\n\r\n\r\n\r\n<!-- r_start //--><a href=\"http://xn--6o2b15ym2a7ma.kr/\" target=\"_blank\"><img src=\"http://img.mk.co.kr/mk/1/20200327/stock_banner/202003270754181118126.jpg\"></a><br/><br>☞ <a href=\"http://vip.mk.co.kr/newSt/invest/invest_view.php?p_page=&sCode=68&t_uid=30&c_uid=29021&search=\" target=\"_blank\"><font color=\"#4F81BD\">조용히 사서 묻어놔라! 3月 정말 큰돈 된다!</font></a><br>☞ <a href=\"http://vip.mk.co.kr/newSt/invest/invest_view.php?p_page=&sCode=68&t_uid=30&c_uid=29018&search=\" target=\"_blank\"><font color=\"#4F81BD\">7000% 바이오 신기술 터진다! 독점계약 일대 大파란!</font></a><br>☞ <a href=\"http://vip.mk.co.kr/newSt/invest/invest_view.php?p_page=&sCode=68&t_uid=30&c_uid=29019&search=\" target=\"_blank\"><font color=\"#4F81BD\">200조 핵심기술 세계 최초 개발! 단돈 3천원대 황금종목!!!</font></a><br>☞ <a href=\"http://vip.mk.co.kr/newSt/invest/invest_view.php?p_page=&sCode=68&t_uid=30&c_uid=29017&search=\" target=\"_blank\"><font color=\"#4F81BD\">180조 시장 석권할 바이오 황제주!!</font></a><!-- r_end //-->\r\n\r\n[ⓒ 매일경제 & mk.co.kr, 무단전재 및 재배포 금지]<br>\r\n\r\n",
+    "time": "2020-03-27T22:29:57.000Z",
+    "title": "WHO에서도 한국의 코로나19 대응 경험·사례 알려",
+    "__path": "News:5e7dffda24aa9a000727263f"
+  },
+  {
+    "__id": "5e7dffe124aa9a0007272649",
+    "provider": "20",
+    "__typename": "News",
+    "originUrl": null,
+    "id": "5e7dffe124aa9a0007272649",
+    "meta": {
+      "source": "EBEST",
+      "__typename": "NewsMeta",
+      "__id": "0",
+      "__path": "News:5e7dffe124aa9a0007272649:meta=>NewsMeta:0"
+    },
+    "content": "\r\n[머니투데이 김근희 기자] [5명 중 3명 대구지역 확진자]\r\n\r\n <img src=\"http://thumb.mt.co.kr/06/2020/03/2020032722260637853_1.jpg\" alt=\"삽화_코로나19,코로나,바이러스,마스크,우한, 우한폐렴 / 사진=김현정디자인기자\" border='0' vspace='5' hspace='5' align=\"\">질병관리본부 중앙방역대책본부(방대본)는 국내 코로나19(신종 코로나바이러스 감염증\r\n) 사망자가 5명 추가 발생했다고 27일 밝혔다. 이로써 국내 코로나19 사망자는 144명 \r\n으로 늘었다. \r\n\r\n이날 추가된 사망자 5명 중 3명은 대구 지역 환자이고, 나머지 2명은 각각 경북과 경 \r\n기 지역 환자다. \r\n\r\n140번째 사망자는 88세 여성으로 지난 18일 확진 판정을 받고 대구의료원에서 입원 치\r\n료 중 지난 26일 사망했다. \r\n\r\n87세 남성인 141번째 사망자도 지난 18일 확진 판정을 받았다. 대구가톨릭대병원 입원\r\n치료 중 이날 숨졌다. \r\n\r\n경북 지역 확진 환자인 142번째 사망자는 92세 남성이다. 지난 20일 확진 판정을 받아\r\n 안동의료원에 입원했고, 이날 사망했다. \r\n\r\n143번째 사망자는 95세 여성으로 경기 지역 확진 환자다. 지난 26일 코로나19 양성이 \r\n나와 경기의료원 수원병원에 입원했고, 이날 숨졌다. \r\n\r\n81세 여성인 144번째 사망자는 지난 17일 확진 판정을 받았고, 대구 파티마병원 입원 \r\n치료 중 지난 26일 사망했다. \r\n\r\n중대본은 이들의 사망 원인에 대해 조사 중이다. \r\n\r\n<br /><div id=\"relnews_list\"><!--relatedstart-->[관련기사]<br>☞ <a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2020032708060861460&EMBA\">&#034;한국은 이런 나라&#034; 외국인 눈에 비친 우리 모습은</a><br>☞ <a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2020032614270968525&EMBA\">&#39;45분 만에 확인&#39; 美 진단키트…전문가들 우려하는 이유는</a><br>☞ <a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2020032714195581746&EMBA\">&#39;원룸 세입자&#39; 조주빈, 32억 벌었다기엔 의아한 생활</a><br>☞ <a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2020032713173230078&EMBA\">옷에 묻은 코로나 바이러스, 빨래하면 없어질까?</a><br>☞ <a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2020032716047687205&EMBA\">&#034;한국 진단키트, 세계가 원한다&#034;…美·UAE·인니, 3국 우선공급</a><br><br><!--relatedend--></div>김근희 기자 keun7@mt.co.kr\r\n\r\n<!--textlinktopstart-->\r\n\t\t\t\t\t<strong><a href=\"http://www.kwdream.co.kr/loan/?type=out_mt_t\" target=\"_blank\">※주목※ \r\n총 수수료 0원+월 0.4%대 금리 ▶저비용 고수익 실현해볼까? (바로 가기)</a></strong><br>\r\n\t\t\t\t\r\n\t\t\t\t\t<strong><a href=\"http://mh.joystock.co.kr/landing/landing.php?inputpage=mh\" target=\"_blank\">※급등임박※ 무료 급등주 공개 ◀지금 바로 신청</a></strong><br>\r\n\t\t\t\t\r\n\t\t\t\t\t<strong><a href=\"http://web.mossinvest.com/n1/index.php?type=lin\" target=\"_blank\">코로나19 최대수혜주는?</a></strong><br>\r\n\t\t\t\t<!--textlinktopend--><!--powerIntstart--><br />\r\n[파워 인터뷰]<br>\r\n<a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2019081408535212578&amp;VBCC_P\"><img src=\"https://menu.mt.co.kr/ad/201908/20190819045017_hts0.jpg\" border=\"0\"></\r\na><br>\r\n<a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2019061216223014049\"><img src=\"https://menu.mt.co.kr/ad/201906/20190621030213_hts1.jpg\" border=\"0\"></\r\na><br><!--powerIntend--><!--textlinkstart-->\r\n\t\t\t\t\t<strong><a href=\"http://mh.joystock.co.kr/landing/landing.php?inputpage=mh\" target=\"_blank\">무료 급등주 공개 ◀지금 바로 신청</a></strong><br>\r\n\t\t\t\t\r\n\t\t\t\t\t<strong><a href=\"http://web.mossinvest.com/n1/index.php?type=lin\" target=\"_blank\">계좌복구 프로그램 지금 신청하기</a></strong><br>\r\n\t\t\t\t<!--textlinkend-->\r\n\r\n\r\n<저작권자 ⓒ '돈이 보이는 리얼타임 뉴스' 머니투데이, 무단전재 및 재배포 금지>\r\n",
+    "time": "2020-03-27T22:30:00.000Z",
+    "title": "코로나19 사망자 5명 늘어…누적 144명",
+    "__path": "News:5e7dffe124aa9a0007272649"
+  },
+  {
+    "__id": "5e7e00a824aa9a0007272679",
+    "provider": "20",
+    "__typename": "News",
+    "originUrl": null,
+    "id": "5e7e00a824aa9a0007272679",
+    "meta": {
+      "source": "EBEST",
+      "__typename": "NewsMeta",
+      "__id": "0",
+      "__path": "News:5e7e00a824aa9a0007272679:meta=>NewsMeta:0"
+    },
+    "content": "\r\n[머니투데이 진경진 기자] \r\n<img src=\"http://thumb.mt.co.kr/06/2020/03/2020032722243660221_1.jpg\" alt=\"남아프리카공화국 요하네스버그 내 한 슈퍼마켓 모습./사진=AFP\" border='0' vspace='5' hspace='5' align=\"\">\r\n남아프리카공화국(남아공)에서 코로나19(신종 코로나바이러스 감염증) 감염으로 2명의\r\n 사망자가 발생했다. 남아공에서 코로나19로 사망한 첫번째 사례다.\r\n\r\n현지매체와 BBC 등에 따르면 남아공 보건부는 27일(현지시간) \"우리는 코로나19로 첫 \r\n번째 사망자가 발생했다는 소식으로 잠에서 깼다\"며  \"두 명의 사망자 모두 웨스턴케 \r\n이프주 내 병원에서 발생했다\"고 밝혔다.\r\n\r\n남아공 내 코로나19 확진자는 전날 927명에서 1000명 이상으로 증가했다.\r\n\r\n앞서 남아공은 코로나19 확산에 따라 이날 0시부터 다음달 16일 밤 12시까지 3주간 통\r\n행 제한에 돌입했다. \r\n\r\n이 기간 모든 주민들은 집안에 머물러야 하며 식료품을 사거나 응급상황 등의 경우에 \r\n만 예외적으로 외출이 허용된다. 음주 및 조깅, 애완견 산책 등을 금지된다. 이에 식 \r\n료품점에서도 주류는 판매하지 않는다.\r\n\r\n남아공 정부는 이를 위반하는 경우 6개월의 징역이나 벌금에 처하겠다고 경고했다. \r\n\r\n\r\n\r\n<br /><div id=\"relnews_list\"><!--relatedstart-->[관련기사]<br>☞ <a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2020032708060861460&EMBA\">&#034;한국은 이런 나라&#034; 외국인 눈에 비친 우리 모습은</a><br>☞ <a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2020032614270968525&EMBA\">&#39;45분 만에 확인&#39; 美 진단키트…전문가들 우려하는 이유는</a><br>☞ <a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2020032714195581746&EMBA\">&#39;원룸 세입자&#39; 조주빈, 32억 벌었다기엔 의아한 생활</a><br>☞ <a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2020032713173230078&EMBA\">옷에 묻은 코로나 바이러스, 빨래하면 없어질까?</a><br>☞ <a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2020032716047687205&EMBA\">&#034;한국 진단키트, 세계가 원한다&#034;…美·UAE·인니, 3국 우선공급</a><br><br><!--relatedend--></div>진경진 기자 jkjin@mt.co.kr\r\n\r\n<!--textlinktopstart-->\r\n\t\t\t\t\t<strong><a href=\"http://www.kwdream.co.kr/loan/?type=out_mt_t\" target=\"_blank\">※주목※ \r\n총 수수료 0원+월 0.4%대 금리 ▶저비용 고수익 실현해볼까? (바로 가기)</a></strong><br>\r\n\t\t\t\t\r\n\t\t\t\t\t<strong><a href=\"http://mh.joystock.co.kr/landing/landing.php?inputpage=mh\" target=\"_blank\">※급등임박※ 무료 급등주 공개 ◀지금 바로 신청</a></strong><br>\r\n\t\t\t\t\r\n\t\t\t\t\t<strong><a href=\"http://web.mossinvest.com/n1/index.php?type=lin\" target=\"_blank\">코로나19 최대수혜주는?</a></strong><br>\r\n\t\t\t\t<!--textlinktopend--><!--powerIntstart--><br />\r\n[파워 인터뷰]<br>\r\n<a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2019081408535212578&amp;VBCC_P\"><img src=\"https://menu.mt.co.kr/ad/201908/20190819045017_hts0.jpg\" border=\"0\"></\r\na><br>\r\n<a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2019061216223014049\"><img src=\"https://menu.mt.co.kr/ad/201906/20190621030213_hts1.jpg\" border=\"0\"></\r\na><br><!--powerIntend--><!--textlinkstart-->\r\n\t\t\t\t\t<strong><a href=\"http://mh.joystock.co.kr/landing/landing.php?inputpage=mh\" target=\"_blank\">무료 급등주 공개 ◀지금 바로 신청</a></strong><br>\r\n\t\t\t\t\r\n\t\t\t\t\t<strong><a href=\"http://web.mossinvest.com/n1/index.php?type=lin\" target=\"_blank\">계좌복구 프로그램 지금 신청하기</a></strong><br>\r\n\t\t\t\t<!--textlinkend-->\r\n\r\n\r\n<저작권자 ⓒ '돈이 보이는 리얼타임 뉴스' 머니투데이, 무단전재 및 재배포 금지>\r\n",
+    "time": "2020-03-27T22:33:20.000Z",
+    "title": "남아공서 코로나19 첫 사망…\"통행 제한 기간 음주 금지\"",
+    "__path": "News:5e7e00a824aa9a0007272679"
+  },
+  {
+    "__id": "5e7e010524aa9a0007272691",
+    "provider": "32",
+    "__typename": "News",
+    "originUrl": null,
+    "id": "5e7e010524aa9a0007272691",
+    "meta": {
+      "source": "EBEST",
+      "__typename": "NewsMeta",
+      "__id": "0",
+      "__path": "News:5e7e010524aa9a0007272691:meta=>NewsMeta:0"
+    },
+    "content": "이탈리아 당국이 우한 코로나(코로나19) 환자에 대한 말라리아와 에이즈 치료제 투\r\n약을 승인했다.\n\n27일(현지 시각) 현지 언론에 따르면 이탈리아 당국은 말라리아 치료제인 클로로퀸\r\n과 클로로퀸 계열 유사 약물인 하이드록시클로로퀸을 우한 코로나 환자 치료에 사용\r\n하도록 허가했다. 미국 식품의약국(FDA)의 승인을 받은 에이즈 치료제 성분인 로피\r\n나비르와 리토나비르 사용도 가능해졌다.\n\n우한 코로나 환자에 이 치료제를 사용하면 전액 의료보험 혜택이 적용된다.\n26일 기준 이탈리아 우한 코로나 누적 확진자 수는 8만539명, 누적 사망자 수는 816\r\n5명이다. 누적 사망자 규모로는 세계 최대다.\n 이다비 기자 dabee@chosunbiz.comCopyrights ⓒ ChosunBiz.com\n",
+    "time": "2020-03-27T22:33:31.000Z",
+    "title": "이탈리아도 우한 코로나에 '말라리아·에이즈 치료제' 사용 승인",
+    "__path": "News:5e7e010524aa9a0007272691"
+  },
+  {
+    "__id": "5e7e024024aa9a00072726b9",
+    "provider": "26",
+    "__typename": "News",
+    "originUrl": null,
+    "id": "5e7e024024aa9a00072726b9",
+    "meta": {
+      "source": "EBEST",
+      "__typename": "NewsMeta",
+      "__id": "0",
+      "__path": "News:5e7e024024aa9a00072726b9:meta=>NewsMeta:0"
+    },
+    "content": "<FONT color=#666666><STRONG>송파구, 석촌호수 벚꽃 축제 취소<br />\n내달 12일까지 진출입로 전면 폐쇄</STRONG></FONT><br />\n<br /><br />\n<img align=\"\" alt=\"\" src=\"https://img.hankyung.com/photo/202003/03.16383049.1.jpg\" width=\"630\" height=\"946\" title=\"\" /><br />송파구가 석촌호수 벚꽃 축제를 취소한데 이어 전면 폐쇄하기로 했다.<br /><br />송파구는 \r\n27일 오는 28일부터 다음 달 12일까지 석촌호수 진출입로를 전면 폐쇄한다고 밝혔다\r\n. 송파구는 &quot;축제를 취소했지만, 벚꽃이 피는 3월 말부터 4월 초 사이 꽃구경을 위\r\n해 많은 사람이 찾아올 것으로 보여 이런 조치를 했다&quot;고 밝혔다. 2000년대 초반 벚\r\n꽃축제 시작한 이래 석촌호수 입장이 통제된 것은 이번이 처음이다.<br /><br />방역 당국에서\r\n &#39;사회적 거리두기&#39;를 권고하고 있는 만큼 벚꽃을 보기 위해 석촌호수에 사람들이 \r\n몰리는 것을 방지하기 위해 54개 진입로에 166개에 달하는 안전펜스를 설치하기로 \r\n했다. 또 2인 1조로 구성된 통제 요원을 산책로에 배치해 방문객의 이동을 통제할 \r\n예정이다. <br /><br />더불어 400만명이 찾았던 진해군항제가 올해 취소된 데 이어 여좌천 등\r\n 진해지역 벚꽃 명소도 24일부터 사실상 출입이 전면 통제됐다. <br /><br />더불어 여의도 벚\r\n꽃 축제를 취소한 영등포구도 대책 마련에 분주하다. 영등포구는 개화 기간에 벚꽃 \r\n명소 구간을 출입 통제하는 방안을 검토하고 있다.<br /><br />장지민 한경닷컴 객원기자 news\r\ninfo@hankyung.com<br/><br/><br /><br /><strong><a href=\"http://ad.mapy.co.kr/vvvip001/Ryl8Wy/vAkNb2/hk02#info\" style=\"color:darkblue\" target=\"_blank\">▶▶[무료 공개]◀◀ \"100만원\"만 있어도 지금 당장 \"이것\"\r\n부터 사라!! >>> (바로확인)</a></strong><br /><strong><a href=\"http://www.x1.co.kr/landing.x1?type=9916&corp=x1\" style=\"color:darkblue\" target=\"_blank\">◆◆100%추가급등 예상◆◆ 개별주 장세 후속테마 \r\nTOP 3 (지금 추천받기)</a></strong><br /><strong><a href=\"http://www.x1.co.kr/loan.x1?action=main\" style=\"color:darkblue\" target=\"_blank\">최저금리로 갈아탈 수 있는 마지막 버스, 신용·미수·\r\n예담 대환하고 취급수수료 할인 받자!</a></strong><br /><strong><a href=\"http://ad.mapy.co.kr/vvvip001/Ryl8Wy/vAkNb2/hk01#info\" style=\"color:darkblue\" target=\"_blank\">▶▶[급등임박 공개]◀◀ 2020년 상반기 \r\n\"정부정책\" 수혜주 TOP 10 긴급공개 >>> (바로확인)</a></strong><br /><strong><a href=\"http://www.thinkstock.co.kr/\" style=\"color:darkblue\" target=\"_blank\">◈파격이벤트◈ 수수료없이\r\n 연2.79%부터, 추가자금받아 투자하자!! AI전문기업 ▲씽크풀스탁론▲</a></strong><br /><br/><br/><div id=\"relnews_list\"><div>관련기\r\n사</div><ul><li><a href=\"\"https://www.hankyung.com/article/202003264159e\" target=\"_blank\">\"순식간에 1억 벌었어요\" 노다지 어디길래</a></li><li><a href=\"\"https://www.hankyung.com/article/2020032765467\" target=\"_blank\">외국인들 \"한국 가면 코로나 검\r\n사 공짜\" 발칵</a></li><li><a href=\"\"https://www.hankyung.com/article/202003263068i\" target=\"_blank\">'큰손'들 급락장에 조용히 담은 종목, 알고보니</a></li><li><a href=\"\"https://www.hankyung.com/article/2020032640601\" target=\"_blank\">팔짱만 끼고 \r\n있더니…韓 '최악의 상황'에 결국</a></li><li><a href=\"\"https://www.hankyung.com/article/202003274908i\" target=\"_blank\">삼성전자 주가, 5~6월을 기다려라</a></li></ul></div><br/><br/><br/>ⓒ 한\r\n국경제 & <a href=\"http://www.hankyung.com\" target=\"_blank\">hankyung.com</a>, 무단전재 \r\n및 재배포 금지\n",
+    "time": "2020-03-27T22:39:53.000Z",
+    "title": "석촌호수 폐쇄, 다음달 12일까지 진출입로 막아 \"꽃놀이는 내년에\"",
+    "__path": "News:5e7e024024aa9a00072726b9"
+  },
+  {
+    "__id": "5e7e027124aa9a00072726c1",
+    "provider": "20",
+    "__typename": "News",
+    "originUrl": null,
+    "id": "5e7e027124aa9a00072726c1",
+    "meta": {
+      "source": "EBEST",
+      "__typename": "NewsMeta",
+      "__id": "0",
+      "__path": "News:5e7e027124aa9a00072726c1:meta=>NewsMeta:0"
+    },
+    "content": "\r\n[머니투데이 권다희  기자] [[the300]]\r\n\r\n<img src=\"http://thumb.mt.co.kr/06/2020/03/2020032722217666530_1.jpg\" alt=\"(인천=뉴스1) 정진욱 기자 = 8일 오전 인천시 계양구 국제평화지원단에서 한빛부대 11진 환송식이 열리고 있다.한빛부대 11진은  파병기간 동안 남수단의 동맥인 보르~피보르(322km)를 연결하는 주요 도로 재건과 보수작전을 통해 경제활성화와 현지 주민 통합에 기여할 계획이다. 2019.7.8/뉴스1\" border='0' vspace='5' hspace='5' align=\"\">\r\n\r\n아프리카 남수단에 파병된 한빛부대 11진 장병이 27일 에티오피아 항공 전세기를 이용\r\n해 귀국길에 올랐다.\r\n\r\n국방부 관계자는 한빛부대 11진 장병들이 이날 오후 9시50분 에티오피아 항공기편으로\r\n 남수단을 출발했다고 밝혔다. 이들은 28일 오전 11시10분께 인천국제공항에 도착할  \r\n예정이다.\r\n\r\n2013년 유엔의 요청으로 남수단에 파견돼 인도적 재건 임무를 수행해 온 한빛 부대는 \r\n8개월 단위로 임무를 교대해 왔다. 당초 한빛부대 12진이 지난 9일과 23일 두 차례에 \r\n걸쳐 남수단으로 출발해 11진과 임무를 교대할 예정이었다. \r\n\r\n그러나 남수단측이 최근 코로나19 확산을 막기 위해 새로운 평화유지군의 자국 입국  \r\n중지를 국방부측에 요청하면서 11진과 12진의 정상적인 교대가 어렵게 됐다.\r\n\r\n국방부는 한빛부대 11진 중 10여 명이 다음달 초 전역을 앞두고 있고, 4·15 총선에서\r\n 장병들의 선거권 보장이 필요하다는 점 등을 이유로 임무 교대 없이 일부 복귀를 결 \r\n정한 것으로 파악된다. \r\n\r\n국방부는 \"코로나19 상황으로 한빛부대 11, 12진 교대가 지연됨에 따라 11진 인원 중 \r\n주둔지 경계와 관리를 위한 필수 인원은 현지에 잔류하게 된다\"고 전했다. \r\n\r\n귀국하는 한빛부대 11진 장병은 모두 코로나19 진단검사를 받게 되며, 음성이어도 2주\r\n간 자가격리를 하게 된다. 확진자가 발생할 경우, 전원 육군학생군사학교 내 격리조치\r\n된다. \r\n\r\n국방부는 \"정부는 한빛부대의 정상적 임무수행을 위해 조속한 시일 내에 12진이 투입 \r\n될 수 있도록 주둔국 및 유엔과의 협의 등 외교적 노력을 지속할 계획\"이라 덧붙였다.\r\n\r\n<br /><div id=\"relnews_list\"><!--relatedstart-->[관련기사]<br>☞ <a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2020032708060861460&EMBA\">&#034;한국은 이런 나라&#034; 외국인 눈에 비친 우리 모습은</a><br>☞ <a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2020032614270968525&EMBA\">&#39;45분 만에 확인&#39; 美 진단키트…전문가들 우려하는 이유는</a><br>☞ <a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2020032714195581746&EMBA\">&#39;원룸 세입자&#39; 조주빈, 32억 벌었다기엔 의아한 생활</a><br>☞ <a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2020032713173230078&EMBA\">옷에 묻은 코로나 바이러스, 빨래하면 없어질까?</a><br>☞ <a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2020032716047687205&EMBA\">&#034;한국 진단키트, 세계가 원한다&#034;…美·UAE·인니, 3국 우선공급</a><br><br><!--relatedend--></div>권다희  기자 dawn27@mt.co.kr\r\n\r\n<!--textlinktopstart-->\r\n\t\t\t\t\t<strong><a href=\"http://www.kwdream.co.kr/loan/?type=out_mt_t\" target=\"_blank\">※주목※ \r\n총 수수료 0원+월 0.4%대 금리 ▶저비용 고수익 실현해볼까? (바로 가기)</a></strong><br>\r\n\t\t\t\t\r\n\t\t\t\t\t<strong><a href=\"http://mh.joystock.co.kr/landing/landing.php?inputpage=mh\" target=\"_blank\">※급등임박※ 무료 급등주 공개 ◀지금 바로 신청</a></strong><br>\r\n\t\t\t\t\r\n\t\t\t\t\t<strong><a href=\"http://web.mossinvest.com/n1/index.php?type=lin\" target=\"_blank\">코로나19 최대수혜주는?</a></strong><br>\r\n\t\t\t\t<!--textlinktopend--><!--powerIntstart--><br />\r\n[파워 인터뷰]<br>\r\n<a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2019081408535212578&amp;VBCC_P\"><img src=\"https://menu.mt.co.kr/ad/201908/20190819045017_hts0.jpg\" border=\"0\"></\r\na><br>\r\n<a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2019061216223014049\"><img src=\"https://menu.mt.co.kr/ad/201906/20190621030213_hts1.jpg\" border=\"0\"></\r\na><br><!--powerIntend--><!--textlinkstart-->\r\n\t\t\t\t\t<strong><a href=\"http://mh.joystock.co.kr/landing/landing.php?inputpage=mh\" target=\"_blank\">무료 급등주 공개 ◀지금 바로 신청</a></strong><br>\r\n\t\t\t\t\r\n\t\t\t\t\t<strong><a href=\"http://web.mossinvest.com/n1/index.php?type=lin\" target=\"_blank\">계좌복구 프로그램 지금 신청하기</a></strong><br>\r\n\t\t\t\t<!--textlinkend-->\r\n\r\n\r\n<저작권자 ⓒ '돈이 보이는 리얼타임 뉴스' 머니투데이, 무단전재 및 재배포 금지>\r\n",
+    "time": "2020-03-27T22:40:57.000Z",
+    "title": "남수단 한빛부대 11진, 전세기로 귀국길…내일 도착",
+    "__path": "News:5e7e027124aa9a00072726c1"
+  },
+  {
+    "__id": "5e7e027924aa9a00072726c3",
+    "provider": "20",
+    "__typename": "News",
+    "originUrl": null,
+    "id": "5e7e027924aa9a00072726c3",
+    "meta": {
+      "source": "EBEST",
+      "__typename": "NewsMeta",
+      "__id": "0",
+      "__path": "News:5e7e027924aa9a00072726c3:meta=>NewsMeta:0"
+    },
+    "content": "\r\n[머니투데이 뉴욕=이상배 특파원]  <img src=\"http://thumb.mt.co.kr/06/2020/03/2020032722402564952_1.jpg\" alt=\"\" border='0' vspace='5' hspace='5' align=\"\">\r\n\r\n<br /><div id=\"relnews_list\"><!--relatedstart-->[관련기사]<br>☞ <a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2020032708060861460&EMBA\">&#034;한국은 이런 나라&#034; 외국인 눈에 비친 우리 모습은</a><br>☞ <a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2020032614270968525&EMBA\">&#39;45분 만에 확인&#39; 美 진단키트…전문가들 우려하는 이유는</a><br>☞ <a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2020032714195581746&EMBA\">&#39;원룸 세입자&#39; 조주빈, 32억 벌었다기엔 의아한 생활</a><br>☞ <a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2020032713173230078&EMBA\">옷에 묻은 코로나 바이러스, 빨래하면 없어질까?</a><br>☞ <a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2020032716047687205&EMBA\">&#034;한국 진단키트, 세계가 원한다&#034;…美·UAE·인니, 3국 우선공급</a><br><br><!--relatedend--></div>뉴욕=이상배 특파원 ppark140@gmail.com\r\n\r\n<!--textlinktopstart-->\r\n\t\t\t\t\t<strong><a href=\"http://www.kwdream.co.kr/loan/?type=out_mt_t\" target=\"_blank\">※주목※ \r\n총 수수료 0원+월 0.4%대 금리 ▶저비용 고수익 실현해볼까? (바로 가기)</a></strong><br>\r\n\t\t\t\t\r\n\t\t\t\t\t<strong><a href=\"http://mh.joystock.co.kr/landing/landing.php?inputpage=mh\" target=\"_blank\">※급등임박※ 무료 급등주 공개 ◀지금 바로 신청</a></strong><br>\r\n\t\t\t\t\r\n\t\t\t\t\t<strong><a href=\"http://web.mossinvest.com/n1/index.php?type=lin\" target=\"_blank\">코로나19 최대수혜주는?</a></strong><br>\r\n\t\t\t\t<!--textlinktopend--><!--powerIntstart--><br />\r\n[파워 인터뷰]<br>\r\n<a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2019081408535212578&amp;VBCC_P\"><img src=\"https://menu.mt.co.kr/ad/201908/20190819045017_hts0.jpg\" border=\"0\"></\r\na><br>\r\n<a target=_blank href=\"https://news.mt.co.kr/mtview.php?no=2019061216223014049\"><img src=\"https://menu.mt.co.kr/ad/201906/20190621030213_hts1.jpg\" border=\"0\"></\r\na><br><!--powerIntend--><!--textlinkstart-->\r\n\t\t\t\t\t<strong><a href=\"http://mh.joystock.co.kr/landing/landing.php?inputpage=mh\" target=\"_blank\">무료 급등주 공개 ◀지금 바로 신청</a></strong><br>\r\n\t\t\t\t\r\n\t\t\t\t\t<strong><a href=\"http://web.mossinvest.com/n1/index.php?type=lin\" target=\"_blank\">계좌복구 프로그램 지금 신청하기</a></strong><br>\r\n\t\t\t\t<!--textlinkend-->\r\n\r\n\r\n<저작권자 ⓒ '돈이 보이는 리얼타임 뉴스' 머니투데이, 무단전재 및 재배포 금지>\r\n",
+    "time": "2020-03-27T22:41:06.000Z",
+    "title": "[속보] 뉴욕증시 3일만에 하락 출발…S&P 3%↓",
+    "__path": "News:5e7e027924aa9a00072726c3"
+  }
+]

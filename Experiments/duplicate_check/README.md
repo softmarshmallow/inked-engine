@@ -8,7 +8,8 @@ ebest news is realtime, and naver news is crawled 1~2 minute late, containing mo
 - provider must match (but ignore when unknown provider)
 
 
-**sensitive cases** (need exception handling)
+**sensitive cases** (need exception handling)리
 - when content is small or empty
 - when actually different news, but with same title
 - when actually different news, but with same title, and similar content
+- 표, 사진 only 뉴스 처
