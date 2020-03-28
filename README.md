@@ -1,4 +1,4 @@
-# inked engine
+# inked engine 🤖🤖
 
 | 뉴스 분석을 위한 툴킷입니다. 
 
@@ -53,6 +53,11 @@ credentials/db-connection.json
 ```
 from `.gitignore` which two files you will have to provide manually to run this project.
 
+
+## modules
+- duplicate news checker ✅
+- spam news detector 🚫
+- word2vec ✅ (wiki) 🚫 (news)
 
 
 ## developed by
