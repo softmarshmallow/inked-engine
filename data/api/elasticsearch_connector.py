@@ -71,7 +71,7 @@ def search_news(q):
 
 def migrate_news_test():
     from data.api import content_db_connector
-    newses = content_db_connector.fetch_raw_collection(100)
+    newses = content_db_connector.fetch_news_collection(100)
     from bs4 import BeautifulSoup
 
     for news in newses:

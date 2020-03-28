@@ -49,7 +49,7 @@ class ConstantAnalysisHelper(Thread):
 
 
 def listen_to_crawler():
-    import Main.crawler_listener.crawler_listener as l
+    import main.crawler_listener.crawler_listener as l
     l.run_threaded()
     l.callback = add_item
 

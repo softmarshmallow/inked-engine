@@ -3,7 +3,7 @@ import re
 
 from nltk import jaccard_distance
 from datetime import datetime
-import arrow
+from data.model.news import News, NewsMeta
 
 from bs4 import BeautifulSoup
 
@@ -12,7 +12,7 @@ def diff_time_sec_abs(first: datetime, second: datetime):
     return abs((first - second).seconds)
 
 
-def time_match(time1, time2) -> bool:
+def time_match(time1: datetime, time2: datetime) -> bool:
     diff = diff_time_sec_abs(time1, time2)
     time_matches_range = diff < 3 * 60
     return time_matches_range
@@ -51,24 +51,24 @@ def content_match(html1, html2):
     return distance < MAX_ACCEPTED_JACCARD_DISTANCE
 
 
-def check_duplicate(set1, set2) -> (bool, str):
+def check_duplicate(set1: News, set2: News) -> (bool, str):
     # blocking same source
-    source_matches = set1["meta"]["source"] == set2["meta"]["source"]
+    source_matches = set1.meta.source == set2.meta.source
     if source_matches:
         return False, "news with same source, skipping process"
 
     # 0. check time diff
-    time_matches = time_match(arrow.get(set1["time"]).datetime, arrow.get(set2["time"]).datetime)
+    time_matches = time_match(set1.time, set2.time)
     if not time_matches:
         return False, "time does not matches"
 
     # 1. check title match
-    title_matches = title_match(set1["title"], set2["title"])
+    title_matches = title_match(set1.title, set2.title)
     if not title_matches:
         return False, "title does not matches"
 
     # 2. check content similarity with `jaccard_distance`
-    content_matches = content_match(set1["content"], set2["content"])
+    content_matches = content_match(set1.content, set2.content)
     if not content_matches:
         return False, "content does not matches"
 
@@ -93,6 +93,8 @@ def __test():
         "title": "남수단 한빛부대 11진 장병 에티오피아 전세기로 귀국길",
         "__path": "News:5e7df8ec24aa9a00072724f9"
     }
+    set1 = News(**set1)
+
     set2 = {
     "__id": "5e7df92e24aa9a000727250b",
     "provider": "연합뉴스",
@@ -110,6 +112,8 @@ def __test():
     "title": "남수단 한빛부대 11진 장병 에티오피아 전세기로 귀국길",
     "__path": "News:5e7df92e24aa9a000727250b"
 }
+    set2 = News(**set2)
+
     set3 = {
     "__id": "5e7dfcb724aa9a00072725ab",
     "provider": "MBC",
@@ -127,6 +131,8 @@ def __test():
     "title": "남수단 한빛부대 11진 장병 에티오피아 전세기로 귀국길",
     "__path": "News:5e7dfcb724aa9a00072725ab"
 }
+    set3 = News(**set3)
+
     set4 = {
     "__id": "5e7dffb224aa9a0007272637",
     "provider": "SBS",
@@ -144,12 +150,13 @@ def __test():
     "title": "남수단 한빛부대 11진 장병 에티오피아 전세기로 귀국길",
     "__path": "News:5e7dffb224aa9a0007272637"
 }
+    set4 = News(**set4)
 
     sets = [set1, set2, set3, set4]
     for i in range(0, len(sets)):
         og_set = sets[i]
         for single_set in sets:
-            print(og_set["title"], og_set["meta"]["source"])
+            print(og_set.title, og_set.meta.source)
             is_duplicate = check_duplicate(og_set, single_set)
             print(is_duplicate)
 
