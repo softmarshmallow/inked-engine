@@ -1,4 +1,6 @@
 # coding=utf8
+import re
+
 from nltk import jaccard_distance, word_tokenize, ngrams
 from datetime import datetime
 import arrow
@@ -54,44 +56,94 @@ def title_match(title1, title2) -> bool:
     return title_matches
 
 
-def plain_text(html):
+def extract_usable_text(html):
     soup = BeautifulSoup(html, 'lxml')
+    [s.extract() for s in soup('em')] # read /rsc/README.md for more details
+    [s.extract() for s in soup('a')] # read /rsc/README.md for more details
     return soup.get_text()
 
 
 def content_distance_check(html1, html2):
-    txt1 = plain_text(html1)
-    txt2 = plain_text(html2)
+    txt1 = extract_usable_text(html1)
+    txt2 = extract_usable_text(html2)
+    txt1 = re.sub('\s+',' ',txt1)
+    txt2 = re.sub('\s+',' ',txt2)
+    print(txt1)
+    print(txt2)
     distance = jaccard_distance(set(txt1), set(txt2))
     return distance
 
 
-MAX_ACCEPTED_JACCARD_DISTANCE = 0.15
+MAX_ACCEPTED_JACCARD_DISTANCE = 0.05
 
 
 def content_match(html1, html2):
-    return content_distance_check(html1, html2) < MAX_ACCEPTED_JACCARD_DISTANCE
+    distance = content_distance_check(html1, html2)
+    print(distance)
+    return distance < MAX_ACCEPTED_JACCARD_DISTANCE
 
 
-def check_duplicate(set1, set2) -> bool:
+def check_duplicate(set1, set2) -> (bool, str):
     # 0. check time diff
-    time_matches = (time_match(arrow.get(set1["time"]).datetime, arrow.get(set2["time"]).datetime))
-    if not time_matches:
-        return False
+    # time_matches = time_match(arrow.get(set1["time"]).datetime, arrow.get(set2["time"]).datetime)
+    # if not time_matches:
+    #     return False, "time does not matches"
 
     # 1. check title match
     title_matches = title_match(set1["title"], set2["title"])
     if not title_matches:
-        return False
+        return False, "title does not matches"
 
     # 2. check content similarity with `jaccard_distance`
     content_matches = content_match(set1["content"], set2["content"])
     if not content_matches:
-        return False
+        return False, "content does not matches"
 
-    return True
+    return True, "time, title, and content matched"
+
+
+def __test():
+    set1 = {
+        "provider": "11",
+        "originUrl": None,
+        "meta": {
+            "source": "EBEST",
+        },
+        "content": "이탈리아도 말라리아·에이즈 치료제 사용 승인\n    \r\n\n    \r\n    (로마=연합뉴스) 전성훈 특파원 = 이탈리아 당국이 신종 코로나바이러스 감염증\r\n(코로나19) 환자에 대한 말라리아 및 에이즈 치료제 투약을 승인했다.\r\n    27일(현지시간) 현지 언론에 따르면 이탈리아 당국은 말라리아 치료제인 클로로\r\n퀸과 클로로퀸 계열 유사 약물인 하이드록시클로로퀸을 코로나19 환자 치료에 사용\r\n하도록 허가했다.\r\n    미국 식품의약국(FDA)의 승인을 받은 에이즈 치료제 성분인 로피나비르와 리토\r\n나비르 사용도 가능해졌다.\r\n    코로나19 환자에 해당 치료제를 사용할 경우 전액 의료보험 혜택이 적용된다.\r\n    26일 기준 이탈리아의 코로나19 누적 확진자 수는 8만539명, 누적 사망자 수는 \r\n8천165명이다. \r\n    누적 사망자 규모는 세계 최대이며, 누적 확진자도 현재의 증가 추이라면 미국(\r\n8만5천162명)과 중국(8만1천340명)을 넘어 세계 최대를 기록할 가능성이 크다. \r\n    lucho@yna.co.kr\r\n(끝)\n\n\r\n<a href=\"http://www.yonhapnews.co.kr/aboutus/4223030400.html\"><긴급속보 SMS 신청></a> <a href=\"http://yonhap.pumzine.com\"><포토 매거진></a> <a href=\"http://www.yonhapnews.co.kr/aboutus/4223030500.html\">< M-SPORTS ></a>\r\n<저작권자(c) 연합뉴스, 무단 전재-재배포 금지>",
+        "time": "2020-03-27T22:26:36.000Z",
+        "title": "이탈리아도 말라리아·에이즈 치료제 사용 승인",
+    }
+    set2 = {
+               "provider": "연합뉴스",
+               "originUrl": "http://yna.kr/AKR20200327191900109?did=1195m",
+               "meta": {
+                   "source": "NAVER",
+               },
+               "content": "<html><body><div class=\"_article_body_contents\" id=\"articleBodyContents\">\n\n\n\n\n<span class=\"end_photo_org\"><img alt=\"\" src=\"https://imgnews.pstatic.net/image/001/2020/03/27/PYH2020022723170034000_P4_20200327222710845.jpg?type=w647\"/><em class=\"img_desc\">\"코로나19 치료 효과\" 클로로퀸 생산 재개한 중국 제약사(난퉁 EPA=연합뉴스) 중국 장쑤성 난퉁에 있는 한 제약회사가 15년만에 말라리아 약제인 클로로퀸 포스페이트 생산을 재개한 가운데 직원들이 27일 해당 약품을 포장하고 있다. 중국 언론에 따르면 클로로퀸은 신종 코로나바이러스 감염증(코로나19)을 치료하는 데 어느 정도 효능을 보인 것으로 알려졌다. jsmoon@yna.co.kr</em></span><br/><br/>(로마=연합뉴스) 전성훈 특파원 = 이탈리아 당국이 신종 코로나바이러스 감염증(코로나19) 환자에 대한 말라리아 및 에이즈 치료제 투약을 승인했다.<br/><br/>    27일(현지시간) 현지 언론에 따르면 이탈리아 당국은 말라리아 치료제인 클로로퀸과 클로로퀸 계열 유사 약물인 하이드록시클로로퀸을 코로나19 환자 치료에 사용하도록 허가했다.<br/><br/>    미국 식품의약국(FDA)의 승인을 받은 에이즈 치료제 성분인 로피나비르와 리토나비르 사용도 가능해졌다.<br/><br/>    코로나19 환자에 해당 치료제를 사용할 경우 전액 의료보험 혜택이 적용된다.<br/><br/>    26일 기준 이탈리아의 코로나19 누적 확진자 수는 8만539명, 누적 사망자 수는 8천165명이다. <br/><br/>    누적 사망자 규모는 세계 최대이며, 누적 확진자도 현재의 증가 추이라면 미국(8만5천162명)과 중국(8만1천340명)을 넘어 세계 최대를 기록할 가능성이 크다. <br/><br/>    lucho@yna.co.kr<br/><br/><span><a href=\"https://media.naver.com/channel/promotion.nhn?oid=001\" target=\"_blank\">▶코로나19 속보는 네이버 연합뉴스에서 [구독 클릭]</a><br/><a href=\"https://www.yna.co.kr/theme-list/factcheck?input=1195s\" target=\"_blank\">▶[팩트체크]'코로나19' 사실은 이렇습니다</a><a href=\"https://www.yna.co.kr/board/jebo/index?input=offer_naver\" style=\"margin-left:10px;\" target=\"_blank\">▶제보하기</a></span><br/><br/>\n\n</div></body></html>",
+               "time": "2020-03-27T22:26:00.000Z",
+               "title": "이탈리아도 말라리아·에이즈 치료제 사용 승인",
+           }
+    set3 = {
+        "provider": "SBS",
+        "originUrl": "https://news.sbs.co.kr/news/endPage.do?news_id=N1005720713&plink=ORI&cooper=NAVER",
+        "meta": {
+            "source": "NAVER",
+        },
+        "content": "<html><body><div class=\"_article_body_contents\" id=\"articleBodyContents\">\n\n\n\n\n<span class=\"end_photo_org\"><img alt=\"\" src=\"https://imgnews.pstatic.net/image/055/2020/03/27/0000803884_001_20200327224207483.jpg?type=w647\"/></span><br/>이탈리아 당국이 코로나19 환자에 대한 말라리아 및 에이즈 치료제 투약을 승인했습니다.<br/><br/>이탈리아 당국은 말라리아 치료제인 클로로퀸과 클로로퀸 계열 유사 약물인 하이드록시클로로퀸을 코로나19 환자 치료에 사용하도록 허가했습니다.<br/><br/>미국 식품의약국 FDA의 승인을 받은 에이즈 치료제 성분인 로피나비르와 리토나비르 사용도 가능해졌습니다.<br/><br/>코로나19 환자에 해당 치료제를 사용할 경우 전액 의료보험 혜택이 적용됩니다.<br/><br/>현지시간으로 어제 기준 이탈리아의 코로나19 누적 확진자 수는 8만 539명, 누적 사망자 수는 8천165명입니다.<br/><br/>누적 사망자 규모는 세계 최대이며, 누적 확진자도 현재의 증가 추이라면 미국과 중국을 넘어 세계 최대를 기록할 가능성이 큽니다.<br/><br/><span class=\"end_photo_org\"><img alt=\"\" src=\"https://imgnews.pstatic.net/image/055/2020/03/27/0000803884_002_20200327224207515.jpg?type=w647\"/></span><br/><br/>안서현 기자(ash@sbs.co.kr)<br/><br/><a href=\"https://news.sbs.co.kr/news/newsHotIssueList.do?tagId=10000051272&amp;plink=FOOT&amp;cooper=NAVER\">▶ 'n번방 · 박사방' 성착취 사건 파문</a><br/><a href=\"https://news.sbs.co.kr/news/newsHotIssueList.do?tagId=10000050973&amp;plink=FOOT&amp;cooper=NAVER\" target=\"_blank\">▶ 코로나19 속보 한눈에 보기</a><br/><a href=\"https://news.sbs.co.kr/news/newsPlusList.do?themeId=10000000257&amp;plink=FOOT&amp;cooper=NAVER\" target=\"_blank\">▶ VOTE KOREA 2020 온라인 갤러리</a><br/><br/>※ ⓒ SBS &amp; SBS Digital News Lab. : 무단복제 및 재배포 금지\n\t\n</div></body></html>",
+        "time": "2020-03-27T22:41:00.000Z",
+        "title": "이탈리아도 말라리아·에이즈 치료제 사용 승인",
+    }
+
+    is_duplicate_1_2 = check_duplicate(set1, set2)
+    print(is_duplicate_1_2)
+
+    is_duplicate_1_3 = check_duplicate(set1, set3)
+    print(is_duplicate_1_3)
+
+    is_duplicate_2_3 = check_duplicate(set2, set3)
+    print(is_duplicate_2_3)
 
 
 if __name__ == "__main__":
-    is_duplicate = check_duplicate(set1, wrong_set_example)
-    print(is_duplicate)
+    # check_duplicate(set1, set2)
+    __test()
