@@ -13,7 +13,8 @@ class NewsAnalyzer:
         return self.analysis
 
     def __summarize__(self):
-        self.analysis.summary = "test"
+        ...
+        # self.analysis.summary = "test"
 
     def __spam_detection__(self):
         res = spam(self.news)
