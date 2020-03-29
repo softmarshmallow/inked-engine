@@ -25,7 +25,7 @@ SECRET_KEY = 'uve^*0)ivm@x0abx-v8@7bt(l)qufhc1$)e65@za-_%uqzf$@9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 # Application definition
 
@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'rest_framework',
     "rest_framework_api_key",
     'channels',
-    'django_eventstream',
 ]
 
 MIDDLEWARE = [
@@ -53,7 +52,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django_grip.GripMiddleware',
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -119,11 +117,6 @@ DATABASES = {
     }
 }
 
-
-# region sse
-EVENTSTREAM_ALLOW_ORIGIN = "*"
-EVENTSTREAM_ALLOW_CREDENTIALS = False
-# endregion
 
 
 # Password validation

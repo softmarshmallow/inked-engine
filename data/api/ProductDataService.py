@@ -1,9 +1,10 @@
 from typing import List
 
 from conf import DATA_SOURCE_ROOT
-from DataModels.models import ProductModel
 import os
 import json
+
+from data.local.models import ProductModel
 
 
 class ProductDataService:

@@ -5,6 +5,8 @@
 example
 ``` python
 
+SECRET_KEY = "your new secrete key, refer https://djecrety.ir/"
+
 DATABASES['default']['CLIENT'] = {
     'host': 'xx.xx.xx.xx',
     'port': 27017,

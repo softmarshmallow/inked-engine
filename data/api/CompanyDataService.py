@@ -4,9 +4,8 @@ from typing import List
 
 import os
 
-from DataModels.models import CompanyModel
 from conf import DATA_SOURCE_ROOT
-
+from data.local.models import CompanyModel
 
 companies: List[CompanyModel] = None
 

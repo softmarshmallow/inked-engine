@@ -1,3 +1,5 @@
+from datetime import datetime
+
 import pymongo
 from pymongo import MongoClient
 import urllib.parse
@@ -22,9 +24,35 @@ db = client[database]
 collection_news = db.News
 
 
-def fetch_news_collection(lim=10) -> [News]:
+def build_time_query(time_from=None, time_to=None):
+    if time_from is not None or time_to is not None:
+        query = {}
+        if time_from is not None:
+            query["$gte"] = time_from
+        if time_to is not None:
+            query["$lt"] = time_to
+        return query
+    else:
+        return None
+
+
+def fetch_news_collection(time_from: datetime=None, time_to: datetime=None, lim=10) -> [News]:
+    """
+    :param time_from: from
+    :param time_to: to
+    :param lim: set 0 for no limit
+    :return: [News]
+    """
+    # region build query
+    query = {}
+    if time_from is not None or time_to is not None:
+        query["time"] = build_time_query(time_from=time_from, time_to=time_to)
+    # endregion build query
+
     result = []
-    cursor: pymongo.cursor.Cursor = collection_news.find().limit(lim)
+    cursor: pymongo.cursor.Cursor = collection_news.find(
+        query
+    ).limit(lim)
     for r in cursor:
         result.append(News(**r))
     return result

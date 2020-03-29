@@ -4,7 +4,7 @@ from threading import Thread
 from textrankr import TextRank
 
 from data.api import NewsDataService
-from DataModels.news_models import AnalyzedNewsModel, NewsDataModel
+from local.news_models import AnalyzedNewsModel, NewsDataModel
 from utils.SentTokenizer import sent_tokenize
 from NamedEntityRecognition.IncidentExtraction.incedent_extractor import IncidentExtractor
 from NamedEntityRecognition.StockCompanyExtractor.StockCompanyExtractor import CompanyExtractor

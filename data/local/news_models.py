@@ -1,7 +1,7 @@
 from datetime import datetime
 from typing import List
 
-from DataModels.models import ProductModel, PersonModel, QuantityModel, IncidentModel, CompanyModel
+from data.local.models import ProductModel, PersonModel, QuantityModel, IncidentModel, CompanyModel
 
 
 class NewsDataModel(object):

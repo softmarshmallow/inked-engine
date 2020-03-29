@@ -1,7 +1,7 @@
 
 from konlpy.tag import Mecab
 
-from DataModels.models import PersonModel
+from local.models import PersonModel
 from NamedEntityRecognition.AnnieHelper.annie_helper import extract_named_entity_dictionary
 
 mecab = Mecab()

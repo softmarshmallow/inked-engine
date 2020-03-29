@@ -3,12 +3,12 @@ from typing import List
 import pymongo
 from bson import ObjectId
 
-from DataModels.models import CompanyModel
-from DataModels.news_models import NewsDataModel, CreateNewNewsModelFromJson_MongoDB
 from pymongo import MongoClient
 import warnings
 
 from conf import DEFAULT_NEWS_DATABASE
+from data.local.models import CompanyModel
+from data.local.news_models import NewsDataModel, CreateNewNewsModelFromJson_MongoDB
 
 
 class NewsDataService:

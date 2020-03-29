@@ -45,6 +45,9 @@ http://konlpy.org/en/v0.4.4/install/
 `bash <(curl -s https://raw.githubusercontent.com/konlpy/konlpy/master/scripts/mecab.sh)`
 
 
+## start the engine server
+`daphne server.asgi:application`
+
 ## IMPORTANT:: seed credential files
 you can see 
 ```gitignore

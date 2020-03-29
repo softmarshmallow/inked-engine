@@ -5,10 +5,9 @@ import os
 
 from datetime import datetime
 
-from DataModels.news_models import NewsDataModel, CreateNewNewsModelFromJson
-
 # File
-dirname = os.path.dirname(__file__)
+from conf import DATA_SOURCE_ROOT
+from data.local.news_models import NewsDataModel, CreateNewNewsModelFromJson
 
 
 def GetLocalNewsData(max: int = 1000, hasMaxValue: bool = True) -> List[NewsDataModel]:
@@ -18,7 +17,7 @@ def GetLocalNewsData(max: int = 1000, hasMaxValue: bool = True) -> List[NewsData
     else:
         file = "evileye-quorraengine-News-export.json"
 
-    filename = os.path.join(dirname, "../DataSource/" + file)
+    filename = os.path.join(DATA_SOURCE_ROOT, file)
     rootJson = json.load(open(filename))
 
     newsDataList = []
@@ -52,7 +51,6 @@ if __name__ == "__main__":
     et = datetime.now()
     print(len(newsList))
     print("time took: ", et - st)
-
 
     for news in newsList:
         print(news.get_news_content())

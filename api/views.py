@@ -1,6 +1,8 @@
+import json
 from datetime import datetime, timedelta, time
 
-from django.http import Http404
+from django.http import Http404, HttpResponse, JsonResponse
+from django.views import View
 from rest_framework import viewsets, generics, status
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -9,6 +11,16 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from api.models import RawNews, TagHolder, TagHolderForm
 from api.serializers import NewsSerializer
 
+# region tools
+class DuplicateCheckView(View):
+    def post(self, request, *args, **kwargs):
+        json_data = json.loads(request.body)
+        print(json_data)
+        from Experiments.duplicate_check.duplicate_check import check_duplicates_from_database
+        from data.model.news import News
+        res = check_duplicates_from_database(target=News(**json_data))
+        return JsonResponse(res.serialize())
+# endregion
 
 def get_time_range_start(date_diff = -1):
     today = datetime.now().date()

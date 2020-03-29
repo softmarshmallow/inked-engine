@@ -1,5 +1,5 @@
 from data.api import NewsDataService
-from DataModels.models import CompanyModel
+from local.models import CompanyModel
 from NamedEntityRecognition.StockCompanyExtractor.StockCompanyExtractor import \
     FindAllCompanyInContent
 

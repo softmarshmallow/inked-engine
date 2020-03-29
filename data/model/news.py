@@ -4,8 +4,8 @@ import arrow
 
 class News:
     def __init__(self, **kwargs):
-        self.id: str # optional
-        self.origin_url: str # optional
+        self.id: str = None  # optional
+        self.origin_url: str = None  # optional
         self.title: str
         self.content: str
         self.time: datetime
@@ -17,7 +17,7 @@ class News:
                 if 'id' in kwargs:
                     self.id = kwargs['id']
                 elif '_id' in kwargs:
-                    self.id = str(kwargs['_id']) # mongodb id field
+                    self.id = str(kwargs['_id'])  # mongodb id field
 
                 try:
                     self.origin_url = kwargs['originUrl']
@@ -38,10 +38,15 @@ class News:
         else:
             content = self.content
 
+        origin_url = None
+        if self.origin_url is not None:
+            origin_url = self.origin_url
+
         item = {
+            "id": self.id,
             "time": self.time.isoformat(),
             "title": self.title,
-            "originUrl": self.origin_url,
+            "originUrl": origin_url,
             "content": content,
             "provider": self.provider,
             "meta": self.meta.serialize()
