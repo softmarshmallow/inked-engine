@@ -10,17 +10,31 @@ from rest_framework_api_key.permissions import HasAPIKey
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from api.models import RawNews, TagHolder, TagHolderForm
 from api.serializers import NewsSerializer
+from data.model.news import News
+
 
 # region tools
+from main.main import NewsAnalyzer
+
+
 class DuplicateCheckView(View):
     def post(self, request, *args, **kwargs):
         json_data = json.loads(request.body)
-        print(json_data)
         from features.duplicate_check.duplicate_check import check_duplicates_from_database
-        from data.model.news import News
         res = check_duplicates_from_database(target=News(**json_data))
         return JsonResponse(res.serialize())
 # endregion
+
+
+class AnalyzeNewsView(View):
+    def post(self, request, *args, **kwargs):
+        json_data = json.loads(request.body)
+        print(json_data)
+        analyzer = NewsAnalyzer(News(**json_data))
+        res = analyzer.analyze()
+        analyzer = None
+        return JsonResponse(res.serialize())
+
 
 def get_time_range_start(date_diff = -1):
     today = datetime.now().date()

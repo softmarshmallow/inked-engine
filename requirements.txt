@@ -34,6 +34,7 @@ gensim==3.5.0
 
 # regioin visualizing
 wordcloud
+tqdm
 # endregion
 
 arrow==0.12.1

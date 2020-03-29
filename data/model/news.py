@@ -1,4 +1,6 @@
 from datetime import datetime
+from enum import Enum
+
 import arrow
 
 
@@ -60,6 +62,7 @@ class News:
 class NewsMeta:
     def __init__(self, **kwargs):
         self.source = None
+        self.spam_marks: [SpamMark] = []
         if kwargs is not None and kwargs != {}:
             try:
                 self.source = kwargs['source']
@@ -68,6 +71,55 @@ class NewsMeta:
 
     def serialize(self):
         item = {
+            "spamMarks": [m.serialize() for m in self.spam_marks],
             "source": self.source,
         }
         return item
+
+
+class SpamTag(Enum):
+    SPAM = "SPAM"
+    NOTSPAM = "NOTSPAM"
+    UNTAGGED = "UNTAGGED"
+
+
+class NewsCategory(Enum):
+    WEATHER = "WEATHER"
+    UNCATEGORIZED = "UNCATEGORIZED"
+
+
+class SpamMark:
+    def __init__(self, spam: SpamTag, reason: str):
+        self.spam: SpamTag = spam
+        self.reason: str = reason
+
+    def serialize(self):
+        return {
+            "spam": self.spam.value,
+            "reason": self.reason
+        }
+
+
+class SingleAnalysisResult:
+    def __init__(self, spam_marks: [SpamMark] = [], summary=None, subject=None,
+                 category: NewsCategory = None, categories: [NewsCategory] = []):
+        self.spam_marks: [SpamMark] = spam_marks
+        self.summary: str = summary
+        self.subject: str = subject
+        self.category: NewsCategory = category
+        self.categories: [NewsCategory] = categories
+        self.tags: [str] = []
+
+    def serialize(self):
+        category = None
+        if self.category is not None:
+            category = self.category.value
+
+        return {
+            "spamMarks": [m.serialize() for m in self.spam_marks],
+            "summary": self.summary,
+            "subject": self.subject,
+            "category": category,
+            "categories": [c.value for c in self.categories],
+            "tags": self.tags
+        }

@@ -1,7 +1,7 @@
 import os, sys
 import json
 
-from data.model.news import News
+from data.model.news import News, SpamMark, SpamTag
 
 RSC_ROOT = os.path.join(os.path.dirname(__file__), 'rsc')
 TITLE_TOKENS_RSC_ROOT = os.path.join(RSC_ROOT, 'title_spam_token')
@@ -30,22 +30,22 @@ for u in uses:
             title_box_based_spam_tokens.append(i)
 
 
-def spam_detect_title(title: str) -> (bool, str):
+def spam_detect_title(title: str) -> (SpamTag, str):
     for t in title_match_based_spam_tokens:
         if t in title:
-            return True, f"token detected {t}"
+            return SpamTag.SPAM, f"token detected {t}"
     for t in title_box_based_spam_tokens:
         if t in title:
-            return True, f"box detected, {t}"
-    return False, "no spam token detected"
+            return SpamTag.SPAM, f"box detected, {t}"
+    return SpamTag.NOTSPAM, "no spam token detected"
 
 
 # endregion title token rule based spam extractor
 
 
-def spam(news: News) -> (bool, str):
+def spam(news: News) -> SpamMark:
     is_title_spam = spam_detect_title(news.title)
-    return is_title_spam
+    return SpamMark(is_title_spam[0], is_title_spam[1])
 
 
 
