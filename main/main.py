@@ -1,10 +1,9 @@
 import time
 from threading import Thread
 
-from textrankr import TextRank
 
 from data.api import NewsDataService
-from local.news_models import AnalyzedNewsModel, NewsDataModel
+from data.local.news_models import NewsDataModel, AnalyzedNewsModel
 from utils.SentTokenizer import sent_tokenize
 from NamedEntityRecognition.IncidentExtraction.incedent_extractor import IncidentExtractor
 from NamedEntityRecognition.StockCompanyExtractor.StockCompanyExtractor import CompanyExtractor

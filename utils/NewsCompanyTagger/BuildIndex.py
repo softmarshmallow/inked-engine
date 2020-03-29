@@ -1,7 +1,7 @@
 from data.api import NewsDataService
-from local.models import CompanyModel
 from NamedEntityRecognition.StockCompanyExtractor.StockCompanyExtractor import \
     FindAllCompanyInContent
+from data.local.models import CompanyModel
 
 
 class NewsCompanyIndexBuilder:

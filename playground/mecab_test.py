@@ -1,12 +1,12 @@
 from datetime import datetime
 from konlpy.tag import Mecab
-from data.api import get_title_list
+from data.api.content_db_connector import fetch_news_collection
 
 
 mecab = Mecab()
 
-sents = get_title_list(start_date=datetime(2018, 1, 1), end_date=datetime(2018, 1, 1))
-
+docs = fetch_news_collection(time_from=datetime(2018, 1, 1), time_to=datetime(2018, 1, 1))
+sents = [i.title for i in docs]
 sents = sents[:100]
 for sent in sents:
     tagged = mecab.pos(sent)

@@ -1,6 +1,6 @@
 from konlpy.tag import Mecab
 
-from local.models import IncidentModel
+from data.local.models import IncidentModel
 
 mecab = Mecab()
 

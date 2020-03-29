@@ -32,6 +32,9 @@ nltk==3.2.5
 gensim==3.5.0
 # endregion
 
+# regioin visualizing
+wordcloud
+# endregion
 
 arrow==0.12.1
 

@@ -1,7 +1,7 @@
 from datetime import datetime
 from typing import List
 
-from local.models import ExtractedInformation
+from data.local.models import ExtractedInformation
 
 time_regex_rules = []
 

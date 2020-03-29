@@ -1,10 +1,9 @@
 import ahocorasick
 from typing import List
-from local.models import ExtractedInformation
 from data.api import FetchAllCompName, GetCompWithName, FetchAllCompanyList
 from data.api import NewsDataService
-from local.models import CompanyModel
-from local.news_models import NewsDataModel
+from data.local.models import CompanyModel, ExtractedInformation
+from data.local.news_models import NewsDataModel
 
 compList: List[CompanyModel] = None
 

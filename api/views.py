@@ -16,7 +16,7 @@ class DuplicateCheckView(View):
     def post(self, request, *args, **kwargs):
         json_data = json.loads(request.body)
         print(json_data)
-        from Experiments.duplicate_check.duplicate_check import check_duplicates_from_database
+        from features.duplicate_check.duplicate_check import check_duplicates_from_database
         from data.model.news import News
         res = check_duplicates_from_database(target=News(**json_data))
         return JsonResponse(res.serialize())
