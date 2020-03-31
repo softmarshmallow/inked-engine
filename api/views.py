@@ -14,7 +14,7 @@ from data.model.news import News
 
 
 # region tools
-from main.main import NewsAnalyzer
+from main.main import NewsAnalyzer, NewsIndexer
 
 
 class DuplicateCheckView(View):
@@ -24,6 +24,15 @@ class DuplicateCheckView(View):
         res = check_duplicates_from_database(target=News(**json_data))
         return JsonResponse(res.serialize())
 # endregion
+
+
+class IndexNewsView(View):
+    def post(self, request, *args, **kwargs):
+        json_data = json.loads(request.body)
+        news = News(**json_data)
+        indexer = NewsIndexer(news)
+        res = indexer.index()
+        return JsonResponse(res)
 
 
 class AnalyzeNewsView(View):

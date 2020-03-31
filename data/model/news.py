@@ -63,6 +63,9 @@ class NewsMeta:
     def __init__(self, **kwargs):
         self.source = None
         self.spam_marks: [SpamMark] = []
+        self.summary = None
+        self.subject = None
+        self.category: NewsCategory = None
         if kwargs is not None and kwargs != {}:
             try:
                 self.source = kwargs['source']
@@ -73,6 +76,9 @@ class NewsMeta:
         item = {
             "spamMarks": [m.serialize() for m in self.spam_marks],
             "source": self.source,
+            "summary": self.summary,
+            "subject": self.subject,
+            "category": self.category,
         }
         return item
 

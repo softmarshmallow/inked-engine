@@ -2,3 +2,4 @@
 **.pyc
 server/settings/production.py
 credentials/db-connection.json
+credentials/es-connection.json
