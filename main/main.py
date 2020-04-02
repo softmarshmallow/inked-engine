@@ -23,7 +23,8 @@ class NewsAnalyzer:
         self.analysis.spam_marks = [res]
 
     def __index_elastic_search(self):
-        add_news(self.news)
+        # add_news(self.news)
+        ...
 
 
 class NewsIndexer:
