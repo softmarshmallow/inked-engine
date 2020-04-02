@@ -1,7 +1,7 @@
 import json
 from datetime import datetime, timedelta, time
 
-from django.http import Http404, HttpResponse, JsonResponse
+from django.http import Http404, HttpResponse, JsonResponse, HttpResponseBadRequest
 from django.views import View
 from rest_framework import viewsets, generics, status
 from rest_framework.response import Response
@@ -12,40 +12,49 @@ from api.models import RawNews, TagHolder, TagHolderForm
 from api.serializers import NewsSerializer
 from data.model.news import News
 
-
 # region tools
 from main.main import NewsAnalyzer, NewsIndexer
 
 
 class DuplicateCheckView(View):
     def post(self, request, *args, **kwargs):
-        json_data = json.loads(request.body)
-        from features.duplicate_check.duplicate_check import check_duplicates_from_database
-        res = check_duplicates_from_database(target=News(**json_data))
-        return JsonResponse(res.serialize())
+        try:
+            json_data = json.loads(request.body)
+            from features.duplicate_check.duplicate_check import check_duplicates_from_database
+            res = check_duplicates_from_database(target=News(**json_data))
+            return JsonResponse(res.serialize())
+        except Exception as e:
+            return HttpResponseBadRequest(reason=e)
+
+
 # endregion
 
 
 class IndexNewsView(View):
     def post(self, request, *args, **kwargs):
-        json_data = json.loads(request.body)
-        news = News(**json_data)
-        indexer = NewsIndexer(news)
-        res = indexer.index()
-        return JsonResponse(res)
+        try:
+            json_data = json.loads(request.body)
+            news = News(**json_data)
+            indexer = NewsIndexer(news)
+            res = indexer.index()
+            return JsonResponse(res)
+        except Exception as e:
+            return HttpResponseBadRequest(reason=e)
 
 
 class AnalyzeNewsView(View):
     def post(self, request, *args, **kwargs):
-        json_data = json.loads(request.body)
-        print(json_data)
-        analyzer = NewsAnalyzer(News(**json_data))
-        res = analyzer.analyze()
-        analyzer = None
-        return JsonResponse(res.serialize())
+        try:
+            json_data = json.loads(request.body)
+            analyzer = NewsAnalyzer(News(**json_data))
+            res = analyzer.analyze()
+            analyzer = None
+            return JsonResponse(res.serialize())
+        except Exception as e:
+            return HttpResponseBadRequest(reason=e)
 
 
-def get_time_range_start(date_diff = -1):
+def get_time_range_start(date_diff=-1):
     today = datetime.now().date()
     yesterday = today + timedelta(date_diff)
     time_range_start = datetime.combine(yesterday, time())
@@ -57,7 +66,8 @@ class SpamNewsView(APIView):
 
     def get(self, request, format=None):
         time_range_start = get_time_range_start(-5)
-        queryset = RawNews.objects.filter(time__gte=time_range_start, meta={"spam_human": None}).order_by('-time')[:1]
+        queryset = RawNews.objects.filter(time__gte=time_range_start,
+                                          meta={"spam_human": None}).order_by('-time')[:1]
         if len(queryset) == 0:
             raise Http404
         else:
@@ -68,10 +78,11 @@ class SpamNewsView(APIView):
                 return Response(e, status=status.HTTP_400_BAD_REQUEST)
 
     def patch(self, request, format=None):
-        id = request.data['id'] # article id
+        id = request.data['id']  # article id
         is_spam = request.data['is_spam']
         time_range_start = get_time_range_start(-5)
-        news = RawNews.objects.filter(time__gte=time_range_start, article_id=id).update(meta={'spam_human' : is_spam})
+        news = RawNews.objects.filter(time__gte=time_range_start, article_id=id).update(
+            meta={'spam_human': is_spam})
         return Response(news, status=status.HTTP_200_OK)
 
     def delete(self, request, pk, format=None):
@@ -110,4 +121,3 @@ class NewsListCreateView(generics.ListCreateAPIView):
                             headers=headers)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
