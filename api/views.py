@@ -24,7 +24,7 @@ class DuplicateCheckView(View):
             res = check_duplicates_from_database(target=News(**json_data))
             return JsonResponse(res.serialize())
         except Exception as e:
-            return HttpResponseBadRequest(reason=e)
+            return HttpResponseBadRequest(reason=str(e))
 
 
 # endregion
@@ -39,7 +39,7 @@ class IndexNewsView(View):
             res = indexer.index()
             return JsonResponse(res)
         except Exception as e:
-            return HttpResponseBadRequest(reason=e)
+            return HttpResponseBadRequest(reason=str(e))
 
 
 class AnalyzeNewsView(View):
@@ -51,7 +51,7 @@ class AnalyzeNewsView(View):
             analyzer = None
             return JsonResponse(res.serialize())
         except Exception as e:
-            return HttpResponseBadRequest(reason=e)
+            return HttpResponseBadRequest(reason=str(e))
 
 
 def get_time_range_start(date_diff=-1):
