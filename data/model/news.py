@@ -84,8 +84,9 @@ class NewsMeta:
         self.category: NewsCategory = None
         if kwargs is not None and kwargs != {}:
             try:
+                if kwargs["spamMarks"] is not None:
+                    self.spam_marks = [SpamMark(**s) for s in kwargs['spamMarks']]
                 self.source = kwargs['source']
-                self.spam_marks = [SpamMark(**s) for s in kwargs['spamMarks']]
                 self.summary = kwargs['summary']
                 self.subject = kwargs['subject']
                 self.category = kwargs['category']
