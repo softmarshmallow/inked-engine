@@ -52,7 +52,7 @@ def fetch_news_collection(time_from: datetime=None, time_to: datetime=None, lim=
     result = []
     cursor: pymongo.cursor.Cursor = collection_news.find(
         query
-    ).limit(lim)
+    ).limit(lim).sort("time", -1)
     for r in cursor:
         result.append(News(**r))
     return result

@@ -31,7 +31,7 @@ class News:
                 self.provider = kwargs['provider']
                 self.meta = NewsMeta(**kwargs['meta'])
             except KeyError as e:
-                print(e)
+                print("e: ", e)
 
     def serialize(self, debug=False):
         if debug:
@@ -55,6 +55,22 @@ class News:
         }
         return item
 
+    def index_serialize(self):
+        origin_url = None
+        if self.origin_url is not None:
+            origin_url = self.origin_url
+
+        item = {
+            "id": self.id,
+            "time": self.time.isoformat(),
+            "title": self.title,
+            "originUrl": origin_url,
+            "content": self.content,
+            "provider": self.provider,
+            "meta": self.meta.index_serialize()
+        }
+        return item
+
     def __str__(self):
         return str(self.serialize(debug=True))
 
@@ -69,8 +85,18 @@ class NewsMeta:
         if kwargs is not None and kwargs != {}:
             try:
                 self.source = kwargs['source']
+                self.spam_marks = [SpamMark(**s) for s in kwargs['spamMarks']]
+                self.summary = kwargs['summary']
+                self.subject = kwargs['subject']
+                self.category = kwargs['category']
             except KeyError as e:
-                print(e)
+                print("e: ", e)
+
+    def is_spam(self):
+        for s in self.spam_marks:
+            if s.spam == SpamTag.SPAM:
+                return True
+        return False
 
     def serialize(self):
         item = {
@@ -82,11 +108,33 @@ class NewsMeta:
         }
         return item
 
+    def index_serialize(self):
+        item = {
+            "spamMarks": [m.index_serialize() for m in self.spam_marks],
+            "source": self.source,
+            "summary": self.summary,
+            "subject": self.subject,
+            "category": self.category,
+            "isSpam": self.is_spam()
+        }
+        return item
+
 
 class SpamTag(Enum):
     SPAM = "SPAM"
     NOTSPAM = "NOTSPAM"
     UNTAGGED = "UNTAGGED"
+
+    @classmethod
+    def from_str(cls, label):
+        if label == 'SPAM':
+            return cls.SPAM
+        elif label == "NOTSPAM":
+            return cls.NOTSPAM
+        elif label == "UNTAGGED":
+            return cls.UNTAGGED
+        else:
+            raise NotImplementedError
 
 
 class NewsCategory(Enum):
@@ -95,11 +143,22 @@ class NewsCategory(Enum):
 
 
 class SpamMark:
-    def __init__(self, spam: SpamTag, reason: str):
-        self.spam: SpamTag = spam
-        self.reason: str = reason
+    def __init__(self, **kwargs):
+        self.spam: SpamTag
+        self.reason: str
+        # self.at: datetime = at
+
+        if kwargs is not None and kwargs != {}:
+            self.spam = SpamTag.from_str(kwargs["spam"])
+            self.reason = kwargs["reason"]
 
     def serialize(self):
+        return {
+            "spam": self.spam.value,
+            "reason": self.reason
+        }
+
+    def index_serialize(self):
         return {
             "spam": self.spam.value,
             "reason": self.reason
@@ -123,6 +182,20 @@ class SingleAnalysisResult:
 
         return {
             "spamMarks": [m.serialize() for m in self.spam_marks],
+            "summary": self.summary,
+            "subject": self.subject,
+            "category": category,
+            "categories": [c.value for c in self.categories],
+            "tags": self.tags
+        }
+
+    def index_serialize(self):
+        category = None
+        if self.category is not None:
+            category = self.category.value
+
+        return {
+            "spamMarks": [m.index_serialize() for m in self.spam_marks],
             "summary": self.summary,
             "subject": self.subject,
             "category": category,

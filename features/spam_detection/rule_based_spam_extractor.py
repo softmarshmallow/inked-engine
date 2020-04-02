@@ -45,7 +45,8 @@ def spam_detect_title(title: str) -> (SpamTag, str):
 
 def spam(news: News) -> SpamMark:
     is_title_spam = spam_detect_title(news.title)
-    return SpamMark(is_title_spam[0], is_title_spam[1])
+    spam_mark_data = {"spam": is_title_spam[0], "reason": is_title_spam[1]}
+    return SpamMark(**spam_mark_data)
 
 
 
