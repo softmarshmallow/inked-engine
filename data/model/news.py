@@ -84,12 +84,19 @@ class NewsMeta:
         self.category: NewsCategory = None
         if kwargs is not None and kwargs != {}:
             try:
+                self.source = kwargs['source'] # required
+
                 if "spamMarks" in kwargs:
                     self.spam_marks = [SpamMark(**s) for s in kwargs['spamMarks']]
-                self.source = kwargs['source']
-                self.summary = kwargs['summary']
-                self.subject = kwargs['subject']
-                self.category = kwargs['category']
+
+                if "summary" in kwargs:
+                    self.summary = kwargs['summary']
+
+                if "subject" in kwargs:
+                    self.subject = kwargs['subject']
+
+                if "category" in kwargs:
+                    self.category = kwargs['category']
             except KeyError as e:
                 logging.error("err", e)
 
