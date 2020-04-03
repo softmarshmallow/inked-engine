@@ -155,13 +155,13 @@ class SpamMark:
 
     def serialize(self):
         return {
-            "spam": self.spam.value,
+            "spam": self.spam,
             "reason": self.reason
         }
 
     def index_serialize(self):
         return {
-            "spam": self.spam.value,
+            "spam": self.spam,
             "reason": self.reason
         }
 
