@@ -153,15 +153,21 @@ class SpamMark:
             self.spam = kwargs["spam"]
             self.reason = kwargs["reason"]
 
+    def spam_str(self):
+        try:
+            return self.spam.value
+        except Exception:
+            return self.spam
+
     def serialize(self):
         return {
-            "spam": self.spam,
+            "spam": self.spam_str(),
             "reason": self.reason
         }
 
     def index_serialize(self):
         return {
-            "spam": self.spam,
+            "spam": self.spam_str(),
             "reason": self.reason
         }
 
