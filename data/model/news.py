@@ -128,14 +128,14 @@ class SpamTag(Enum):
 
     @classmethod
     def from_str(cls, label):
-        if label == 'SPAM':
+        if label == 'SpamTag.SPAM':
             return cls.SPAM
-        elif label == "NOTSPAM":
+        elif label == "SpamTag.NOTSPAM":
             return cls.NOTSPAM
-        elif label == "UNTAGGED":
+        elif label == "SpamTag.UNTAGGED":
             return cls.UNTAGGED
         else:
-            raise NotImplementedError
+            raise NotImplementedError(f"no SpamTag found with label {label}")
 
 
 class NewsCategory(Enum):
@@ -150,7 +150,7 @@ class SpamMark:
         # self.at: datetime = at
 
         if kwargs is not None and kwargs != {}:
-            self.spam = SpamTag.from_str(kwargs["spam"])
+            self.spam = kwargs["spam"]
             self.reason = kwargs["reason"]
 
     def serialize(self):
