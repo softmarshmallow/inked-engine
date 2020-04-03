@@ -3,7 +3,7 @@ from enum import Enum
 
 import arrow
 
-
+import logging
 class News:
     def __init__(self, **kwargs):
         self.id: str = None  # optional
@@ -31,7 +31,7 @@ class News:
                 self.provider = kwargs['provider']
                 self.meta = NewsMeta(**kwargs['meta'])
             except KeyError as e:
-                print("e: ", e)
+                logging.error("err", e)
 
     def serialize(self, debug=False):
         if debug:
@@ -91,7 +91,7 @@ class NewsMeta:
                 self.subject = kwargs['subject']
                 self.category = kwargs['category']
             except KeyError as e:
-                print("e: ", e)
+                logging.error("err", e)
 
     def is_spam(self):
         for s in self.spam_marks:
