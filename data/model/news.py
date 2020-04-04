@@ -181,13 +181,14 @@ class SpamMark:
 
 class SingleAnalysisResult:
     def __init__(self, spam_marks: [SpamMark] = [], summary=None, subject=None,
-                 category: NewsCategory = None, categories: [NewsCategory] = []):
+                 category: NewsCategory = None, categories: [NewsCategory] = [], is_spam=False):
         self.spam_marks: [SpamMark] = spam_marks
         self.summary: str = summary
         self.subject: str = subject
         self.category: NewsCategory = category
         self.categories: [NewsCategory] = categories
         self.tags: [str] = []
+        self.is_spam = is_spam
 
     def serialize(self):
         category = None
@@ -196,11 +197,12 @@ class SingleAnalysisResult:
 
         return {
             "spamMarks": [m.serialize() for m in self.spam_marks],
+            "isSpam": self.is_spam,
             "summary": self.summary,
             "subject": self.subject,
             "category": category,
             "categories": [c.value for c in self.categories],
-            "tags": self.tags
+            "tags": self.tags,
         }
 
     def index_serialize(self):
@@ -210,9 +212,10 @@ class SingleAnalysisResult:
 
         return {
             "spamMarks": [m.index_serialize() for m in self.spam_marks],
+            "isSpam": self.is_spam,
             "summary": self.summary,
             "subject": self.subject,
             "category": category,
             "categories": [c.value for c in self.categories],
-            "tags": self.tags
+            "tags": self.tags,
         }
