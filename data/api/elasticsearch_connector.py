@@ -6,6 +6,7 @@ from data.model.news import News
 from bs4 import BeautifulSoup
 import os
 from tqdm import tqdm
+from data.api import content_db_connector
 
 with open(os.path.join(CREDENTIALS_ROOT, "es-connection.json")) as json_file:
     data = json.load(json_file)
@@ -127,8 +128,11 @@ def search_news(q):
 
 
 def migrate_news_test():
-    from data.api import content_db_connector
-    newses = content_db_connector.fetch_news_collection(lim=2000)
+    from datetime import datetime, timedelta
+    today = datetime.now()
+    yesterday = today - timedelta(days=1)
+
+    newses = content_db_connector.fetch_news_collection(lim=8000, time_from=yesterday, time_to=today)
 
     print(len(newses))
     for news in tqdm(newses):
@@ -137,6 +141,13 @@ def migrate_news_test():
         # print(res)
 
 
+def reindexSingleNews(id):
+    news = content_db_connector.fetch_one(id)
+    add_news(news)
+
+
 if __name__ == "__main__":
     # create_initial_index(force=True)
     migrate_news_test()
+
+    # reindexSingleNews("5e86b41924aa9a0007370dd5")

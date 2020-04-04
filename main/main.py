@@ -1,5 +1,6 @@
 from data.api.elasticsearch_connector import add_news
 from data.model.news import News, NewsMeta, SingleAnalysisResult
+from features.simple_tag_extraction.main import SimpleTagExtractor
 from features.spam_detection.rule_based_spam_extractor import spam
 
 
@@ -10,7 +11,7 @@ class NewsAnalyzer:
 
     def analyze(self) -> SingleAnalysisResult:
         self.__index_elastic_search()
-        self.__spam_detection__()
+        self.__spam_detection()
         self.__summarize__()
         return self.analysis
 
@@ -18,13 +19,17 @@ class NewsAnalyzer:
         ...
         # self.analysis.summary = "test"
 
-    def __spam_detection__(self):
+    def __spam_detection(self):
         res = spam(self.news)
         self.analysis.spam_marks = [res]
 
     def __index_elastic_search(self):
         # add_news(self.news)
         ...
+
+    def __tags_extraction(self):
+        tags = SimpleTagExtractor(self.news).extract()
+        self.analysis.tags = tags
 
 
 class NewsIndexer:

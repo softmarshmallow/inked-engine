@@ -6,6 +6,7 @@ import urllib.parse
 import json
 import os
 from conf import CREDENTIALS_ROOT
+from bson.objectid import ObjectId
 
 # simple connector returns data from mongodb
 # connects to service server's raw collection database,
@@ -56,6 +57,11 @@ def fetch_news_collection(time_from: datetime=None, time_to: datetime=None, lim=
     for r in cursor:
         result.append(News(**r))
     return result
+
+
+def fetch_one(id) -> News:
+    res = collection_news.find_one({"_id": ObjectId(id)})
+    return News(**res)
 
 
 if __name__ == "__main__":
