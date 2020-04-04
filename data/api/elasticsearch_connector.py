@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 import os
 from tqdm import tqdm
 from data.api import content_db_connector
+import logging
 
 with open(os.path.join(CREDENTIALS_ROOT, "es-connection.json")) as json_file:
     data = json.load(json_file)
@@ -91,6 +92,7 @@ def create_initial_index(force=False):
 
 
 def add_news(news: News) -> dict:
+    logging.info(f"start indexing news.. {news.id}")
     # clean content
     html = news.content
     soup = BeautifulSoup(html, 'lxml')
@@ -100,17 +102,21 @@ def add_news(news: News) -> dict:
     text = soup.get_text()
     news.content = text
 
-    serialized = news.index_serialize()
+    try:
+        serialized = news.index_serialize()
 
-    doc = {
-        "title": news.title,
-        "content": news.content,
-        "provider": news.provider,
-        "time": news.time,
-        "meta": serialized["meta"]
-    }
-    res = es.index(index='news', body=doc, id=news.id)
-    return res
+        doc = {
+            "title": news.title,
+            "content": news.content,
+            "provider": news.provider,
+            "time": news.time,
+            "meta": serialized["meta"]
+        }
+        res = es.index(index='news', body=doc, id=news.id)
+        return res
+    except Exception as e:
+        logging.error("error while indexing", e)
+        return None
 
 
 def search_news(q):
@@ -149,5 +155,3 @@ def reindexSingleNews(id):
 if __name__ == "__main__":
     # create_initial_index(force=True)
     migrate_news_test()
-
-    # reindexSingleNews("5e86b41924aa9a0007370dd5")

@@ -1,5 +1,6 @@
 import os, sys
 import json
+import logging
 
 from data.model.news import News, SpamMark, SpamTag
 
@@ -44,9 +45,12 @@ def spam_detect_title(title: str) -> (SpamTag, str):
 
 
 def spam(news: News) -> SpamMark:
-    is_title_spam = spam_detect_title(news.title)
-    spam_mark_data = {"spam": is_title_spam[0], "reason": is_title_spam[1]}
-    return SpamMark(**spam_mark_data)
+    try:
+        is_title_spam = spam_detect_title(news.title)
+        spam_mark_data = {"spam": is_title_spam[0], "reason": is_title_spam[1]}
+        return SpamMark(**spam_mark_data)
+    except Exception as e:
+        logging.error("error while extracting spam", e)
 
 
 

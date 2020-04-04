@@ -3,7 +3,7 @@ from enum import Enum
 
 import arrow
 
-
+import logging
 class News:
     def __init__(self, **kwargs):
         self.id: str = None  # optional
@@ -31,7 +31,7 @@ class News:
                 self.provider = kwargs['provider']
                 self.meta = NewsMeta(**kwargs['meta'])
             except KeyError as e:
-                print("e: ", e)
+                logging.error("err", e)
 
     def serialize(self, debug=False):
         if debug:
@@ -84,14 +84,21 @@ class NewsMeta:
         self.category: NewsCategory = None
         if kwargs is not None and kwargs != {}:
             try:
-                if kwargs["spamMarks"] is not None:
+                self.source = kwargs['source'] # required
+
+                if "spamMarks" in kwargs:
                     self.spam_marks = [SpamMark(**s) for s in kwargs['spamMarks']]
-                self.source = kwargs['source']
-                self.summary = kwargs['summary']
-                self.subject = kwargs['subject']
-                self.category = kwargs['category']
+
+                if "summary" in kwargs:
+                    self.summary = kwargs['summary']
+
+                if "subject" in kwargs:
+                    self.subject = kwargs['subject']
+
+                if "category" in kwargs:
+                    self.category = kwargs['category']
             except KeyError as e:
-                print("e: ", e)
+                logging.error("err", e)
 
     def is_spam(self):
         for s in self.spam_marks:
@@ -128,14 +135,14 @@ class SpamTag(Enum):
 
     @classmethod
     def from_str(cls, label):
-        if label == 'SPAM':
+        if label == 'SpamTag.SPAM':
             return cls.SPAM
-        elif label == "NOTSPAM":
+        elif label == "SpamTag.NOTSPAM":
             return cls.NOTSPAM
-        elif label == "UNTAGGED":
+        elif label == "SpamTag.UNTAGGED":
             return cls.UNTAGGED
         else:
-            raise NotImplementedError
+            raise NotImplementedError(f"no SpamTag found with label {label}")
 
 
 class NewsCategory(Enum):
@@ -150,18 +157,24 @@ class SpamMark:
         # self.at: datetime = at
 
         if kwargs is not None and kwargs != {}:
-            self.spam = SpamTag.from_str(kwargs["spam"])
+            self.spam = kwargs["spam"]
             self.reason = kwargs["reason"]
+
+    def spam_str(self):
+        try:
+            return self.spam.value
+        except Exception:
+            return self.spam
 
     def serialize(self):
         return {
-            "spam": self.spam.value,
+            "spam": self.spam_str(),
             "reason": self.reason
         }
 
     def index_serialize(self):
         return {
-            "spam": self.spam.value,
+            "spam": self.spam_str(),
             "reason": self.reason
         }
 

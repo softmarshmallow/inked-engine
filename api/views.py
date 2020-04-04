@@ -14,7 +14,7 @@ from data.model.news import News
 
 # region tools
 from main.main import NewsAnalyzer, NewsIndexer
-
+import logging
 
 class DuplicateCheckView(View):
     def post(self, request, *args, **kwargs):
@@ -46,12 +46,14 @@ class AnalyzeNewsView(View):
     def post(self, request, *args, **kwargs):
         try:
             json_data = json.loads(request.body)
-            analyzer = NewsAnalyzer(News(**json_data))
+            news = News(**json_data)
+            analyzer = NewsAnalyzer(news=news)
             res = analyzer.analyze()
             analyzer = None
             return JsonResponse(res.serialize())
         except Exception as e:
-            return HttpResponseBadRequest(reason=str(e))
+            logging.error("error while handing request", e)
+            return HttpResponseBadRequest(e)
 
 
 def get_time_range_start(date_diff=-1):
