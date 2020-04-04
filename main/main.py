@@ -13,6 +13,7 @@ class NewsAnalyzer:
         self.__index_elastic_search()
         self.__spam_detection()
         self.__summarize__()
+        self.__tags_extraction()
         return self.analysis
 
     def __summarize__(self):
