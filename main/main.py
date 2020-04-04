@@ -30,6 +30,9 @@ class NewsAnalyzer:
 
     def __tags_extraction(self):
         tags = SimpleTagExtractor(self.news).extract()
+        # tod change location
+        if len(self.analysis.spam_marks) > 0:
+            tags.append("spam")
         self.analysis.tags = tags
 
 
