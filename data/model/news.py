@@ -79,6 +79,7 @@ class NewsMeta:
     def __init__(self, **kwargs):
         self.source = None
         self.spam_marks: [SpamMark] = []
+        self.tags: [str] = []
         self.summary = None
         self.subject = None
         self.category: NewsCategory = None
@@ -97,6 +98,9 @@ class NewsMeta:
 
                 if "category" in kwargs:
                     self.category = kwargs['category']
+
+                if "tags" in kwargs:
+                    self.tags = kwargs["tags"]
             except KeyError as e:
                 logging.error("err", e)
 
@@ -113,6 +117,8 @@ class NewsMeta:
             "summary": self.summary,
             "subject": self.subject,
             "category": self.category,
+            "isSpam": self.is_spam(),
+            "tags": self.tags
         }
         return item
 
@@ -123,7 +129,8 @@ class NewsMeta:
             "summary": self.summary,
             "subject": self.subject,
             "category": self.category,
-            "isSpam": self.is_spam()
+            "isSpam": self.is_spam(),
+            "tags": self.tags
         }
         return item
 

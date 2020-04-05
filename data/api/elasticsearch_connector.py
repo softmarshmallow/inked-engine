@@ -51,18 +51,19 @@ def create_initial_index(force=False):
 
     mappings = {
         "properties": {
-            "title": {"type": "text", "analyzer": "korean", "index": True},
+            "title": {"type": "text", "analyzer": "korean", "index": True, "boost": 2},
             "content": {"type": "text", "analyzer": "korean", "index": True},
             "provider": {"type": "keyword"},
             "time": {"type": "date"},
             "meta": {
                 "type": "nested",
                 "properties": {
-                    "summary": {"type": "text"},
-                    "subject": {"type": "text"},
+                    "summary": {"type": "text", "boost": 2},
+                    "subject": {"type": "text", "boost": 2},
                     "category": {"type": "keyword"},
                     "categories": {"type": "nested"},
                     "spamMarks": {"type": "nested"},
+                    "tags": {"type": "nested"},
                     "isSpam": {"type": "boolean"}
                     # TODO provide more meta fields including array
                 }

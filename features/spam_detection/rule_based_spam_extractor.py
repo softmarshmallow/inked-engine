@@ -31,14 +31,17 @@ for u in uses:
             title_box_based_spam_tokens.append(i)
 
 
+TITLE_MIN_LENGTH = 21
 def spam_detect_title(title: str) -> (SpamTag, str):
+    if len(title) < TITLE_MIN_LENGTH:
+        return SpamTag.SPAM, f"title too short {len(title)}"
     for t in title_match_based_spam_tokens:
         if t in title:
             return SpamTag.SPAM, f"token detected {t}"
     for t in title_box_based_spam_tokens:
         if t in title:
             return SpamTag.SPAM, f"box detected, {t}"
-    return SpamTag.NOTSPAM, "no spam token detected"
+    return SpamTag.NOTSPAM, "no spam rule detected"
 
 
 # endregion title token rule based spam extractor
