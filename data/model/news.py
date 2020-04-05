@@ -118,7 +118,7 @@ class NewsMeta:
             "subject": self.subject,
             "category": self.category,
             "isSpam": self.is_spam(),
-            "tags": self.tags
+            # "tags": self.tags
         }
         return item
 
@@ -130,7 +130,7 @@ class NewsMeta:
             "subject": self.subject,
             "category": self.category,
             "isSpam": self.is_spam(),
-            "tags": self.tags
+            # "tags": self.tags
         }
         return item
 
