@@ -21,6 +21,11 @@ es = Elasticsearch(
 )
 
 
+def get_user_dictionary():
+    # TODO migrate to external file
+    return ["n95", "n번방", "아비간", "CDBC", "수소차", "웹캠", "치료제", "3d프린터"]
+
+
 def create_initial_index(force=False):
     settings = {
         "number_of_shards": 2,
@@ -37,7 +42,7 @@ def create_initial_index(force=False):
                 "seunjeon_default_tokenizer": {
                     "type": "seunjeon_tokenizer",
                     "index_eojeol": False,
-                    "user_words": []
+                    "user_words": get_user_dictionary()
                 }
             },
             "char_filter": {
@@ -82,9 +87,13 @@ def create_initial_index(force=False):
             res = es.indices.create(index='news', body=request_body)
             print(res)
         else:
+            es.indices.close(index="news")
             print("already exists 'news' index...")
+            res = es.indices.put_settings(index='news', body=settings)
+            print("update index settings", res)
             res = es.indices.put_mapping(index='news', body=mappings)
-            print(res)
+            print("update index mapping", res)
+            es.indices.open(index="news")
         return
     else:
         print("creating 'news' index...")
@@ -139,7 +148,7 @@ def migrate_news_test():
     today = datetime.now()
     yesterday = today - timedelta(days=1)
 
-    newses = content_db_connector.fetch_news_collection(lim=8000, time_from=yesterday, time_to=today)
+    newses = content_db_connector.fetch_news_collection(lim=200, time_from=yesterday, time_to=today)
 
     print(len(newses))
     for news in tqdm(newses):
@@ -154,5 +163,5 @@ def reindexSingleNews(id):
 
 
 if __name__ == "__main__":
-    # create_initial_index(force=True)
-    migrate_news_test()
+    create_initial_index(force=True)
+    # migrate_news_test()
