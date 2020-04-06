@@ -17,13 +17,32 @@ with open(os.path.join(CREDENTIALS_ROOT, "es-connection.json")) as json_file:
 es = Elasticsearch(
     hosts=hosts,
     port=port,
-    scheme="https",
+    scheme="http",
 )
 
 
 def get_user_dictionary():
     # TODO migrate to external file
     return ["n95", "n번방", "아비간", "CDBC", "수소차", "웹캠", "치료제", "3d프린터"]
+
+
+s_tokenizer = {
+    "seunjeon_default_tokenizer": {
+        "type": "seunjeon_tokenizer",
+        "index_eojeol": False,
+        "user_words": get_user_dictionary()
+    }
+}
+
+
+# https://github.com/elastic/elasticsearch/blob/master/docs/plugins/analysis-nori.asciidoc
+nori_tokenizer = {
+    "nori_user_dict_tokenizer": {
+        "type": "nori_tokenizer",
+        "decompound_mode": "mixed",
+        "user_dictionary_rules": get_user_dictionary()
+    }
+}
 
 
 def create_initial_index(force=False):
@@ -34,17 +53,12 @@ def create_initial_index(force=False):
             "analyzer": {
                 "korean": {
                     "type": "custom",
-                    "tokenizer": "seunjeon_default_tokenizer",
+                    "tokenizer": "nori_user_dict_tokenizer",
+                    "filter": ["nori_readingform"],
                     "char_filter": ["html_cleaner"]
                 },
             },
-            "tokenizer": {
-                "seunjeon_default_tokenizer": {
-                    "type": "seunjeon_tokenizer",
-                    "index_eojeol": False,
-                    "user_words": get_user_dictionary()
-                }
-            },
+            "tokenizer": nori_tokenizer,
             "char_filter": {
                 "html_cleaner": {
                     "type": "html_strip",
