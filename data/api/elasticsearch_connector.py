@@ -23,7 +23,8 @@ es = Elasticsearch(
 
 def get_user_dictionary():
     # TODO migrate to external file
-    return ["n95", "n번방", "아비간", "CDBC", "수소차", "웹캠", "치료제", "3d프린터"]
+    # https://www.elastic.co/guide/en/elasticsearch/plugins/current/analysis-nori-tokenizer.html
+    return ["n95", "n번방", "아비간", "CDBC", "수소차", "웹캠", "치료제", "3D프린터 3D 프린터"]
 
 
 s_tokenizer = {
@@ -178,4 +179,4 @@ def reindexSingleNews(id):
 
 if __name__ == "__main__":
     create_initial_index(force=True)
-    # migrate_news_test()
+    migrate_news_test()

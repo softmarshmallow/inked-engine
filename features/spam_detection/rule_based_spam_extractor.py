@@ -49,6 +49,11 @@ def spam_detect_title(title: str) -> (SpamTag, str):
 
 def spam(news: News) -> SpamMark:
     try:
+        # do not mark spam for provider === "공시"
+        if news.provider == "공시":
+            spam_mark_data = {"spam": False, "reason": "provider is 공시"}
+            return SpamMark(**spam_mark_data)
+
         is_title_spam = spam_detect_title(news.title)
         spam_mark_data = {"spam": is_title_spam[0], "reason": is_title_spam[1]}
         return SpamMark(**spam_mark_data)
