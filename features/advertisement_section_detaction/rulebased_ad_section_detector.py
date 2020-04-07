@@ -1,7 +1,6 @@
-"""뉴스 안의 광고 영역을 제거합니다."""
+"""뉴스 안의 광고 영역을 추출, 제거합니다."""
 
 from bs4 import BeautifulSoup
-from data.api import GetLocalNewsData
 
 
 # todo create 1. rule based remover & rename as it
