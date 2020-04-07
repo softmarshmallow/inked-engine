@@ -36,7 +36,7 @@ Body::
         self._newsContent = self.newsContent
 
         if removeAdSection:
-            from utils.AdRemover.AdSectionRemover import GetAdLessContent
+            from utils.advertisement_section_detaction.AdSectionRemover import GetAdLessContent
             self._newsContent = GetAdLessContent(self.newsContent)
 
         if removeHtml:

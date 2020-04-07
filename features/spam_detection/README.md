@@ -37,7 +37,8 @@
 3. 
 
 ### 접근방법 - 문서 내용 포함
-준비 되지 않았다.
+접근 - 뉴스 문서안의 링크는 99% 스팸성이다. 본문을 광고영역과 컨탠츠 영역으로 분리하고, 광고영역에 스팸 태그를, 일반 컨텐츠에 일반 태그를 부여한후, 트래인한다.
+모델 사용시 입력은 본문 광고영역을 제외한 컨탠츠만 입력하는 식으로 분석결과를 확인한다.
 
 ### references
 * Text Classification in Python[https://towardsdatascience.com/text-classification-in-python-dd95d264c802]

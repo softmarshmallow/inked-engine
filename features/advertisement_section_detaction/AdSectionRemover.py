@@ -5,6 +5,8 @@ from data.api import GetLocalNewsData
 
 
 # todo create 1. rule based remover & rename as it
+from data.api.content_db_connector import fetch_news_collection
+
 
 class AdSectionRemover:
     def __init__(self, newsContent: str):
@@ -46,17 +48,15 @@ def GetAdLessContent(content: str) -> str:
 
 
 if __name__ == "__main__":
-
     samplesCount = 2000
-    sampleNewsDataList = GetLocalNewsData(max=samplesCount, hasMaxValue=True)
-
-    for sample in sampleNewsDataList:
+    newses = fetch_news_collection(lim=samplesCount)
+    for news in newses:
         # print("Title : ", sample.newsTitle)
         # print("\n")
-        # print("RawContent : ", sample.newsContent)
-        bs = BeautifulSoup(sample.newsContent, "lxml")
+        print("RawContent : ", news.content)
+        bs = BeautifulSoup(news.content, "lxml")
         parsedText = bs.get_text()
-        oneLineText = sample.newsContent.replace("\n", ' ')
+        oneLineText = news.content.replace("\n", ' ')
         # print("BuiltText:", parsedText)
         # print("OneLineText", oneLineText)
         print("\n\nADS")

@@ -1,6 +1,6 @@
 from data.api.NewsDataService import NewsDataService
 from utils.SentTokenizer import sent_tokenize
-from NamedEntityRecognition.StockCompanyExtractor.StockCompanyExtractor import FindAllCompanyInContent
+from NamedEntityRecognition.krx_company.company_extractor import find_companies_in_content
 
 #  Load news
 newsList = NewsDataService().FetchNewsData(100)
@@ -12,7 +12,7 @@ for newsData in newsList:
 
     for sent in sentences:
 
-        comps = FindAllCompanyInContent(sent)
+        comps = find_companies_in_content(sent)
         if len(comps) > 0:
             if last_section_comps == comps:
                 print("\n\n")

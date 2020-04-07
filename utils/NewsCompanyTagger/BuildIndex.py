@@ -1,9 +1,10 @@
 from data.api import NewsDataService
-from NamedEntityRecognition.StockCompanyExtractor.StockCompanyExtractor import \
-    FindAllCompanyInContent
+from NamedEntityRecognition.krx_company.company_extractor import \
+    find_companies_in_content
 from data.local.models import CompanyModel
 
 
+@DeprecationWarning
 class NewsCompanyIndexBuilder:
     """
     뉴스 데이터에대한 종목정보를 태깅하여 미리 저장해둠.
@@ -24,7 +25,7 @@ class NewsCompanyIndexBuilder:
         print("TagArticles for", allCnt, "articles")
         i = 1
         for newsData in allNewsData:
-            comp_infos:[CompanyModel] = FindAllCompanyInContent(newsData.get_news_content(), allowOverlap=False)
+            comp_infos:[CompanyModel] = find_companies_in_content(newsData.get_news_content(), allow_overlap=False)
             comp_codes = [i.information.compCode for i in comp_infos]
             # Save here
             NewsDataService().SetCompTags(newsData.id, comp_codes)

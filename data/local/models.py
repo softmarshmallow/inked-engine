@@ -17,6 +17,7 @@ class PersonModel:
     def __str__(self):
         return self.name
 
+
 class CompanyModel(object):
     def __init__(self, compName, compCode):
         self.id = compCode
@@ -49,6 +50,7 @@ class QuantityModel:
         self.amount: float = amount
         self.unit: str = unit
         self.target: object = target
+
 
 class ExtractedInformation:
     def __init__(self, original: object, information: object, span: (int, int)):

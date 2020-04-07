@@ -6,7 +6,7 @@ from data.api import NewsDataService
 from data.local.news_models import NewsDataModel, AnalyzedNewsModel
 from utils.SentTokenizer import sent_tokenize
 from NamedEntityRecognition.IncidentExtraction.incedent_extractor import IncidentExtractor
-from NamedEntityRecognition.StockCompanyExtractor.StockCompanyExtractor import CompanyExtractor
+from NamedEntityRecognition.krx_company.company_extractor import CompanyExtractor
 from NamedEntityRecognition.QuantityExtraction.quantity_extractor import QuantityExtractor
 from NamedEntityRecognition.PeopleExtraction.people_extractor import PeopleExtractor
 from NamedEntityRecognition.ProductExtraction.product_extraction import ProductExtractor

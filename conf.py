@@ -6,7 +6,7 @@ BASE_DIR = os.path.dirname(
     os.path.abspath(__file__)
 )
 CREDENTIALS_ROOT = os.path.join(BASE_DIR, "credentials")
-DATA_SOURCE_ROOT = os.path.join(BASE_DIR, "data/local")
+DATA_SOURCE_ROOT = os.path.join(BASE_DIR, "rsc")
 
 # region
 '''

@@ -1,6 +1,7 @@
 from utils.NewsCompanyTagger.BuildIndex import NewsCompanyIndexBuilder
 
 
+@DeprecationWarning
 def MigrateToDatabase_NaverNewsDump():
     """
     news.naver.com // inkednewscrawler 통해 수집한 뉴스 데이터를 바탕으로 디비를 구성합니다.
@@ -31,14 +32,13 @@ def MigrateToDatabase_NaverNewsDump():
         print("TOTAL", total, "DONE", str(i))
         i += 1
 
+
 def MigrateToDatabase_FirebaseDump():
     """
     Evil-eye firebase. json을 mongo db 로 migrate 한다.
     Temporary method
     로컬 데이터를 디비로 옮길때 사용, 아키텍쳐 변경시 deprecated.
     """
-
-
 
     from pymongo import MongoClient
     client = MongoClient('localhost', 27017)
@@ -61,7 +61,6 @@ def MigrateToDatabase_FirebaseDump():
         print('One post: {0}'.format(result.inserted_id))
         print("TOTAL", total, "DONE", str(i))
         i += 1
-
 
 
 if __name__ == "__main__":
