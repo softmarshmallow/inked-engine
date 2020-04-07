@@ -3,7 +3,7 @@ import codecs
 from datetime import datetime
 
 # contentType:: (NewsTitle, NewsContent, Wiki)
-from WordTokenizer.WordTokenizer import WordTokenizer
+from tokenizer.WordTokenizer import WordTokenizer
 
 
 def CreateUnpolishedCorpus(contentType:str = "Wiki")->str:

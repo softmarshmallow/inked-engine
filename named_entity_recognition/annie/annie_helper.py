@@ -3,7 +3,7 @@ import os.path
 import sys
 
 dirname = os.path.dirname(__file__)
-filename = os.path.join(dirname, "../rsc/gazette.annie")
+filename = os.path.join(dirname, "./gazette.annie")
 
 
 def extract_named_entity_dictionary(NE_type='OG'):

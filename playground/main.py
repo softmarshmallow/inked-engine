@@ -5,11 +5,11 @@ from threading import Thread
 from data.api import NewsDataService
 from data.local.news_models import NewsDataModel, AnalyzedNewsModel
 from utils.SentTokenizer import sent_tokenize
-from NamedEntityRecognition.IncidentExtraction.incedent_extractor import IncidentExtractor
+from NamedEntityRecognition.incident.incident_extractor import IncidentExtractor
 from NamedEntityRecognition.krx_company.company_extractor import CompanyExtractor
 from NamedEntityRecognition.QuantityExtraction.quantity_extractor import QuantityExtractor
-from NamedEntityRecognition.PeopleExtraction.people_extractor import PeopleExtractor
-from NamedEntityRecognition.ProductExtraction.product_extraction import ProductExtractor
+from NamedEntityRecognition.people.people_extractor import PeopleExtractor
+from NamedEntityRecognition.product.product_extraction import ProductExtractor
 
 from multiprocessing.dummy import Pool as ThreadPool
 
