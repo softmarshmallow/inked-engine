@@ -48,6 +48,12 @@ http://konlpy.org/en/v0.4.4/install/
 ## start the engine server
 `daphne server.asgi:application`
 
+## supervisor ctrl
+restart server
+`sudo supervisorctl restart asgi_daphne`
+
+
+
 ## IMPORTANT:: seed credential files
 you can see 
 ```gitignore
