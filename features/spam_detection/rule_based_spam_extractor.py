@@ -41,7 +41,7 @@ def spam_detect_title(title: str) -> (SpamTag, str):
     for t in title_box_based_spam_tokens:
         if t in title:
             return SpamTag.SPAM, f"box detected, {t}"
-    return SpamTag.NOTSPAM, "no spam rule detected"
+    return SpamTag.UNTAGGED, "no spam rule detected"
 
 
 # endregion title token rule based spam extractor
