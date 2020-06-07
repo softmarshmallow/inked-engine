@@ -68,6 +68,9 @@ from `.gitignore` which two files you will have to provide manually to run this 
 - spam news detector 🚫
 - word2vec ✅ (wiki) 🚫 (news)
 
+## used by
+* [wor.io](https://github.com/softmarshmallow/wor.io)
+* [inked-server](https://github.com/softmarshmallow/inked-server)
 
 ## developed by
 develped by softmarshmallow
