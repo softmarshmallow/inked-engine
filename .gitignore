@@ -3,3 +3,6 @@
 server/settings/production.py
 credentials/db-connection.json
 credentials/es-connection.json
+.DS_Store
+venv
+.ipynb_checkpoints/*
