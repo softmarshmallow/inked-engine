@@ -38,7 +38,7 @@ wordcloud
 tqdm
 # endregion
 
-arrow==0.12.1
+arrow==0.15.1
 
 Keras==2.3.1
 Keras-Applications==1.0.6
